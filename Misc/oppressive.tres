@@ -1,0 +1,12 @@
+[gd_resource type="Theme" format=3 uid="uid://nqeeakofp0hq"]
+
+[ext_resource type="FontFile" uid="uid://bq5c6mjko0k4c" path="res://Misc/fonts/TextFont/Imperial.otf" id="1_fcubb"]
+
+[resource]
+Button/font_sizes/font_size = 50
+Button/fonts/font = ExtResource("1_fcubb")
+Label/colors/font_color = Color(1, 1, 1, 1)
+Label/font_sizes/font_size = 50
+Label/fonts/font = ExtResource("1_fcubb")
+LineEdit/font_sizes/font_size = 50
+LineEdit/fonts/font = ExtResource("1_fcubb")
