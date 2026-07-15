@@ -80,7 +80,7 @@ func setAllowedTiles(allowed: Array):
 	return totalTiles
 
 # Will return valid Atlas Cords
-func findValidHex(cell, lowBound: int = 0, highBound: int = 6, restrictions: Array = [0, 0, 0, 0, 0, 0]):
+func placeValidHex(cell, lowBound: int = 0, highBound: int = 6, restrictions: Array = [0, 0, 0, 0, 0, 0]):
 	# Restricts the total tiles we look at to the ones fitting the min  max valid values
 	#print(lowBound, ' ', highBound, ' ', restrictions)
 	var bound: Array[bool] = [false, false, false, false, false, false, false]
@@ -110,18 +110,24 @@ func findValidHex(cell, lowBound: int = 0, highBound: int = 6, restrictions: Arr
 			#print(totalTiles,randTile,randTileVals)
 			
 			if checkTile:
-				hexSearch = false
-				break
+				var tile = tileDict.get(randTile)
+				var atlasCoords = tile["coords"]
+				tilemap.set_cell(tilemap.cube_to_map(cell), 0, atlasCoords)
+				if validAdjacency(cell):
+					return true
+				else:
+					hexSearch = true
+					#print(atlasCoords)
+					totalTiles.erase(randTile)
+					randTile = totalTiles[randi() % totalTiles.size()]
+					randTileVals = int2NodeVals(randTile)
 			else:
 				if totalTiles.size() == 0:
-					return Vector2i(-1, -1)
+					return false
 				randTile = totalTiles[randi() % totalTiles.size()]
 				randTileVals = int2NodeVals(randTile)
 	#print(randTile)
 	#print(randTileVals)
-	var tile = tileDict.get(randTile)
-	var atlasCoords = tile["coords"]
-	return atlasCoords
 
 # Finds the nodes that are already filled in.
 func findRestrictions(pos: int, tiledata, restrictions: Array[int] = [0,0,0,0,0,0]):
@@ -162,19 +168,24 @@ func findRestrictions(pos: int, tiledata, restrictions: Array[int] = [0,0,0,0,0,
 
 # Takes the decided node & checks that it doesn't create a 0, 1, 0, 1 pattern
 func validAdjacency(cell: Vector3i, toCheck: Array[bool] = [true, true, true, true, true, true]):
+	print('ENTERED')
 	var neighbors = tilemap.cube_neighbors(cell)
 	for i in range(6):
 		if toCheck[i]:
 			var restrictions: Array[int] = [0, 0, 0, 0, 0, 0]
-			var vectorCoords = tilemap.cube_to_map(neighbors[i])
-			var tiledata = tilemap.get_cell_tile_data(vectorCoords)
-			if tiledata:
-				restrictions = findRestrictions(i, tiledata, restrictions)
-				print(vectorCoords, restrictions)
-				for j in range(6):
-					if (restrictions[j] and restrictions[j-1] and restrictions[j] != restrictions[j-1]) and (restrictions[j] == restrictions[j-2] and restrictions[j-1] == restrictions[j-3]):
-						print('INVALID')
-						return false
+			var nxtNeighbors = tilemap.cube_neighbors(neighbors[i])
+			for j in range(6):
+				var vectorCoords = tilemap.cube_to_map(nxtNeighbors[j])
+				var tiledata = tilemap.get_cell_tile_data(vectorCoords)
+				if tiledata:
+					restrictions = findRestrictions(j, tiledata, restrictions)
+				#print(vectorCoords, restrictions)
+			for k in range(6):
+				#print(restrictions[k], restrictions[k-1], restrictions[k-2], restrictions[k-3])
+				if (restrictions[k] and restrictions[k-1] and restrictions[k] != restrictions[k-1]) and (restrictions[k] == restrictions[k-2] and restrictions[k-1] == restrictions[k-3]):
+					#print('EXITED INVALID', restrictions)
+					return false
+	#print('EXITED VALID')
 	return true
 
 # Debug function to test if the IntNode layer works.
@@ -183,10 +194,10 @@ func printTileVals():
 	var clicked_cell = tilemap.local_to_map(tilemap.get_local_mouse_position())
 	var data = tilemap.get_cell_tile_data(clicked_cell)
 	print(clicked_cell)
-	#if data:
-	#	print(data.get_custom_data("IntNode"))
-	#else:
-	#	return 0
+	if data:
+		print(data.get_custom_data("IntNode"))
+	else:
+		return 0
 
 func _ready() -> void:
 	# Builds a dictonary that uses source ID or node value as a key for atlas coords.
@@ -236,11 +247,11 @@ func _on_generate_pressed() -> void:
 		
 		# Finds a hexagon that fits & places it.
 		#print(lowBound, ' ', highBound, ' ', restrictions)
-		#placeValidHex(cell, lowBound, highBound, restrictions)
-		var validHex = findValidHex(cell, lowBound, highBound, restrictions)
-		if validHex == Vector2i(-1, -1):
+		if !placeValidHex(cell, lowBound, highBound, restrictions):
 			$PuzzleMenu/Bottom/Buttons/BadPuzzle.visible = true
-			print(cell, restrictions)
-			break
-		tilemap.set_cell(tilemap.cube_to_map(cell), 0, validHex)
-		
+		#var validHex = findValidHex(cell, lowBound, highBound, restrictions)
+		#if validHex == Vector2i(-1, -1):
+		#	$PuzzleMenu/Bottom/Buttons/BadPuzzle.visible = true
+		#	print(cell, restrictions)
+		#	break
+		#tilemap.set_cell(tilemap.cube_to_map(cell), 0, validHex)
