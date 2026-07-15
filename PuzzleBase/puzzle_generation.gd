@@ -27,7 +27,7 @@ var tileDict := {}
 func buildTileDict():
 	# Clear's just in case & sets our layer to the int values of each hex
 	tileDict.clear()
-	var layer_name = "IntNodes"
+	#var layer_name = "IntNodes"
 	
 	# Takes each id in the tileset & saves its source & data.
 	for source_id in tileset.get_source_count():
@@ -39,7 +39,7 @@ func buildTileDict():
 				
 				# Using the data we save the IntNode values to a dict as the keys to atlas coords.
 				if data:
-					var id = data.get_custom_data(layer_name)
+					var id = data.get_custom_data("IntNodes")
 					if id != null:
 						tileDict[id] = {"source_id": source_id, "coords": coords}
 
@@ -168,7 +168,7 @@ func findRestrictions(pos: int, tiledata, restrictions: Array[int] = [0,0,0,0,0,
 
 # Takes the decided node & checks that it doesn't create a 0, 1, 0, 1 pattern
 func validAdjacency(cell: Vector3i, toCheck: Array[bool] = [true, true, true, true, true, true]):
-	print('ENTERED')
+	#print('ENTERED')
 	var neighbors = tilemap.cube_neighbors(cell)
 	for i in range(6):
 		if toCheck[i]:
