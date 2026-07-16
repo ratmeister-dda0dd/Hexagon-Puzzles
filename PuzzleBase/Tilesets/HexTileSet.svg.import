@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://761oeagtgna5"
-path="res://.godot/imported/NewHexTileSet.svg-16c65cc48f153597455739b68ab328da.ctex"
+uid="uid://7uou32st2ee7"
+path="res://.godot/imported/HexTileSet.svg-ccc519dc2ffad40dc6a1a96824fdc6f3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://PuzzleBase/NewHexTileSet.svg"
-dest_files=["res://.godot/imported/NewHexTileSet.svg-16c65cc48f153597455739b68ab328da.ctex"]
+source_file="res://PuzzleBase/Tilesets/HexTileSet.svg"
+dest_files=["res://.godot/imported/HexTileSet.svg-ccc519dc2ffad40dc6a1a96824fdc6f3.ctex"]
 
 [params]
 

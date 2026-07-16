@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://bswo25s2ifgjx"]
 
 [ext_resource type="Script" uid="uid://dcs0lm4jvax5i" path="res://PuzzleBase/puzzle_generation.gd" id="1_bau5w"]
-[ext_resource type="Texture2D" uid="uid://c2jor0muqus8h" path="res://PuzzleBase/HexTileSetDownscaled.png" id="2_ifosy"]
+[ext_resource type="Texture2D" uid="uid://chddvyhlpucqv" path="res://PuzzleBase/Tilesets/HexTileSetDownscaled.png" id="2_ifosy"]
+[ext_resource type="Texture2D" uid="uid://c2jor0muqus8h" path="res://PuzzleBase/Tilesets/OldTilesets/OLDHexTileSetDownscaled.png" id="3_ejoar"]
 [ext_resource type="Script" uid="uid://buj6ft1vvdf2f" path="res://addons/hexagon_tilemaplayer/hexagon_tilemaplayer.gd" id="3_ri7nl"]
 [ext_resource type="Script" uid="uid://6x2hxiaploah" path="res://PuzzleBase/camera_2d.gd" id="4_fu5wo"]
 [ext_resource type="FontFile" uid="uid://bq5c6mjko0k4c" path="res://Misc/fonts/TextFont/Imperial.otf" id="5_ifosy"]
@@ -10,8 +11,82 @@
 
 [sub_resource type="GDScript" id="GDScript_wbw2b"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1oo8t"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_id0ix"]
 texture = ExtResource("2_ifosy")
+separation = Vector2i(11, 0)
+texture_region_size = Vector2i(89, 100)
+8:4/0 = 0
+8:4/0/custom_data_0 = 45
+7:4/0 = 0
+7:4/0/custom_data_0 = 54
+6:4/0 = 0
+6:4/0/custom_data_0 = 27
+5:4/0 = 0
+5:4/0/custom_data_0 = 39
+4:4/0 = 0
+4:4/0/custom_data_0 = 51
+3:4/0 = 0
+3:4/0/custom_data_0 = 57
+2:3/0 = 0
+2:3/0/custom_data_0 = 28
+1:3/0 = 0
+1:3/0/custom_data_0 = 14
+0:3/0 = 0
+0:3/0/custom_data_0 = 7
+0:4/0 = 0
+0:4/0/custom_data_0 = 15
+0:5/0 = 0
+0:5/0/custom_data_0 = 31
+0:6/0 = 0
+0:6/0/custom_data_0 = 63
+1:4/0 = 0
+1:4/0/custom_data_0 = 30
+2:5/0 = 0
+2:5/0/custom_data_0 = 61
+3:5/0 = 0
+3:5/0/custom_data_0 = 59
+4:5/0 = 0
+4:5/0/custom_data_0 = 55
+5:5/0 = 0
+5:5/0/custom_data_0 = 47
+2:4/0 = 0
+2:4/0/custom_data_0 = 60
+1:5/0 = 0
+1:5/0/custom_data_0 = 62
+4:3/0 = 0
+4:3/0/custom_data_0 = 49
+5:3/0 = 0
+5:3/0/custom_data_0 = 35
+5:2/0 = 0
+5:2/0/custom_data_0 = 33
+5:1/0 = 0
+5:1/0/custom_data_0 = 32
+4:1/0 = 0
+4:1/0/custom_data_0 = 16
+3:1/0 = 0
+3:1/0/custom_data_0 = 8
+3:2/0 = 0
+3:2/0/custom_data_0 = 24
+4:2/0 = 0
+4:2/0/custom_data_0 = 48
+3:3/0 = 0
+3:3/0/custom_data_0 = 56
+2:2/0 = 0
+2:2/0/custom_data_0 = 12
+1:2/0 = 0
+1:2/0/custom_data_0 = 6
+1:1/0 = 0
+1:1/0/custom_data_0 = 2
+0:1/0 = 0
+0:1/0/custom_data_0 = 1
+0:2/0 = 0
+0:2/0/custom_data_0 = 3
+2:1/0 = 0
+2:1/0/custom_data_0 = 4
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1oo8t"]
+texture = ExtResource("3_ejoar")
 texture_region_size = Vector2i(100, 100)
 0:0/0 = 0
 0:1/0 = 0
@@ -85,10 +160,11 @@ texture_region_size = Vector2i(100, 100)
 
 [sub_resource type="TileSet" id="TileSet_64ccv"]
 tile_shape = 3
-tile_size = Vector2i(75, 75)
+tile_size = Vector2i(72, 84)
 custom_data_layer_0/name = "IntNodes"
 custom_data_layer_0/type = 2
-sources/0 = SubResource("TileSetAtlasSource_1oo8t")
+sources/1 = SubResource("TileSetAtlasSource_1oo8t")
+sources/0 = SubResource("TileSetAtlasSource_id0ix")
 script = SubResource("GDScript_wbw2b")
 
 [sub_resource type="Theme" id="Theme_ri7nl"]
