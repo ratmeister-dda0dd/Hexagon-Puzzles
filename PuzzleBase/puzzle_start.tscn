@@ -8,6 +8,8 @@
 [ext_resource type="FontFile" uid="uid://bq5c6mjko0k4c" path="res://Misc/fonts/TextFont/Imperial.otf" id="5_ifosy"]
 [ext_resource type="Script" uid="uid://brtpbbjg65k15" path="res://PuzzleBase/puzzle_menu.gd" id="5_ri7nl"]
 [ext_resource type="Theme" uid="uid://nqeeakofp0hq" path="res://Misc/oppressive.tres" id="7_fu5wo"]
+[ext_resource type="Texture2D" uid="uid://00b7jl73516u" path="res://Misc/Buttons/ZeroButton.png" id="9_lisbm"]
+[ext_resource type="Texture2D" uid="uid://b2gwxt5gvm2sw" path="res://Misc/Buttons/SixButton.png" id="10_uq4n1"]
 
 [sub_resource type="GDScript" id="GDScript_wbw2b"]
 
@@ -189,60 +191,80 @@ script = ExtResource("4_fu5wo")
 [node name="PuzzleMenu" type="CanvasLayer" parent="." unique_id=2004726587]
 script = ExtResource("5_ri7nl")
 
-[node name="Top" type="HBoxContainer" parent="PuzzleMenu" unique_id=2031044140]
+[node name="TopLeft" type="HBoxContainer" parent="PuzzleMenu" unique_id=2031044140]
 offset_left = 50.0
 offset_top = 50.0
 offset_right = 517.0
 offset_bottom = 540.0
 theme = SubResource("Theme_ri7nl")
 
-[node name="Buttons" type="VBoxContainer" parent="PuzzleMenu/Top" unique_id=723871401]
+[node name="Buttons" type="VBoxContainer" parent="PuzzleMenu/TopLeft" unique_id=723871401]
 z_index = 1
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("7_fu5wo")
 theme_override_constants/separation = 50
 
-[node name="Save" type="Button" parent="PuzzleMenu/Top/Buttons" unique_id=629144684]
+[node name="Save" type="Button" parent="PuzzleMenu/TopLeft/Buttons" unique_id=629144684]
 layout_mode = 2
 text = "Save Puzzle"
 
-[node name="Load" type="Button" parent="PuzzleMenu/Top/Buttons" unique_id=1599151511]
+[node name="Load" type="Button" parent="PuzzleMenu/TopLeft/Buttons" unique_id=1599151511]
 layout_mode = 2
 text = "Load Puzzle"
 
-[node name="Bottom" type="HBoxContainer" parent="PuzzleMenu" unique_id=1209912280]
+[node name="BottomLeft" type="HBoxContainer" parent="PuzzleMenu" unique_id=1209912280]
 offset_left = 50.0
 offset_top = 540.0
 offset_right = 517.0
 offset_bottom = 1030.0
 theme = SubResource("Theme_ri7nl")
 
-[node name="Buttons" type="VBoxContainer" parent="PuzzleMenu/Bottom" unique_id=15915904]
+[node name="Buttons" type="VBoxContainer" parent="PuzzleMenu/BottomLeft" unique_id=15915904]
 z_index = 1
 layout_mode = 2
 theme = ExtResource("7_fu5wo")
 theme_override_constants/separation = 50
 alignment = 2
 
-[node name="BadPuzzle" type="Label" parent="PuzzleMenu/Bottom/Buttons" unique_id=674147259]
+[node name="BadPuzzle" type="Label" parent="PuzzleMenu/BottomLeft/Buttons" unique_id=674147259]
 visible = false
 layout_mode = 2
 text = "Puzzle Failed!"
 
-[node name="UserSize" type="LineEdit" parent="PuzzleMenu/Bottom/Buttons" unique_id=1546415306]
+[node name="UserSize" type="LineEdit" parent="PuzzleMenu/BottomLeft/Buttons" unique_id=1546415306]
 layout_mode = 2
 placeholder_text = "Enter Size..."
 
-[node name="Generate" type="Button" parent="PuzzleMenu/Bottom/Buttons" unique_id=1188066836]
+[node name="Generate" type="Button" parent="PuzzleMenu/BottomLeft/Buttons" unique_id=1188066836]
 layout_mode = 2
 text = "Create Puzzle"
 
-[node name="Return" type="Button" parent="PuzzleMenu/Bottom/Buttons" unique_id=776776038]
+[node name="Return" type="Button" parent="PuzzleMenu/BottomLeft/Buttons" unique_id=776776038]
 layout_mode = 2
 text = "Back"
 
-[connection signal="pressed" from="PuzzleMenu/Top/Buttons/Save" to="PuzzleMenu" method="_on_save_pressed"]
-[connection signal="pressed" from="PuzzleMenu/Top/Buttons/Load" to="PuzzleMenu" method="_on_load_pressed"]
-[connection signal="pressed" from="PuzzleMenu/Bottom/Buttons/Generate" to="." method="_on_generate_pressed"]
-[connection signal="pressed" from="PuzzleMenu/Bottom/Buttons/Return" to="PuzzleMenu" method="_on_return_pressed"]
+[node name="BottomRight" type="HBoxContainer" parent="PuzzleMenu" unique_id=2013096846]
+offset_left = 1403.0
+offset_top = 928.0
+offset_right = 1870.0
+offset_bottom = 1030.0
+theme = SubResource("Theme_ri7nl")
+alignment = 2
+
+[node name="DisableZeros" type="TextureButton" parent="PuzzleMenu/BottomRight" unique_id=379044379]
+layout_mode = 2
+toggle_mode = true
+texture_normal = ExtResource("9_lisbm")
+
+[node name="DisableSixes" type="TextureButton" parent="PuzzleMenu/BottomRight" unique_id=633297242]
+layout_mode = 2
+toggle_mode = true
+texture_normal = ExtResource("10_uq4n1")
+
+[connection signal="pressed" from="PuzzleMenu/TopLeft/Buttons/Save" to="PuzzleMenu" method="_on_save_pressed"]
+[connection signal="pressed" from="PuzzleMenu/TopLeft/Buttons/Load" to="PuzzleMenu" method="_on_load_pressed"]
+[connection signal="pressed" from="PuzzleMenu/BottomLeft/Buttons/Generate" to="." method="_on_generate_pressed"]
+[connection signal="pressed" from="PuzzleMenu/BottomLeft/Buttons/Return" to="PuzzleMenu" method="_on_return_pressed"]
+[connection signal="toggled" from="PuzzleMenu/BottomRight/DisableZeros" to="PuzzleMenu" method="_on_disable_zeros_toggled"]
+[connection signal="toggled" from="PuzzleMenu/BottomRight/DisableSixes" to="PuzzleMenu" method="_on_disable_sixes_toggled"]

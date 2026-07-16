@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var tilemap = $PuzzleBaseLayer
-@onready var sideLen = $PuzzleMenu/Bottom/Buttons/UserSize
+@onready var sideLen = $PuzzleMenu/BottomLeft/Buttons/UserSize
 @export var tileset: TileSet
 var tileDict := {}
 
@@ -94,40 +94,41 @@ func placeValidHex(cell, lowBound: int = 0, highBound: int = 6, restrictions: Ar
 	var randTile = totalTiles[randi() % totalTiles.size()]
 	var randTileVals = int2NodeVals(randTile)
 	#print(totalTiles, ' ', randTile, ' ', randTileVals)
-	var hexSearch = true
-	var checkTile = true
+	var searching = true
 	
-	# Checks that the random hexagon fits within the restrictions.
-	while hexSearch:
-		while checkTile or hexSearch:
-			checkTile = true
-			for i in range(6):
-				if restrictions[i] and restrictions[i] != randTileVals[i]:
-					#print(restrictions[i], ' ', randTileVals)
-					checkTile = false
-					totalTiles.erase(randTile)
-					break
-			#print(totalTiles,randTile,randTileVals)
-			
-			if checkTile:
-				var tile = tileDict.get(randTile)
-				var atlasCoords = tile["coords"]
-				tilemap.set_cell(tilemap.cube_to_map(cell), 0, atlasCoords)
-				if validAdjacency(cell):
-					return true
-				else:
-					hexSearch = true
-					#print(atlasCoords)
-					totalTiles.erase(randTile)
-					randTile = totalTiles[randi() % totalTiles.size()]
-					randTileVals = int2NodeVals(randTile)
-			else:
-				if totalTiles.size() == 0:
-					return false
+	# Picks a random hexagon in the dictonary.
+	while searching:
+		if totalTiles.size() == 0:
+			return false
+		randTile = totalTiles[randi() % totalTiles.size()]
+		randTileVals = int2NodeVals(randTile)
+		
+		# Checks it against the restrictions, if it fails searching is set to false.
+		for i in range(6):
+			if restrictions[i] and restrictions[i] != randTileVals[i]:
+				#print(restrictions[i], ' ', randTileVals)
+				searching = false
+				totalTiles.erase(randTile)
+				break
+		#print(totalTiles,randTile,randTileVals)
+		
+		# If it doesn't fail, we place the tile, then check it doesn't create a 1, -1, 1, -1 or -1, 1, -1, 1 pattern.
+		if searching:
+			var tile = tileDict.get(randTile)
+			var atlasCoords = tile["coords"]
+			tilemap.set_cell(tilemap.cube_to_map(cell), 0, atlasCoords)
+			if invalidAdjacency(cell):
+				#print(atlasCoords)
+				totalTiles.erase(randTile)
 				randTile = totalTiles[randi() % totalTiles.size()]
 				randTileVals = int2NodeVals(randTile)
-	#print(randTile)
-	#print(randTileVals)
+			else:
+				searching = false
+		else:
+			searching = true
+			
+	# If it doesn't we return true.
+	return true
 
 # Finds the nodes that are already filled in.
 func findRestrictions(pos: int, tiledata, restrictions: Array[int] = [0,0,0,0,0,0]):
@@ -167,7 +168,7 @@ func findRestrictions(pos: int, tiledata, restrictions: Array[int] = [0,0,0,0,0,
 	return restrictions
 
 # Takes the decided node & checks that it doesn't create a 0, 1, 0, 1 pattern
-func validAdjacency(cell: Vector3i, toCheck: Array[bool] = [true, true, true, true, true, true]):
+func invalidAdjacency(cell: Vector3i, toCheck: Array[bool] = [true, true, true, true, true, true]):
 	#print('ENTERED')
 	var neighbors = tilemap.cube_neighbors(cell)
 	for i in range(6):
@@ -183,10 +184,10 @@ func validAdjacency(cell: Vector3i, toCheck: Array[bool] = [true, true, true, tr
 			for k in range(6):
 				#print(restrictions[k], restrictions[k-1], restrictions[k-2], restrictions[k-3])
 				if (restrictions[k] and restrictions[k-1] and restrictions[k] != restrictions[k-1]) and (restrictions[k] == restrictions[k-2] and restrictions[k-1] == restrictions[k-3]):
-					#print('EXITED INVALID', restrictions)
-					return false
-	#print('EXITED VALID')
-	return true
+					#print('EXITED VALID', restrictions)
+					return true
+	#print('EXITED INVALID')
+	return false
 
 # Debug function to test if the IntNode layer works.
 func printTileVals():
@@ -212,7 +213,7 @@ func _process(_delta: float) -> void:
 
 func _on_generate_pressed() -> void:
 	# Hide the Failure label & clear the old puzzle.
-	$PuzzleMenu/Bottom/Buttons/BadPuzzle.visible = false
+	$PuzzleMenu/BottomLeft/Buttons/BadPuzzle.visible = false
 	tilemap.clear()
 	
 	# Sets the spiral's size to the user's input or 2 if that's not possible.
@@ -248,7 +249,7 @@ func _on_generate_pressed() -> void:
 		# Finds a hexagon that fits & places it.
 		#print(lowBound, ' ', highBound, ' ', restrictions)
 		if !placeValidHex(cell, lowBound, highBound, restrictions):
-			$PuzzleMenu/Bottom/Buttons/BadPuzzle.visible = true
+			$PuzzleMenu/BottomLeft/Buttons/BadPuzzle.visible = true
 		#var validHex = findValidHex(cell, lowBound, highBound, restrictions)
 		#if validHex == Vector2i(-1, -1):
 		#	$PuzzleMenu/Bottom/Buttons/BadPuzzle.visible = true
