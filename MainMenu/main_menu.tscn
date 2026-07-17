@@ -22,8 +22,8 @@ horizontal_alignment = 1
 [node name="MenuContainer" type="HBoxContainer" parent="." unique_id=903780718]
 offset_left = 50.0
 offset_top = 300.0
-offset_right = 750.0
-offset_bottom = 1050.0
+offset_right = 714.0
+offset_bottom = 870.0
 theme = ExtResource("3_5de1l")
 
 [node name="MainButtons" type="VBoxContainer" parent="MenuContainer" unique_id=1949973290]

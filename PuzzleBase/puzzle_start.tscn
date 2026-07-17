@@ -247,7 +247,6 @@ layout_mode = 2
 text = "Back"
 
 [node name="BottomRight" type="HBoxContainer" parent="PuzzleMenu" unique_id=2013096846]
-visible = false
 offset_left = 1403.0
 offset_top = 930.0
 offset_right = 1870.0
