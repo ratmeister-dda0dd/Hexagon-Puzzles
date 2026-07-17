@@ -2,6 +2,8 @@ extends Node2D
 
 @onready var tilemap = $PuzzleBaseLayer
 @onready var sideLen = $PuzzleMenu/BottomLeft/Buttons/UserSize
+#@onready var disable6s = $PuzzleMenu/BottomRight/DisableSixes
+#@onready var disable0s = $PuzzleMenu/BottomRight/DisableZeros
 @export var tileset: TileSet
 var tileDict := {}
 
@@ -63,7 +65,7 @@ func int2NodeVals(hex: int):
 # Removes all hexagons outside of the bounds.
 func setAllowedTiles(allowed: Array):
 	var totalTiles: Array[int] = []
-	if allowed[0]:
+	if allowed[0] and !$PuzzleMenu/BottomRight/DisableZeros.button_pressed:
 		totalTiles += zeroTiles
 	if allowed[1]:
 		totalTiles += oneTiles
@@ -75,7 +77,7 @@ func setAllowedTiles(allowed: Array):
 		totalTiles += fourTiles
 	if allowed[5]:
 		totalTiles += fiveTiles
-	if allowed[6]:
+	if allowed[6] and !$PuzzleMenu/BottomRight/DisableSixes.button_pressed:
 		totalTiles += sixTiles
 	return totalTiles
 
