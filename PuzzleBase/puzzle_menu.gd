@@ -65,11 +65,3 @@ func _on_load_pressed() -> void:
 
 func _on_return_pressed() -> void:
 	get_tree().change_scene_to_file("uid://c4kk82bvm81ni")
-
-
-func _on_disable_zeros_toggled(toggled_on: bool) -> void:
-	pass # Replace with function body.
-
-
-func _on_disable_sixes_toggled(toggled_on: bool) -> void:
-	pass # Replace with function body.
