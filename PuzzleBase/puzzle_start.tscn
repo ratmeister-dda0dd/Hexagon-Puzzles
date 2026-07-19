@@ -215,6 +215,98 @@ text = "Save Puzzle"
 layout_mode = 2
 text = "Load Puzzle"
 
+[node name="SaveLoadBG" type="ColorRect" parent="PuzzleMenu/TopLeft" unique_id=697290006]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.9411765, 0.8784314, 0.8627451, 1)
+
+[node name="SaveCont" type="VBoxContainer" parent="PuzzleMenu/TopLeft/SaveLoadBG" unique_id=572697344]
+visible = false
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 447.0
+offset_bottom = 470.0
+
+[node name="SaveSlot1" type="Button" parent="PuzzleMenu/TopLeft/SaveLoadBG/SaveCont" unique_id=1297921625]
+layout_mode = 2
+theme = ExtResource("7_fu5wo")
+text = "Slot 1
+"
+
+[node name="SaveSlot2" type="Button" parent="PuzzleMenu/TopLeft/SaveLoadBG/SaveCont" unique_id=1822270698]
+layout_mode = 2
+theme = ExtResource("7_fu5wo")
+text = "Slot 2
+"
+
+[node name="SaveSlot3" type="Button" parent="PuzzleMenu/TopLeft/SaveLoadBG/SaveCont" unique_id=703887511]
+layout_mode = 2
+theme = ExtResource("7_fu5wo")
+text = "Slot 3"
+
+[node name="SaveSlot4" type="Button" parent="PuzzleMenu/TopLeft/SaveLoadBG/SaveCont" unique_id=259221186]
+layout_mode = 2
+theme = ExtResource("7_fu5wo")
+text = "Slot 4"
+
+[node name="SaveSlot5" type="Button" parent="PuzzleMenu/TopLeft/SaveLoadBG/SaveCont" unique_id=276298162]
+layout_mode = 2
+theme = ExtResource("7_fu5wo")
+text = "Slot 5"
+
+[node name="Back" type="Button" parent="PuzzleMenu/TopLeft/SaveLoadBG/SaveCont" unique_id=1993819984]
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 15)
+offset_transform_visual_only = false
+theme = ExtResource("7_fu5wo")
+text = "Exit Saving"
+
+[node name="LoadCont" type="VBoxContainer" parent="PuzzleMenu/TopLeft/SaveLoadBG" unique_id=1833088040]
+visible = false
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 447.0
+offset_bottom = 470.0
+
+[node name="LoadSlot1" type="Button" parent="PuzzleMenu/TopLeft/SaveLoadBG/LoadCont" unique_id=1213807612]
+layout_mode = 2
+theme = ExtResource("7_fu5wo")
+text = "Slot 1
+"
+
+[node name="LoadSlot2" type="Button" parent="PuzzleMenu/TopLeft/SaveLoadBG/LoadCont" unique_id=1850549113]
+layout_mode = 2
+theme = ExtResource("7_fu5wo")
+text = "Slot 2
+"
+
+[node name="LoadSlot3" type="Button" parent="PuzzleMenu/TopLeft/SaveLoadBG/LoadCont" unique_id=1831760402]
+layout_mode = 2
+theme = ExtResource("7_fu5wo")
+text = "Slot 3"
+
+[node name="LoadSlot4" type="Button" parent="PuzzleMenu/TopLeft/SaveLoadBG/LoadCont" unique_id=604941923]
+layout_mode = 2
+theme = ExtResource("7_fu5wo")
+text = "Slot 4"
+
+[node name="LoadSlot5" type="Button" parent="PuzzleMenu/TopLeft/SaveLoadBG/LoadCont" unique_id=665497980]
+layout_mode = 2
+theme = ExtResource("7_fu5wo")
+text = "Slot 5"
+
+[node name="Back" type="Button" parent="PuzzleMenu/TopLeft/SaveLoadBG/LoadCont" unique_id=553630940]
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 15)
+offset_transform_visual_only = false
+theme = ExtResource("7_fu5wo")
+text = "Exit Loading"
+
 [node name="BottomLeft" type="HBoxContainer" parent="PuzzleMenu" unique_id=1209912280]
 offset_left = 50.0
 offset_top = 540.0
@@ -268,5 +360,17 @@ texture_pressed = ExtResource("12_1j7lq")
 
 [connection signal="pressed" from="PuzzleMenu/TopLeft/Buttons/Save" to="PuzzleMenu" method="_on_save_pressed"]
 [connection signal="pressed" from="PuzzleMenu/TopLeft/Buttons/Load" to="PuzzleMenu" method="_on_load_pressed"]
+[connection signal="pressed" from="PuzzleMenu/TopLeft/SaveLoadBG/SaveCont/SaveSlot1" to="PuzzleMenu" method="_on_save_slot_1_pressed"]
+[connection signal="pressed" from="PuzzleMenu/TopLeft/SaveLoadBG/SaveCont/SaveSlot2" to="PuzzleMenu" method="_on_save_slot_2_pressed"]
+[connection signal="pressed" from="PuzzleMenu/TopLeft/SaveLoadBG/SaveCont/SaveSlot3" to="PuzzleMenu" method="_on_save_slot_3_pressed"]
+[connection signal="pressed" from="PuzzleMenu/TopLeft/SaveLoadBG/SaveCont/SaveSlot4" to="PuzzleMenu" method="_on_save_slot_4_pressed"]
+[connection signal="pressed" from="PuzzleMenu/TopLeft/SaveLoadBG/SaveCont/SaveSlot5" to="PuzzleMenu" method="_on_save_slot_5_pressed"]
+[connection signal="pressed" from="PuzzleMenu/TopLeft/SaveLoadBG/SaveCont/Back" to="PuzzleMenu" method="_on_back_pressed"]
+[connection signal="pressed" from="PuzzleMenu/TopLeft/SaveLoadBG/LoadCont/LoadSlot1" to="PuzzleMenu" method="_on_load_slot_1_pressed"]
+[connection signal="pressed" from="PuzzleMenu/TopLeft/SaveLoadBG/LoadCont/LoadSlot2" to="PuzzleMenu" method="_on_load_slot_2_pressed"]
+[connection signal="pressed" from="PuzzleMenu/TopLeft/SaveLoadBG/LoadCont/LoadSlot3" to="PuzzleMenu" method="_on_load_slot_3_pressed"]
+[connection signal="pressed" from="PuzzleMenu/TopLeft/SaveLoadBG/LoadCont/LoadSlot4" to="PuzzleMenu" method="_on_load_slot_4_pressed"]
+[connection signal="pressed" from="PuzzleMenu/TopLeft/SaveLoadBG/LoadCont/LoadSlot5" to="PuzzleMenu" method="_on_load_slot_5_pressed"]
+[connection signal="pressed" from="PuzzleMenu/TopLeft/SaveLoadBG/LoadCont/Back" to="PuzzleMenu" method="_on_back_pressed"]
 [connection signal="pressed" from="PuzzleMenu/BottomLeft/Buttons/Generate" to="." method="_on_generate_pressed"]
 [connection signal="pressed" from="PuzzleMenu/BottomLeft/Buttons/Return" to="PuzzleMenu" method="_on_return_pressed"]
