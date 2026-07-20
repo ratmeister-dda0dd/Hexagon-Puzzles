@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xjqcx2wj5g7g"
-path="res://.godot/imported/CrossedOut.png-f0263f7dc436a20e9e7261246d211627.ctex"
+uid="uid://biwa0vspbh21v"
+path="res://.godot/imported/Button0.png-86694f5e13d919a4b1652e5bb6a1ba44.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Misc/Buttons/CrossedOut.png"
-dest_files=["res://.godot/imported/CrossedOut.png-f0263f7dc436a20e9e7261246d211627.ctex"]
+source_file="res://Misc/Buttons/PlacementButtons/OtherButtons/Button0.png"
+dest_files=["res://.godot/imported/Button0.png-86694f5e13d919a4b1652e5bb6a1ba44.ctex"]
 
 [params]
 

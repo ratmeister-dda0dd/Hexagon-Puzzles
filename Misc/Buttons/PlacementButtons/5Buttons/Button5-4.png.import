@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bsuk0mb86qs0g"
-path="res://.godot/imported/SixDisabled.png-f98ea494db35557f3ef53ece8b6218c7.ctex"
+uid="uid://bf8colxsgk2jn"
+path="res://.godot/imported/Button5-4.png-8b973046eeae073335b96aa97599526e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Misc/Buttons/SixDisabled.png"
-dest_files=["res://.godot/imported/SixDisabled.png-f98ea494db35557f3ef53ece8b6218c7.ctex"]
+source_file="res://Misc/Buttons/PlacementButtons/5Buttons/Button5-4.png"
+dest_files=["res://.godot/imported/Button5-4.png-8b973046eeae073335b96aa97599526e.ctex"]
 
 [params]
 

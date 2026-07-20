@@ -105,3 +105,57 @@ func _on_back_pressed() -> void:
 
 func _on_return_pressed() -> void:
 	get_tree().change_scene_to_file("uid://c4kk82bvm81ni")
+
+
+
+func menuOpening(userChoice: int):
+	var oneSubmenu = $TopRight/NumberButtons/OneButtons/OneSubButtons
+	var twoSubmenu = $TopRight/NumberButtons/TwoButtons/TwoSubButtons
+	var threeSubmenu = $TopRight/NumberButtons/ThreeButtons/ThreeSubButtons
+	var fourSubmenu = $TopRight/NumberButtons/FourButtons/FourSubButtons
+	var fiveSubmenu = $TopRight/NumberButtons/FiveButtons/FiveSubButtons
+	var otherSubmenu = $TopRight/NumberButtons/OtherButtons/OtherSubButtons
+	if userChoice == 1 and oneSubmenu.visible == false:
+		oneSubmenu.visible = true
+	else:
+		oneSubmenu.visible = false
+	if userChoice == 2 and twoSubmenu.visible == false:
+		twoSubmenu.visible = true
+	else:
+		twoSubmenu.visible = false
+	if userChoice == 3 and threeSubmenu.visible == false:
+		threeSubmenu.visible = true
+	else:
+		threeSubmenu.visible = false
+	if userChoice == 4 and fourSubmenu.visible == false:
+		fourSubmenu.visible = true
+	else:
+		fourSubmenu.visible = false
+	if userChoice == 5 and fiveSubmenu.visible == false:
+		fiveSubmenu.visible = true
+	else:
+		fiveSubmenu.visible = false
+	if userChoice == 6 and otherSubmenu.visible == false:
+		otherSubmenu.visible = true
+	else:
+		otherSubmenu.visible = false
+		
+func _on_menu_button_pressed() -> void:
+	if $TopRight/NumberButtons.visible:
+		menuOpening(0)
+		$TopRight/NumberButtons.visible = false
+	else:
+		$TopRight/NumberButtons.visible = true
+
+func _on_button_1_pressed() -> void:
+	menuOpening(1)
+func _on_button_2_pressed() -> void:
+	menuOpening(2)
+func _on_button_3_pressed() -> void:
+	menuOpening(3)
+func _on_button_4_pressed() -> void:
+	menuOpening(4)
+func _on_button_5_pressed() -> void:
+	menuOpening(5)
+func _on_button_other_pressed() -> void:
+	menuOpening(6)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://00b7jl73516u"
-path="res://.godot/imported/ZeroButton.png-2731fc206d7bc6f4b87a4da05767fa56.ctex"
+uid="uid://b2pnq6ghxm32h"
+path="res://.godot/imported/Button3-1.png-236ab3ed77221f10943f9fca7724fa4c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Misc/Buttons/ZeroButton.png"
-dest_files=["res://.godot/imported/ZeroButton.png-2731fc206d7bc6f4b87a4da05767fa56.ctex"]
+source_file="res://Misc/Buttons/PlacementButtons/3Buttons/Button3-1.png"
+dest_files=["res://.godot/imported/Button3-1.png-236ab3ed77221f10943f9fca7724fa4c.ctex"]
 
 [params]
 

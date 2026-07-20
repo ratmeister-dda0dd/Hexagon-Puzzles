@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cs2p1bus5dcno"
-path="res://.godot/imported/ZeroDisabled.png-b31a65a8d2ccf9c38ba515c08a7bafcb.ctex"
+uid="uid://du7mfyqpxs03d"
+path="res://.godot/imported/Button5-2.png-179faba3fe58bd502b7feea573a455a3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Misc/Buttons/ZeroDisabled.png"
-dest_files=["res://.godot/imported/ZeroDisabled.png-b31a65a8d2ccf9c38ba515c08a7bafcb.ctex"]
+source_file="res://Misc/Buttons/PlacementButtons/5Buttons/Button5-2.png"
+dest_files=["res://.godot/imported/Button5-2.png-179faba3fe58bd502b7feea573a455a3.ctex"]
 
 [params]
 
