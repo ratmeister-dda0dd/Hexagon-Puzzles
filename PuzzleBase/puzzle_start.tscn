@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://cot7rheh7oiff" path="res://Misc/Buttons/PlacementButtons/1Buttons/Button1.png" id="10_0geiw"]
 [ext_resource type="Texture2D" uid="uid://bh6qx05hj60gc" path="res://Misc/Buttons/DisabledButtons/ZeroDisabled.png" id="10_1j7lq"]
 [ext_resource type="Texture2D" uid="uid://cas4ju2iur50d" path="res://Misc/Buttons/PlacementButtons/1Buttons/Button1-6.png" id="10_bjplc"]
+[ext_resource type="Script" uid="uid://ckisxmuh77lu5" path="res://PuzzleBase/place_number.gd" id="10_d48ln"]
 [ext_resource type="Texture2D" uid="uid://fespolposvah" path="res://Misc/Buttons/PlacementButtons/2Buttons/Button2.png" id="11_8x6ae"]
 [ext_resource type="Texture2D" uid="uid://cbba7r5p4s8dl" path="res://Misc/Buttons/DisabledButtons/SixButton.png" id="11_btkv1"]
 [ext_resource type="Texture2D" uid="uid://drw00kqppg6y2" path="res://Misc/Buttons/PlacementButtons/1Buttons/Button1-5.png" id="11_d48ln"]
@@ -406,6 +407,7 @@ texture_normal = ExtResource("9_rcetb")
 [node name="NumberButtons" type="VBoxContainer" parent="PuzzleMenu/TopRight" unique_id=406033973]
 visible = false
 layout_mode = 2
+script = ExtResource("10_d48ln")
 
 [node name="OneButtons" type="HBoxContainer" parent="PuzzleMenu/TopRight/NumberButtons" unique_id=2078481281]
 layout_mode = 2

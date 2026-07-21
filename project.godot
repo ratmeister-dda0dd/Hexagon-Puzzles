@@ -13,7 +13,7 @@ config_version=5
 config/name="Summer Hex Puzzles"
 run/main_scene="uid://c4kk82bvm81ni"
 config/features=PackedStringArray("4.7", "GL Compatibility")
-config/icon="res://Misc/icon.svg"
+config/icon="uid://r0jx21sg800l"
 
 [display]
 

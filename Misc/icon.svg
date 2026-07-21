@@ -7,14 +7,89 @@
    viewBox="0 0 100 100"
    version="1.1"
    id="svg1"
+   sodipodi:docname="icon.svg"
+   inkscape:version="1.4.4 (dcaf3e7d9e, 2026-05-05)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="2.0769792"
+     inkscape:cx="180.79141"
+     inkscape:cy="198.12428"
+     inkscape:window-width="1920"
+     inkscape:window-height="1008"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1" />
   <defs
-     id="defs1" />
+     id="defs1">
+    <linearGradient
+       id="linearGradient6"
+       inkscape:collect="always">
+      <stop
+         style="stop-color:#cd0000;stop-opacity:1;"
+         offset="0.22741355"
+         id="stop6" />
+      <stop
+         style="stop-color:#cd0000;stop-opacity:0;"
+         offset="0.80026835"
+         id="stop7" />
+    </linearGradient>
+    <linearGradient
+       id="swatch5">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:1;"
+         offset="0"
+         id="stop5" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient2"
+       inkscape:collect="always">
+      <stop
+         style="stop-color:#ffd42a;stop-opacity:1;"
+         offset="0.76342696"
+         id="stop2" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:1;"
+         offset="1"
+         id="stop3" />
+    </linearGradient>
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient2"
+       id="radialGradient3"
+       cx="50"
+       cy="50"
+       fx="50"
+       fy="50"
+       r="50"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient6"
+       id="linearGradient7"
+       x1="25.272526"
+       y1="44.292553"
+       x2="130.11589"
+       y2="111.22482"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
   <g
      id="layer1">
     <circle
-       style="fill:#ffd42a;fill-opacity:1;stroke-width:2.65252"
+       style="fill:url(#radialGradient3);fill-opacity:1;stroke-width:2.65252"
        id="path1"
        cx="50"
        cy="50"
@@ -34,7 +109,7 @@
              d="m 39.992619,18.139993 62.482701,0 31.24135,54.111609 -31.24135,54.111608 -62.482702,0 L 8.7512665,72.251602 Z"
              transform="matrix(0.85305186,0,0,0.85305186,385.93274,291.22438)" />
           <path
-             style="fill:#cd0000;fill-opacity:1;stroke-width:0.264999"
+             style="fill:url(#linearGradient7);stroke-width:0.264999;fill-opacity:1"
              id="path4"
              d="m 39.992619,18.139993 62.482701,0 31.24135,54.111609 -31.24135,54.111608 -62.482702,0 L 8.7512665,72.251602 Z"
              transform="matrix(0.76774668,0,0,0.76774668,392.00937,297.38782)" />

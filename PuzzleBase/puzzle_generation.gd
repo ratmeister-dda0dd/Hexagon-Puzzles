@@ -209,9 +209,9 @@ func _ready() -> void:
 	#Note that set_cell works like set_cell(cords in tilemap, id (always 0 for me), cords in the tileset (0,0) = 0, (0,1) = 1
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	#printTileVals()
-	pass
+#func _process(_delta: float) -> void:
+#	#printTileVals()
+#	pass
 
 func _on_generate_pressed() -> void:
 	# Hide the Failure label & clear the old puzzle.
