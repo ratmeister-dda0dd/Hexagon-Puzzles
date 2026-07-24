@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://caqhe4gi5oqnk"
-path="res://.godot/imported/MainMenuImage.png-cd6320700e107c4dae7b6eb37359e7a9.ctex"
+uid="uid://de8yote1syho6"
+path="res://.godot/imported/HexTileSetClipped.svg-005a766995298eee453c5edc0c8ce381.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Misc/MainMenuImage.png"
-dest_files=["res://.godot/imported/MainMenuImage.png-cd6320700e107c4dae7b6eb37359e7a9.ctex"]
+source_file="res://PuzzleBase/Tilesets/HexTileSetClipped.svg"
+dest_files=["res://.godot/imported/HexTileSetClipped.svg-005a766995298eee453c5edc0c8ce381.ctex"]
 
 [params]
 
@@ -38,3 +38,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

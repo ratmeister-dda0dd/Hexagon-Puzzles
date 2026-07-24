@@ -118,7 +118,7 @@ func placeValidHex(cell, lowBound: int = 0, highBound: int = 6, restrictions: Ar
 		if searching:
 			var tile = tileDict.get(randTile)
 			var atlasCoords = tile["coords"]
-			tilemap.set_cell(tilemap.cube_to_map(cell), 0, atlasCoords)
+			tilemap.set_cell(tilemap.cube_to_map(cell), 0, atlasCoords) #(location on map, layer, location in tileset)
 			if invalidAdjacency(cell):
 				#print(atlasCoords)
 				totalTiles.erase(randTile)

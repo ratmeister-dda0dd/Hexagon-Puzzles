@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://dcs0lm4jvax5i" path="res://PuzzleBase/puzzle_generation.gd" id="1_bau5w"]
 [ext_resource type="Texture2D" uid="uid://chddvyhlpucqv" path="res://PuzzleBase/Tilesets/HexTileSetDownscaled.png" id="2_ifosy"]
-[ext_resource type="Texture2D" uid="uid://c2jor0muqus8h" path="res://PuzzleBase/Tilesets/OldTilesets/OLDHexTileSetDownscaled.png" id="3_ejoar"]
 [ext_resource type="Script" uid="uid://buj6ft1vvdf2f" path="res://addons/hexagon_tilemaplayer/hexagon_tilemaplayer.gd" id="3_ri7nl"]
 [ext_resource type="Script" uid="uid://6x2hxiaploah" path="res://PuzzleBase/camera_2d.gd" id="4_fu5wo"]
 [ext_resource type="FontFile" uid="uid://bq5c6mjko0k4c" path="res://Misc/fonts/TextFont/Imperial.otf" id="5_ifosy"]
@@ -133,86 +132,14 @@ texture_region_size = Vector2i(89, 100)
 2:1/0 = 0
 2:1/0/custom_data_0 = 4
 0:0/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1oo8t"]
-texture = ExtResource("3_ejoar")
-texture_region_size = Vector2i(100, 100)
-0:0/0 = 0
-0:1/0 = 0
-0:1/0/custom_data_0 = 1
-1:1/0 = 0
-1:1/0/custom_data_0 = 2
-2:1/0 = 0
-2:1/0/custom_data_0 = 4
-3:1/0 = 0
-3:1/0/custom_data_0 = 8
-4:1/0 = 0
-4:1/0/custom_data_0 = 16
-5:1/0 = 0
-5:1/0/custom_data_0 = 32
-0:2/0 = 0
-0:2/0/custom_data_0 = 3
-1:2/0 = 0
-1:2/0/custom_data_0 = 6
-2:2/0 = 0
-2:2/0/custom_data_0 = 12
-3:2/0 = 0
-3:2/0/custom_data_0 = 24
-4:2/0 = 0
-4:2/0/custom_data_0 = 48
-5:2/0 = 0
-5:2/0/custom_data_0 = 33
-0:3/0 = 0
-0:3/0/custom_data_0 = 7
-1:3/0 = 0
-1:3/0/custom_data_0 = 14
-2:3/0 = 0
-2:3/0/custom_data_0 = 28
-3:3/0 = 0
-3:3/0/custom_data_0 = 56
-4:3/0 = 0
-4:3/0/custom_data_0 = 49
-5:3/0 = 0
-5:3/0/custom_data_0 = 35
-0:4/0 = 0
-0:4/0/custom_data_0 = 15
-1:4/0 = 0
-1:4/0/custom_data_0 = 30
-2:4/0 = 0
-2:4/0/custom_data_0 = 60
-3:4/0 = 0
-3:4/0/custom_data_0 = 57
-4:4/0 = 0
-4:4/0/custom_data_0 = 51
-5:4/0 = 0
-5:4/0/custom_data_0 = 39
-6:4/0 = 0
-6:4/0/custom_data_0 = 27
-7:4/0 = 0
-7:4/0/custom_data_0 = 54
-8:4/0 = 0
-8:4/0/custom_data_0 = 45
-0:5/0 = 0
-0:5/0/custom_data_0 = 31
-1:5/0 = 0
-1:5/0/custom_data_0 = 62
-2:5/0 = 0
-2:5/0/custom_data_0 = 61
-3:5/0 = 0
-3:5/0/custom_data_0 = 59
-4:5/0 = 0
-4:5/0/custom_data_0 = 55
-5:5/0 = 0
-5:5/0/custom_data_0 = 47
-0:6/0 = 0
-0:6/0/custom_data_0 = 63
+8:1/0 = 0
+8:1/0/custom_data_0 = -1
 
 [sub_resource type="TileSet" id="TileSet_64ccv"]
 tile_shape = 3
 tile_size = Vector2i(72, 84)
 custom_data_layer_0/name = "IntNodes"
 custom_data_layer_0/type = 2
-sources/1 = SubResource("TileSetAtlasSource_1oo8t")
 sources/0 = SubResource("TileSetAtlasSource_id0ix")
 script = SubResource("GDScript_wbw2b")
 
@@ -666,9 +593,46 @@ texture_pressed = ExtResource("12_ey4dr")
 [connection signal="pressed" from="PuzzleMenu/BottomLeft/Buttons/Generate" to="." method="_on_generate_pressed"]
 [connection signal="pressed" from="PuzzleMenu/BottomLeft/Buttons/Return" to="PuzzleMenu" method="_on_return_pressed"]
 [connection signal="pressed" from="PuzzleMenu/TopRight/Menu/MenuButton" to="PuzzleMenu" method="_on_menu_button_pressed"]
+[connection signal="pressed" from="PuzzleMenu/TopRight/NumberButtons/OneButtons/OneSubButtons/Button1-6" to="PuzzleMenu/TopRight/NumberButtons" method="_on_button_16_pressed"]
+[connection signal="pressed" from="PuzzleMenu/TopRight/NumberButtons/OneButtons/OneSubButtons/Button1-5" to="PuzzleMenu/TopRight/NumberButtons" method="_on_button_15_pressed"]
+[connection signal="pressed" from="PuzzleMenu/TopRight/NumberButtons/OneButtons/OneSubButtons/Button1-4" to="PuzzleMenu/TopRight/NumberButtons" method="_on_button_14_pressed"]
+[connection signal="pressed" from="PuzzleMenu/TopRight/NumberButtons/OneButtons/OneSubButtons/Button1-3" to="PuzzleMenu/TopRight/NumberButtons" method="_on_button_13_pressed"]
+[connection signal="pressed" from="PuzzleMenu/TopRight/NumberButtons/OneButtons/OneSubButtons/Button1-2" to="PuzzleMenu/TopRight/NumberButtons" method="_on_button_12_pressed"]
+[connection signal="pressed" from="PuzzleMenu/TopRight/NumberButtons/OneButtons/OneSubButtons/Button1-1" to="PuzzleMenu/TopRight/NumberButtons" method="_on_button_11_pressed"]
 [connection signal="pressed" from="PuzzleMenu/TopRight/NumberButtons/OneButtons/Button1" to="PuzzleMenu" method="_on_button_1_pressed"]
+[connection signal="script_changed" from="PuzzleMenu/TopRight/NumberButtons/TwoButtons/TwoSubButtons/Button2-6" to="PuzzleMenu/TopRight/NumberButtons" method="_on_button_26_script_changed"]
+[connection signal="pressed" from="PuzzleMenu/TopRight/NumberButtons/TwoButtons/TwoSubButtons/Button2-5" to="PuzzleMenu/TopRight/NumberButtons" method="_on_button_25_pressed"]
+[connection signal="pressed" from="PuzzleMenu/TopRight/NumberButtons/TwoButtons/TwoSubButtons/Button2-4" to="PuzzleMenu/TopRight/NumberButtons" method="_on_button_24_pressed"]
+[connection signal="pressed" from="PuzzleMenu/TopRight/NumberButtons/TwoButtons/TwoSubButtons/Button2-3" to="PuzzleMenu/TopRight/NumberButtons" method="_on_button_23_pressed"]
+[connection signal="pressed" from="PuzzleMenu/TopRight/NumberButtons/TwoButtons/TwoSubButtons/Button2-2" to="PuzzleMenu/TopRight/NumberButtons" method="_on_button_22_pressed"]
+[connection signal="pressed" from="PuzzleMenu/TopRight/NumberButtons/TwoButtons/TwoSubButtons/Button2-1" to="PuzzleMenu/TopRight/NumberButtons" method="_on_button_21_pressed"]
 [connection signal="pressed" from="PuzzleMenu/TopRight/NumberButtons/TwoButtons/Button2" to="PuzzleMenu" method="_on_button_2_pressed"]
+[connection signal="pressed" from="PuzzleMenu/TopRight/NumberButtons/ThreeButtons/ThreeSubButtons/Button3-6" to="PuzzleMenu/TopRight/NumberButtons" method="_on_button_36_pressed"]
+[connection signal="pressed" from="PuzzleMenu/TopRight/NumberButtons/ThreeButtons/ThreeSubButtons/Button3-5" to="PuzzleMenu/TopRight/NumberButtons" method="_on_button_35_pressed"]
+[connection signal="pressed" from="PuzzleMenu/TopRight/NumberButtons/ThreeButtons/ThreeSubButtons/Button3-4" to="PuzzleMenu/TopRight/NumberButtons" method="_on_button_34_pressed"]
+[connection signal="pressed" from="PuzzleMenu/TopRight/NumberButtons/ThreeButtons/ThreeSubButtons/Button3-3" to="PuzzleMenu/TopRight/NumberButtons" method="_on_button_33_pressed"]
+[connection signal="pressed" from="PuzzleMenu/TopRight/NumberButtons/ThreeButtons/ThreeSubButtons/Button3-2" to="PuzzleMenu/TopRight/NumberButtons" method="_on_button_32_pressed"]
+[connection signal="pressed" from="PuzzleMenu/TopRight/NumberButtons/ThreeButtons/ThreeSubButtons/Button3-1" to="PuzzleMenu/TopRight/NumberButtons" method="_on_button_31_pressed"]
 [connection signal="pressed" from="PuzzleMenu/TopRight/NumberButtons/ThreeButtons/Button3" to="PuzzleMenu" method="_on_button_3_pressed"]
+[connection signal="pressed" from="PuzzleMenu/TopRight/NumberButtons/FourButtons/FourSubButtons/Button4-9" to="PuzzleMenu/TopRight/NumberButtons" method="_on_button_49_pressed"]
+[connection signal="pressed" from="PuzzleMenu/TopRight/NumberButtons/FourButtons/FourSubButtons/Button4-8" to="PuzzleMenu/TopRight/NumberButtons" method="_on_button_48_pressed"]
+[connection signal="pressed" from="PuzzleMenu/TopRight/NumberButtons/FourButtons/FourSubButtons/Button4-7" to="PuzzleMenu/TopRight/NumberButtons" method="_on_button_47_pressed"]
+[connection signal="pressed" from="PuzzleMenu/TopRight/NumberButtons/FourButtons/FourSubButtons/Button4-6" to="PuzzleMenu/TopRight/NumberButtons" method="_on_button_46_pressed"]
+[connection signal="pressed" from="PuzzleMenu/TopRight/NumberButtons/FourButtons/FourSubButtons/Button4-5" to="PuzzleMenu/TopRight/NumberButtons" method="_on_button_45_pressed"]
+[connection signal="pressed" from="PuzzleMenu/TopRight/NumberButtons/FourButtons/FourSubButtons/Button4-4" to="PuzzleMenu/TopRight/NumberButtons" method="_on_button_44_pressed"]
+[connection signal="pressed" from="PuzzleMenu/TopRight/NumberButtons/FourButtons/FourSubButtons/Button4-3" to="PuzzleMenu/TopRight/NumberButtons" method="_on_button_43_pressed"]
+[connection signal="pressed" from="PuzzleMenu/TopRight/NumberButtons/FourButtons/FourSubButtons/Button4-2" to="PuzzleMenu/TopRight/NumberButtons" method="_on_button_42_pressed"]
+[connection signal="pressed" from="PuzzleMenu/TopRight/NumberButtons/FourButtons/FourSubButtons/Button4-1" to="PuzzleMenu/TopRight/NumberButtons" method="_on_button_41_pressed"]
 [connection signal="pressed" from="PuzzleMenu/TopRight/NumberButtons/FourButtons/Button4" to="PuzzleMenu" method="_on_button_4_pressed"]
+[connection signal="pressed" from="PuzzleMenu/TopRight/NumberButtons/FiveButtons/FiveSubButtons/Button5-6" to="PuzzleMenu/TopRight/NumberButtons" method="_on_button_56_pressed"]
+[connection signal="pressed" from="PuzzleMenu/TopRight/NumberButtons/FiveButtons/FiveSubButtons/Button5-5" to="PuzzleMenu/TopRight/NumberButtons" method="_on_button_55_pressed"]
+[connection signal="pressed" from="PuzzleMenu/TopRight/NumberButtons/FiveButtons/FiveSubButtons/Button5-4" to="PuzzleMenu/TopRight/NumberButtons" method="_on_button_54_pressed"]
+[connection signal="pressed" from="PuzzleMenu/TopRight/NumberButtons/FiveButtons/FiveSubButtons/Button5-3" to="PuzzleMenu/TopRight/NumberButtons" method="_on_button_53_pressed"]
+[connection signal="pressed" from="PuzzleMenu/TopRight/NumberButtons/FiveButtons/FiveSubButtons/Button5-2" to="PuzzleMenu/TopRight/NumberButtons" method="_on_button_52_pressed"]
+[connection signal="pressed" from="PuzzleMenu/TopRight/NumberButtons/FiveButtons/FiveSubButtons/Button5-1" to="PuzzleMenu/TopRight/NumberButtons" method="_on_button_51_pressed"]
 [connection signal="pressed" from="PuzzleMenu/TopRight/NumberButtons/FiveButtons/Button5" to="PuzzleMenu" method="_on_button_5_pressed"]
+[connection signal="pressed" from="PuzzleMenu/TopRight/NumberButtons/OtherButtons/OtherSubButtons/ButtonHole" to="PuzzleMenu/TopRight/NumberButtons" method="_on_button_hole_pressed"]
+[connection signal="pressed" from="PuzzleMenu/TopRight/NumberButtons/OtherButtons/OtherSubButtons/ButtonNull" to="PuzzleMenu/TopRight/NumberButtons" method="_on_button_null_pressed"]
+[connection signal="pressed" from="PuzzleMenu/TopRight/NumberButtons/OtherButtons/OtherSubButtons/Button0-1" to="PuzzleMenu/TopRight/NumberButtons" method="_on_button_01_pressed"]
+[connection signal="pressed" from="PuzzleMenu/TopRight/NumberButtons/OtherButtons/OtherSubButtons/Button6-1" to="PuzzleMenu/TopRight/NumberButtons" method="_on_button_61_pressed"]
 [connection signal="pressed" from="PuzzleMenu/TopRight/NumberButtons/OtherButtons/ButtonOther" to="PuzzleMenu" method="_on_button_other_pressed"]

@@ -3,7 +3,7 @@
 [ext_resource type="FontFile" uid="uid://c3ck1375kmhau" path="res://Misc/fonts/TitleFont/StalinistOne-Regular.ttf" id="1_3w4mj"]
 [ext_resource type="Script" uid="uid://dowxhwn4de18a" path="res://MainMenu/main_menu.gd" id="1_5de1l"]
 [ext_resource type="Theme" uid="uid://nqeeakofp0hq" path="res://Misc/oppressive.tres" id="3_5de1l"]
-[ext_resource type="Texture2D" uid="uid://caqhe4gi5oqnk" path="res://Misc/MainMenuImage.png" id="4_ajn5b"]
+[ext_resource type="Texture2D" uid="uid://d3sby2esm714s" path="res://MainMenu/menuImage.png" id="4_ajn5b"]
 
 [node name="MainMenu" type="Node2D" unique_id=763937730]
 script = ExtResource("1_5de1l")
@@ -85,14 +85,17 @@ theme_override_font_sizes/font_size = 75
 text = "Back"
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1748961142]
-custom_minimum_size = Vector2(1920, 1080)
-offset_right = 40.0
-offset_bottom = 40.0
+custom_minimum_size = Vector2(2400, 1350)
+offset_left = -240.0
+offset_top = -135.0
+offset_right = 2160.0
+offset_bottom = 1215.0
 mouse_filter = 2
 color = Color(0.9411765, 0.8784314, 0.8627451, 1)
 
-[node name="MainMenuImage" type="Sprite2D" parent="." unique_id=821747268]
-position = Vector2(1387, 665)
+[node name="MenuImage" type="Sprite2D" parent="." unique_id=439449842]
+position = Vector2(1560.0001, 891)
+scale = Vector2(1.4454547, 1.4454545)
 texture = ExtResource("4_ajn5b")
 
 [connection signal="pressed" from="MenuContainer/MainButtons/Play" to="." method="_on_fun_pressed"]
