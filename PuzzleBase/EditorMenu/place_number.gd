@@ -1,7 +1,7 @@
 extends VBoxContainer
 
-@onready var tilemap = $/root/PuzzleStart/PuzzleBaseLayer
-@onready var menuButton = $/root/PuzzleStart/PuzzleMenu/TopRight/Menu/MenuButton
+@onready var tilemap = $/root/PuzzleEditor/PuzzleBaseLayer
+@onready var menuButton = $/root/PuzzleEditor/PuzzleMenu/TopRight/Menu/MenuButton
 
 signal mouse_clicked
 
@@ -14,10 +14,10 @@ func _input(event):
 #	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	await get_tree().create_timer(5.0).timeout
-	var mouse = tilemap.get_global_mouse_position()
-	print(mouse)
+#func _process(delta: float) -> void:
+#	await get_tree().create_timer(5.0).timeout
+#	var mouse = tilemap.get_global_mouse_position()
+#	print(mouse)
 
 func placeTile(atlasCoords: Vector2i = Vector2i(0,0)):
 	$OneButtons/OneSubButtons.visible = false

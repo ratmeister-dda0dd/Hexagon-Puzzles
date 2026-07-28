@@ -170,7 +170,7 @@ func findRestrictions(pos: int, tiledata, restrictions: Array[int] = [0,0,0,0,0,
 	return restrictions
 
 # Takes the decided node & checks that it doesn't create a 0, 1, 0, 1 pattern
-func invalidAdjacency(cell: Vector3i, toCheck: Array[bool] = [true, true, true, true, true, true]):
+func invalidAdjacency(cell: Vector3i, toCheck: Array[bool] = [true, true, true, true, true, true]) -> bool:
 	#print('ENTERED')
 	var neighbors = tilemap.cube_neighbors(cell)
 	for i in range(6):
@@ -192,21 +192,81 @@ func invalidAdjacency(cell: Vector3i, toCheck: Array[bool] = [true, true, true, 
 	return false
 
 # Debug function to test if the IntNode layer works.
-func printTileVals():
+func printTileVals() -> void:
 	# Returns the value of IntNode layer when you hover over it.
 	var clicked_cell = tilemap.local_to_map(tilemap.get_local_mouse_position())
 	var data = tilemap.get_cell_tile_data(clicked_cell)
 	print(clicked_cell)
 	if data:
 		print(data.get_custom_data("IntNode"))
-	else:
-		return 0
 
 func _ready() -> void:
 	# Builds a dictonary that uses source ID or node value as a key for atlas coords.
 	tileset = tilemap.tile_set
 	buildTileDict()
 	#Note that set_cell works like set_cell(cords in tilemap, id (always 0 for me), cords in the tileset (0,0) = 0, (0,1) = 1
+	
+	if false:
+		var filepath = "user://SaveDataHughes.hex"
+		var file = FileAccess.open(filepath, FileAccess.WRITE) 
+		for map in range(10000):
+			$PuzzleMenu/BottomLeft/Buttons/BadPuzzle.visible = false
+			tilemap.clear()
+			
+			# Sets the spiral's size to the user's input or 2 if that's not possible.
+			var customSize = 2
+			if sideLen.text.is_valid_int():
+				customSize = sideLen.text.to_int() - 1
+				if customSize < 0:
+					customSize = 2
+			var spiral = tilemap.cube_spiral(Vector3i(0,0,0), customSize) #returns a list of coords needed to spiral
+			#print(spiral)
+			
+			# Reads each coord & places the hexes.
+			for cell in spiral:
+				var neighbors = tilemap.cube_neighbors(cell)
+				var lowBound = 0
+				var highBound = 6
+				var restrictions: Array[int] = [0, 0, 0, 0, 0, 0]
+				#print(cell, ' has ', neighbors)
+				#print(neighbors[0])
+				
+				# Sets restrictions & bounds.
+				for i in range(6):
+					var vectorCoords = tilemap.cube_to_map(neighbors[i])
+					var tiledata = tilemap.get_cell_tile_data(vectorCoords)
+					if tiledata:
+						restrictions = findRestrictions(i, tiledata, restrictions)
+				for i in restrictions:
+					if i > 0:
+						lowBound += 1
+					if i < 0:
+						highBound -= 1
+				
+				# Finds a hexagon that fits & places it.
+				#print(lowBound, ' ', highBound, ' ', restrictions)
+				if !placeValidHex(cell, lowBound, highBound, restrictions):
+					$PuzzleMenu/BottomLeft/Buttons/BadPuzzle.visible = true
+			var tiles = ""
+			
+			var size = 3
+			for ring in range(size):
+				var hexes = tilemap.cube_ring(Vector3i(0, 0, 0), ring)
+				for cell in hexes:
+					cell = tilemap.cube_to_map(cell)
+					var source_id = tilemap.get_cell_source_id(cell)
+					
+					if source_id == -1:
+						continue
+					
+					var atlas_coords = tilemap.get_cell_atlas_coords(cell) #hypothetically unneeded due to IntNodes, but its a very small file already & makes runtime faster
+					var source = tilemap.tile_set.get_source(source_id)
+					tiles = (tiles + str(atlas_coords.y) + ' ')
+			#print(tiles)
+			
+			if file:
+				file.store_string(tiles + '\n')
+		file.close()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(_delta: float) -> void:
@@ -252,9 +312,3 @@ func _on_generate_pressed() -> void:
 		#print(lowBound, ' ', highBound, ' ', restrictions)
 		if !placeValidHex(cell, lowBound, highBound, restrictions):
 			$PuzzleMenu/BottomLeft/Buttons/BadPuzzle.visible = true
-		#var validHex = findValidHex(cell, lowBound, highBound, restrictions)
-		#if validHex == Vector2i(-1, -1):
-		#	$PuzzleMenu/Bottom/Buttons/BadPuzzle.visible = true
-		#	print(cell, restrictions)
-		#	break
-		#tilemap.set_cell(tilemap.cube_to_map(cell), 0, validHex)

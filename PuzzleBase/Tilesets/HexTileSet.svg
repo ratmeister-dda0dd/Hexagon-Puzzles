@@ -9,7 +9,7 @@
    id="svg1"
    inkscape:version="1.4.4 (dcaf3e7d9e, 2026-05-05)"
    sodipodi:docname="HexTileSet.svg"
-   inkscape:export-filename="HexTileSet"
+   inkscape:export-filename="HexTileSet.png"
    inkscape:export-xdpi="25.400002"
    inkscape:export-ydpi="25.400002"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
@@ -28,14 +28,14 @@
      inkscape:document-units="mm"
      showguides="true"
      inkscape:zoom="0.26"
-     inkscape:cx="2448.0769"
-     inkscape:cy="1332.6923"
+     inkscape:cx="1140.3846"
+     inkscape:cy="1051.9231"
      inkscape:window-width="1920"
      inkscape:window-height="1008"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="g110"
      inkscape:export-bgcolor="#ffffff00" />
   <defs
      id="defs1">
@@ -5621,6 +5621,1050 @@
            x="34.051945"
            y="62.34721"
            id="tspan2-2">1</tspan></text>
+    </g>
+    <g
+       id="g110"
+       inkscape:label="Hex 6"
+       transform="translate(599.99999)">
+      <g
+         id="g109"
+         inkscape:label="Full"
+         transform="matrix(0.8790337,0,0,0.8790337,-145.47497,-103.57014)">
+        <g
+           id="g97"
+           inkscape:label="Hexagon"
+           transform="matrix(0,-0.93806893,0.93806893,0,-114.99479,593.73782)">
+          <path
+             sodipodi:type="star"
+             style="fill:#808080;stroke-width:0.264999"
+             id="path96"
+             inkscape:flatsided="true"
+             sodipodi:sides="6"
+             sodipodi:cx="71.233971"
+             sodipodi:cy="72.251602"
+             sodipodi:r1="62.482704"
+             sodipodi:r2="54.111607"
+             sodipodi:arg1="-2.0943951"
+             sodipodi:arg2="-1.5707963"
+             inkscape:rounded="0"
+             inkscape:randomized="0"
+             d="m 39.992619,18.139993 62.482701,0 31.24135,54.111609 -31.24135,54.111608 -62.482702,0 L 8.7512665,72.251602 Z"
+             transform="matrix(0.85305186,0,0,0.85305186,385.93274,291.22438)"
+             inkscape:label="Hex Back" />
+          <path
+             sodipodi:type="star"
+             style="fill:#ffffff;stroke-width:0.264999"
+             id="path97"
+             inkscape:flatsided="true"
+             sodipodi:sides="6"
+             sodipodi:cx="71.233971"
+             sodipodi:cy="72.251602"
+             sodipodi:r1="62.482704"
+             sodipodi:r2="54.111607"
+             sodipodi:arg1="-2.0943951"
+             sodipodi:arg2="-1.5707963"
+             inkscape:rounded="0"
+             inkscape:randomized="0"
+             d="m 39.992619,18.139993 62.482701,0 31.24135,54.111609 -31.24135,54.111608 -62.482702,0 L 8.7512665,72.251602 Z"
+             transform="matrix(0.76774668,0,0,0.76774668,392.00937,297.38782)"
+             inkscape:label="Hex Front" />
+        </g>
+        <g
+           id="g98"
+           inkscape:label="Top Left Circle"
+           transform="matrix(-0.93806396,0,0,-0.93806396,726.4309,388.04014)">
+          <circle
+             style="fill:#000000;stroke-width:0.144671"
+             id="circle97"
+             cx="587.97278"
+             cy="252.74052"
+             r="10"
+             inkscape:label="Circle Back" />
+          <circle
+             style="fill:#ffffff;stroke-width:0.108503"
+             id="circle98"
+             cx="587.97278"
+             cy="252.74052"
+             r="7.5"
+             inkscape:label="Circle Front" />
+        </g>
+        <g
+           id="g100"
+           inkscape:label="Bottom Left Circle"
+           transform="matrix(-0.41951684,-0.83902897,0.83902897,-0.41951684,209.48269,797.80846)">
+          <circle
+             style="fill:#000000;stroke-width:0.144671"
+             id="circle99"
+             cx="587.97278"
+             cy="252.74052"
+             r="10"
+             inkscape:label="Circle Back" />
+          <circle
+             style="fill:#ffffff;stroke-width:0.108503"
+             id="circle100"
+             cx="587.97278"
+             cy="252.74052"
+             r="7.5"
+             inkscape:label="Circle Front" />
+        </g>
+        <g
+           id="g102"
+           inkscape:label="Bottom Circle"
+           transform="matrix(0.41951684,-0.83902897,0.83902897,0.41951684,-242.71007,609.50065)">
+          <circle
+             style="fill:#000000;stroke-width:0.144671"
+             id="circle101"
+             cx="587.97278"
+             cy="252.74052"
+             r="10"
+             inkscape:label="Circle Back" />
+          <circle
+             style="fill:#ffffff;stroke-width:0.108503"
+             id="circle102"
+             cx="587.97278"
+             cy="252.74052"
+             r="7.5"
+             inkscape:label="Circle Front" />
+        </g>
+        <g
+           id="g104"
+           inkscape:label="Bottom Right Circle"
+           transform="matrix(0.93806396,0,0,0.93806396,-294.40883,-38.633417)">
+          <circle
+             style="fill:#000000;stroke-width:0.144671"
+             id="circle103"
+             cx="587.97278"
+             cy="252.74052"
+             r="10"
+             inkscape:label="Circle Back" />
+          <circle
+             style="fill:#ffffff;stroke-width:0.108503"
+             id="circle104"
+             cx="587.97278"
+             cy="252.74052"
+             r="7.5"
+             inkscape:label="Circle Front" />
+        </g>
+        <g
+           id="g106"
+           inkscape:label="Top Right Circle"
+           transform="matrix(0.41951687,0.83902895,-0.83902895,0.41951687,222.53936,-448.40174)">
+          <circle
+             style="fill:#000000;stroke-width:0.144671"
+             id="circle105"
+             cx="587.97278"
+             cy="252.74052"
+             r="10"
+             inkscape:label="Circle Back" />
+          <circle
+             style="fill:#ffffff;stroke-width:0.108503"
+             id="circle106"
+             cx="587.97278"
+             cy="252.74052"
+             r="7.5"
+             inkscape:label="Circle Front" />
+        </g>
+        <g
+           id="g108"
+           inkscape:label="Top Circle"
+           transform="matrix(-0.41951687,0.83902895,-0.83902895,-0.41951687,674.73215,-260.09391)">
+          <circle
+             style="fill:#000000;stroke-width:0.144671"
+             id="circle107"
+             cx="587.97278"
+             cy="252.74052"
+             r="10"
+             inkscape:label="Circle Back" />
+          <circle
+             style="fill:#ffffff;stroke-width:0.108503"
+             id="circle108"
+             cx="587.97278"
+             cy="252.74052"
+             r="7.5"
+             inkscape:label="Circle Front" />
+        </g>
+      </g>
+      <text
+         xml:space="preserve"
+         style="font-size:35.2778px;font-family:stalinist-one;-inkscape-font-specification:stalinist-one;writing-mode:lr-tb;direction:ltr;fill:#ba160c;stroke-width:0.938001"
+         x="22.551405"
+         y="62.34721"
+         id="text109"><tspan
+           sodipodi:role="line"
+           id="tspan109"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:35.2778px;font-family:'Stalinist One';-inkscape-font-specification:'Stalinist One';stroke-width:0.938"
+           x="22.551405"
+           y="62.34721">6</tspan></text>
+    </g>
+    <g
+       id="g40"
+       inkscape:label="Hex 5"
+       transform="translate(500)">
+      <g
+         id="g39"
+         inkscape:label="Full"
+         transform="matrix(0.8790337,0,0,0.8790337,-145.47497,-103.57014)">
+        <g
+           id="g8"
+           inkscape:label="Hexagon"
+           transform="matrix(0,-0.93806893,0.93806893,0,-114.99479,593.73782)">
+          <path
+             sodipodi:type="star"
+             style="fill:#808080;stroke-width:0.264999"
+             id="path5"
+             inkscape:flatsided="true"
+             sodipodi:sides="6"
+             sodipodi:cx="71.233971"
+             sodipodi:cy="72.251602"
+             sodipodi:r1="62.482704"
+             sodipodi:r2="54.111607"
+             sodipodi:arg1="-2.0943951"
+             sodipodi:arg2="-1.5707963"
+             inkscape:rounded="0"
+             inkscape:randomized="0"
+             d="m 39.992619,18.139993 62.482701,0 31.24135,54.111609 -31.24135,54.111608 -62.482702,0 L 8.7512665,72.251602 Z"
+             transform="matrix(0.85305186,0,0,0.85305186,385.93274,291.22438)"
+             inkscape:label="Hex Back" />
+          <path
+             sodipodi:type="star"
+             style="fill:#ffffff;stroke-width:0.264999"
+             id="path6"
+             inkscape:flatsided="true"
+             sodipodi:sides="6"
+             sodipodi:cx="71.233971"
+             sodipodi:cy="72.251602"
+             sodipodi:r1="62.482704"
+             sodipodi:r2="54.111607"
+             sodipodi:arg1="-2.0943951"
+             sodipodi:arg2="-1.5707963"
+             inkscape:rounded="0"
+             inkscape:randomized="0"
+             d="m 39.992619,18.139993 62.482701,0 31.24135,54.111609 -31.24135,54.111608 -62.482702,0 L 8.7512665,72.251602 Z"
+             transform="matrix(0.76774668,0,0,0.76774668,392.00937,297.38782)"
+             inkscape:label="Hex Front" />
+        </g>
+        <g
+           id="g29"
+           inkscape:label="Top Left Circle"
+           transform="matrix(-0.93806396,0,0,-0.93806396,726.4309,388.04014)">
+          <circle
+             style="fill:#000000;stroke-width:0.144671"
+             id="circle10"
+             cx="587.97278"
+             cy="252.74052"
+             r="10"
+             inkscape:label="Circle Back" />
+          <circle
+             style="fill:#ffffff;stroke-width:0.108503"
+             id="circle27"
+             cx="587.97278"
+             cy="252.74052"
+             r="7.5"
+             inkscape:label="Circle Front" />
+        </g>
+        <g
+           id="g30"
+           inkscape:label="Bottom Left Circle"
+           transform="matrix(-0.41951684,-0.83902897,0.83902897,-0.41951684,209.48269,797.80846)">
+          <circle
+             style="fill:#000000;stroke-width:0.144671"
+             id="circle29"
+             cx="587.97278"
+             cy="252.74052"
+             r="10"
+             inkscape:label="Circle Back" />
+          <circle
+             style="fill:#ffffff;stroke-width:0.108503"
+             id="circle30"
+             cx="587.97278"
+             cy="252.74052"
+             r="7.5"
+             inkscape:label="Circle Front" />
+        </g>
+        <g
+           id="g32"
+           inkscape:label="Bottom Circle"
+           transform="matrix(0.41951684,-0.83902897,0.83902897,0.41951684,-242.71007,609.50065)">
+          <circle
+             style="fill:#000000;stroke-width:0.144671"
+             id="circle31"
+             cx="587.97278"
+             cy="252.74052"
+             r="10"
+             inkscape:label="Circle Back" />
+          <circle
+             style="fill:#ffffff;stroke-width:0.108503"
+             id="circle32"
+             cx="587.97278"
+             cy="252.74052"
+             r="7.5"
+             inkscape:label="Circle Front" />
+        </g>
+        <g
+           id="g34"
+           inkscape:label="Bottom Right Circle"
+           transform="matrix(0.93806396,0,0,0.93806396,-294.40883,-38.633417)">
+          <circle
+             style="fill:#000000;stroke-width:0.144671"
+             id="circle33"
+             cx="587.97278"
+             cy="252.74052"
+             r="10"
+             inkscape:label="Circle Back" />
+          <circle
+             style="fill:#ffffff;stroke-width:0.108503"
+             id="circle34"
+             cx="587.97278"
+             cy="252.74052"
+             r="7.5"
+             inkscape:label="Circle Front" />
+        </g>
+        <g
+           id="g36"
+           inkscape:label="Top Right Circle"
+           transform="matrix(0.41951687,0.83902895,-0.83902895,0.41951687,222.53936,-448.40174)">
+          <circle
+             style="fill:#000000;stroke-width:0.144671"
+             id="circle35"
+             cx="587.97278"
+             cy="252.74052"
+             r="10"
+             inkscape:label="Circle Back" />
+          <circle
+             style="fill:#ffffff;stroke-width:0.108503"
+             id="circle36"
+             cx="587.97278"
+             cy="252.74052"
+             r="7.5"
+             inkscape:label="Circle Front" />
+        </g>
+        <g
+           id="g38"
+           inkscape:label="Top Circle"
+           transform="matrix(-0.41951687,0.83902895,-0.83902895,-0.41951687,674.73215,-260.09391)">
+          <circle
+             style="fill:#000000;stroke-width:0.144671"
+             id="circle37"
+             cx="587.97278"
+             cy="252.74052"
+             r="10"
+             inkscape:label="Circle Back" />
+          <circle
+             style="fill:#ffffff;stroke-width:0.108503"
+             id="circle38"
+             cx="587.97278"
+             cy="252.74052"
+             r="7.5"
+             inkscape:label="Circle Front" />
+        </g>
+      </g>
+      <text
+         xml:space="preserve"
+         style="font-size:35.2778px;font-family:stalinist-one;-inkscape-font-specification:stalinist-one;writing-mode:lr-tb;direction:ltr;fill:#ba160c;stroke-width:0.938001"
+         x="22.392675"
+         y="62.34721"
+         id="text39"><tspan
+           sodipodi:role="line"
+           id="tspan39"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:35.2778px;font-family:'Stalinist One';-inkscape-font-specification:'Stalinist One';stroke-width:0.938"
+           x="22.392675"
+           y="62.34721">5</tspan></text>
+    </g>
+    <g
+       id="g54"
+       inkscape:label="Hex 4"
+       transform="translate(400)">
+      <g
+         id="g53"
+         inkscape:label="Full"
+         transform="matrix(0.8790337,0,0,0.8790337,-145.47497,-103.57014)">
+        <g
+           id="g41"
+           inkscape:label="Hexagon"
+           transform="matrix(0,-0.93806893,0.93806893,0,-114.99479,593.73782)">
+          <path
+             sodipodi:type="star"
+             style="fill:#808080;stroke-width:0.264999"
+             id="path40"
+             inkscape:flatsided="true"
+             sodipodi:sides="6"
+             sodipodi:cx="71.233971"
+             sodipodi:cy="72.251602"
+             sodipodi:r1="62.482704"
+             sodipodi:r2="54.111607"
+             sodipodi:arg1="-2.0943951"
+             sodipodi:arg2="-1.5707963"
+             inkscape:rounded="0"
+             inkscape:randomized="0"
+             d="m 39.992619,18.139993 62.482701,0 31.24135,54.111609 -31.24135,54.111608 -62.482702,0 L 8.7512665,72.251602 Z"
+             transform="matrix(0.85305186,0,0,0.85305186,385.93274,291.22438)"
+             inkscape:label="Hex Back" />
+          <path
+             sodipodi:type="star"
+             style="fill:#ffffff;stroke-width:0.264999"
+             id="path41"
+             inkscape:flatsided="true"
+             sodipodi:sides="6"
+             sodipodi:cx="71.233971"
+             sodipodi:cy="72.251602"
+             sodipodi:r1="62.482704"
+             sodipodi:r2="54.111607"
+             sodipodi:arg1="-2.0943951"
+             sodipodi:arg2="-1.5707963"
+             inkscape:rounded="0"
+             inkscape:randomized="0"
+             d="m 39.992619,18.139993 62.482701,0 31.24135,54.111609 -31.24135,54.111608 -62.482702,0 L 8.7512665,72.251602 Z"
+             transform="matrix(0.76774668,0,0,0.76774668,392.00937,297.38782)"
+             inkscape:label="Hex Front" />
+        </g>
+        <g
+           id="g42"
+           inkscape:label="Top Left Circle"
+           transform="matrix(-0.93806396,0,0,-0.93806396,726.4309,388.04014)">
+          <circle
+             style="fill:#000000;stroke-width:0.144671"
+             id="circle41"
+             cx="587.97278"
+             cy="252.74052"
+             r="10"
+             inkscape:label="Circle Back" />
+          <circle
+             style="fill:#ffffff;stroke-width:0.108503"
+             id="circle42"
+             cx="587.97278"
+             cy="252.74052"
+             r="7.5"
+             inkscape:label="Circle Front" />
+        </g>
+        <g
+           id="g44"
+           inkscape:label="Bottom Left Circle"
+           transform="matrix(-0.41951684,-0.83902897,0.83902897,-0.41951684,209.48269,797.80846)">
+          <circle
+             style="fill:#000000;stroke-width:0.144671"
+             id="circle43"
+             cx="587.97278"
+             cy="252.74052"
+             r="10"
+             inkscape:label="Circle Back" />
+          <circle
+             style="fill:#ffffff;stroke-width:0.108503"
+             id="circle44"
+             cx="587.97278"
+             cy="252.74052"
+             r="7.5"
+             inkscape:label="Circle Front" />
+        </g>
+        <g
+           id="g46"
+           inkscape:label="Bottom Circle"
+           transform="matrix(0.41951684,-0.83902897,0.83902897,0.41951684,-242.71007,609.50065)">
+          <circle
+             style="fill:#000000;stroke-width:0.144671"
+             id="circle45"
+             cx="587.97278"
+             cy="252.74052"
+             r="10"
+             inkscape:label="Circle Back" />
+          <circle
+             style="fill:#ffffff;stroke-width:0.108503"
+             id="circle46"
+             cx="587.97278"
+             cy="252.74052"
+             r="7.5"
+             inkscape:label="Circle Front" />
+        </g>
+        <g
+           id="g48"
+           inkscape:label="Bottom Right Circle"
+           transform="matrix(0.93806396,0,0,0.93806396,-294.40883,-38.633417)">
+          <circle
+             style="fill:#000000;stroke-width:0.144671"
+             id="circle47"
+             cx="587.97278"
+             cy="252.74052"
+             r="10"
+             inkscape:label="Circle Back" />
+          <circle
+             style="fill:#ffffff;stroke-width:0.108503"
+             id="circle48"
+             cx="587.97278"
+             cy="252.74052"
+             r="7.5"
+             inkscape:label="Circle Front" />
+        </g>
+        <g
+           id="g50"
+           inkscape:label="Top Right Circle"
+           transform="matrix(0.41951687,0.83902895,-0.83902895,0.41951687,222.53936,-448.40174)">
+          <circle
+             style="fill:#000000;stroke-width:0.144671"
+             id="circle49"
+             cx="587.97278"
+             cy="252.74052"
+             r="10"
+             inkscape:label="Circle Back" />
+          <circle
+             style="fill:#ffffff;stroke-width:0.108503"
+             id="circle50"
+             cx="587.97278"
+             cy="252.74052"
+             r="7.5"
+             inkscape:label="Circle Front" />
+        </g>
+        <g
+           id="g52"
+           inkscape:label="Top Circle"
+           transform="matrix(-0.41951687,0.83902895,-0.83902895,-0.41951687,674.73215,-260.09391)">
+          <circle
+             style="fill:#000000;stroke-width:0.144671"
+             id="circle51"
+             cx="587.97278"
+             cy="252.74052"
+             r="10"
+             inkscape:label="Circle Back" />
+          <circle
+             style="fill:#ffffff;stroke-width:0.108503"
+             id="circle52"
+             cx="587.97278"
+             cy="252.74052"
+             r="7.5"
+             inkscape:label="Circle Front" />
+        </g>
+      </g>
+      <text
+         xml:space="preserve"
+         style="font-size:35.2778px;font-family:stalinist-one;-inkscape-font-specification:stalinist-one;writing-mode:lr-tb;direction:ltr;fill:#ba160c;stroke-width:0.938001"
+         x="23.839045"
+         y="63.105705"
+         id="text53"><tspan
+           sodipodi:role="line"
+           id="tspan53"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:35.2778px;font-family:'Stalinist One';-inkscape-font-specification:'Stalinist One';stroke-width:0.938"
+           x="23.839045"
+           y="63.105705">4</tspan></text>
+    </g>
+    <g
+       id="g68"
+       inkscape:label="Hex 3"
+       transform="translate(300)">
+      <g
+         id="g67"
+         inkscape:label="Full"
+         transform="matrix(0.8790337,0,0,0.8790337,-145.47497,-103.57014)">
+        <g
+           id="g55"
+           inkscape:label="Hexagon"
+           transform="matrix(0,-0.93806893,0.93806893,0,-114.99479,593.73782)">
+          <path
+             sodipodi:type="star"
+             style="fill:#808080;stroke-width:0.264999"
+             id="path54"
+             inkscape:flatsided="true"
+             sodipodi:sides="6"
+             sodipodi:cx="71.233971"
+             sodipodi:cy="72.251602"
+             sodipodi:r1="62.482704"
+             sodipodi:r2="54.111607"
+             sodipodi:arg1="-2.0943951"
+             sodipodi:arg2="-1.5707963"
+             inkscape:rounded="0"
+             inkscape:randomized="0"
+             d="m 39.992619,18.139993 62.482701,0 31.24135,54.111609 -31.24135,54.111608 -62.482702,0 L 8.7512665,72.251602 Z"
+             transform="matrix(0.85305186,0,0,0.85305186,385.93274,291.22438)"
+             inkscape:label="Hex Back" />
+          <path
+             sodipodi:type="star"
+             style="fill:#ffffff;stroke-width:0.264999"
+             id="path55"
+             inkscape:flatsided="true"
+             sodipodi:sides="6"
+             sodipodi:cx="71.233971"
+             sodipodi:cy="72.251602"
+             sodipodi:r1="62.482704"
+             sodipodi:r2="54.111607"
+             sodipodi:arg1="-2.0943951"
+             sodipodi:arg2="-1.5707963"
+             inkscape:rounded="0"
+             inkscape:randomized="0"
+             d="m 39.992619,18.139993 62.482701,0 31.24135,54.111609 -31.24135,54.111608 -62.482702,0 L 8.7512665,72.251602 Z"
+             transform="matrix(0.76774668,0,0,0.76774668,392.00937,297.38782)"
+             inkscape:label="Hex Front" />
+        </g>
+        <g
+           id="g56"
+           inkscape:label="Top Left Circle"
+           transform="matrix(-0.93806396,0,0,-0.93806396,726.4309,388.04014)">
+          <circle
+             style="fill:#000000;stroke-width:0.144671"
+             id="circle55"
+             cx="587.97278"
+             cy="252.74052"
+             r="10"
+             inkscape:label="Circle Back" />
+          <circle
+             style="fill:#ffffff;stroke-width:0.108503"
+             id="circle56"
+             cx="587.97278"
+             cy="252.74052"
+             r="7.5"
+             inkscape:label="Circle Front" />
+        </g>
+        <g
+           id="g58"
+           inkscape:label="Bottom Left Circle"
+           transform="matrix(-0.41951684,-0.83902897,0.83902897,-0.41951684,209.48269,797.80846)">
+          <circle
+             style="fill:#000000;stroke-width:0.144671"
+             id="circle57"
+             cx="587.97278"
+             cy="252.74052"
+             r="10"
+             inkscape:label="Circle Back" />
+          <circle
+             style="fill:#ffffff;stroke-width:0.108503"
+             id="circle58"
+             cx="587.97278"
+             cy="252.74052"
+             r="7.5"
+             inkscape:label="Circle Front" />
+        </g>
+        <g
+           id="g60"
+           inkscape:label="Bottom Circle"
+           transform="matrix(0.41951684,-0.83902897,0.83902897,0.41951684,-242.71007,609.50065)">
+          <circle
+             style="fill:#000000;stroke-width:0.144671"
+             id="circle59"
+             cx="587.97278"
+             cy="252.74052"
+             r="10"
+             inkscape:label="Circle Back" />
+          <circle
+             style="fill:#ffffff;stroke-width:0.108503"
+             id="circle60"
+             cx="587.97278"
+             cy="252.74052"
+             r="7.5"
+             inkscape:label="Circle Front" />
+        </g>
+        <g
+           id="g62"
+           inkscape:label="Bottom Right Circle"
+           transform="matrix(0.93806396,0,0,0.93806396,-294.40883,-38.633417)">
+          <circle
+             style="fill:#000000;stroke-width:0.144671"
+             id="circle61"
+             cx="587.97278"
+             cy="252.74052"
+             r="10"
+             inkscape:label="Circle Back" />
+          <circle
+             style="fill:#ffffff;stroke-width:0.108503"
+             id="circle62"
+             cx="587.97278"
+             cy="252.74052"
+             r="7.5"
+             inkscape:label="Circle Front" />
+        </g>
+        <g
+           id="g64"
+           inkscape:label="Top Right Circle"
+           transform="matrix(0.41951687,0.83902895,-0.83902895,0.41951687,222.53936,-448.40174)">
+          <circle
+             style="fill:#000000;stroke-width:0.144671"
+             id="circle63"
+             cx="587.97278"
+             cy="252.74052"
+             r="10"
+             inkscape:label="Circle Back" />
+          <circle
+             style="fill:#ffffff;stroke-width:0.108503"
+             id="circle64"
+             cx="587.97278"
+             cy="252.74052"
+             r="7.5"
+             inkscape:label="Circle Front" />
+        </g>
+        <g
+           id="g66"
+           inkscape:label="Top Circle"
+           transform="matrix(-0.41951687,0.83902895,-0.83902895,-0.41951687,674.73215,-260.09391)">
+          <circle
+             style="fill:#000000;stroke-width:0.144671"
+             id="circle65"
+             cx="587.97278"
+             cy="252.74052"
+             r="10"
+             inkscape:label="Circle Back" />
+          <circle
+             style="fill:#ffffff;stroke-width:0.108503"
+             id="circle66"
+             cx="587.97278"
+             cy="252.74052"
+             r="7.5"
+             inkscape:label="Circle Front" />
+        </g>
+      </g>
+      <text
+         xml:space="preserve"
+         style="font-size:35.2778px;font-family:stalinist-one;-inkscape-font-specification:stalinist-one;writing-mode:lr-tb;direction:ltr;fill:#ba160c;stroke-width:0.938001"
+         x="23.274607"
+         y="62.34721"
+         id="text67"><tspan
+           sodipodi:role="line"
+           id="tspan67"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:35.2778px;font-family:'Stalinist One';-inkscape-font-specification:'Stalinist One';stroke-width:0.938"
+           x="23.274607"
+           y="62.34721">3</tspan></text>
+    </g>
+    <g
+       id="g82"
+       inkscape:label="Hex 2"
+       transform="translate(200)">
+      <g
+         id="g81"
+         inkscape:label="Full"
+         transform="matrix(0.8790337,0,0,0.8790337,-145.47497,-103.57014)">
+        <g
+           id="g69"
+           inkscape:label="Hexagon"
+           transform="matrix(0,-0.93806893,0.93806893,0,-114.99479,593.73782)">
+          <path
+             sodipodi:type="star"
+             style="fill:#808080;stroke-width:0.264999"
+             id="path68"
+             inkscape:flatsided="true"
+             sodipodi:sides="6"
+             sodipodi:cx="71.233971"
+             sodipodi:cy="72.251602"
+             sodipodi:r1="62.482704"
+             sodipodi:r2="54.111607"
+             sodipodi:arg1="-2.0943951"
+             sodipodi:arg2="-1.5707963"
+             inkscape:rounded="0"
+             inkscape:randomized="0"
+             d="m 39.992619,18.139993 62.482701,0 31.24135,54.111609 -31.24135,54.111608 -62.482702,0 L 8.7512665,72.251602 Z"
+             transform="matrix(0.85305186,0,0,0.85305186,385.93274,291.22438)"
+             inkscape:label="Hex Back" />
+          <path
+             sodipodi:type="star"
+             style="fill:#ffffff;stroke-width:0.264999"
+             id="path69"
+             inkscape:flatsided="true"
+             sodipodi:sides="6"
+             sodipodi:cx="71.233971"
+             sodipodi:cy="72.251602"
+             sodipodi:r1="62.482704"
+             sodipodi:r2="54.111607"
+             sodipodi:arg1="-2.0943951"
+             sodipodi:arg2="-1.5707963"
+             inkscape:rounded="0"
+             inkscape:randomized="0"
+             d="m 39.992619,18.139993 62.482701,0 31.24135,54.111609 -31.24135,54.111608 -62.482702,0 L 8.7512665,72.251602 Z"
+             transform="matrix(0.76774668,0,0,0.76774668,392.00937,297.38782)"
+             inkscape:label="Hex Front" />
+        </g>
+        <g
+           id="g70"
+           inkscape:label="Top Left Circle"
+           transform="matrix(-0.93806396,0,0,-0.93806396,726.4309,388.04014)">
+          <circle
+             style="fill:#000000;stroke-width:0.144671"
+             id="circle69"
+             cx="587.97278"
+             cy="252.74052"
+             r="10"
+             inkscape:label="Circle Back" />
+          <circle
+             style="fill:#ffffff;stroke-width:0.108503"
+             id="circle70"
+             cx="587.97278"
+             cy="252.74052"
+             r="7.5"
+             inkscape:label="Circle Front" />
+        </g>
+        <g
+           id="g72"
+           inkscape:label="Bottom Left Circle"
+           transform="matrix(-0.41951684,-0.83902897,0.83902897,-0.41951684,209.48269,797.80846)">
+          <circle
+             style="fill:#000000;stroke-width:0.144671"
+             id="circle71"
+             cx="587.97278"
+             cy="252.74052"
+             r="10"
+             inkscape:label="Circle Back" />
+          <circle
+             style="fill:#ffffff;stroke-width:0.108503"
+             id="circle72"
+             cx="587.97278"
+             cy="252.74052"
+             r="7.5"
+             inkscape:label="Circle Front" />
+        </g>
+        <g
+           id="g74"
+           inkscape:label="Bottom Circle"
+           transform="matrix(0.41951684,-0.83902897,0.83902897,0.41951684,-242.71007,609.50065)">
+          <circle
+             style="fill:#000000;stroke-width:0.144671"
+             id="circle73"
+             cx="587.97278"
+             cy="252.74052"
+             r="10"
+             inkscape:label="Circle Back" />
+          <circle
+             style="fill:#ffffff;stroke-width:0.108503"
+             id="circle74"
+             cx="587.97278"
+             cy="252.74052"
+             r="7.5"
+             inkscape:label="Circle Front" />
+        </g>
+        <g
+           id="g76"
+           inkscape:label="Bottom Right Circle"
+           transform="matrix(0.93806396,0,0,0.93806396,-294.40883,-38.633417)">
+          <circle
+             style="fill:#000000;stroke-width:0.144671"
+             id="circle75"
+             cx="587.97278"
+             cy="252.74052"
+             r="10"
+             inkscape:label="Circle Back" />
+          <circle
+             style="fill:#ffffff;stroke-width:0.108503"
+             id="circle76"
+             cx="587.97278"
+             cy="252.74052"
+             r="7.5"
+             inkscape:label="Circle Front" />
+        </g>
+        <g
+           id="g78"
+           inkscape:label="Top Right Circle"
+           transform="matrix(0.41951687,0.83902895,-0.83902895,0.41951687,222.53936,-448.40174)">
+          <circle
+             style="fill:#000000;stroke-width:0.144671"
+             id="circle77"
+             cx="587.97278"
+             cy="252.74052"
+             r="10"
+             inkscape:label="Circle Back" />
+          <circle
+             style="fill:#ffffff;stroke-width:0.108503"
+             id="circle78"
+             cx="587.97278"
+             cy="252.74052"
+             r="7.5"
+             inkscape:label="Circle Front" />
+        </g>
+        <g
+           id="g80"
+           inkscape:label="Top Circle"
+           transform="matrix(-0.41951687,0.83902895,-0.83902895,-0.41951687,674.73215,-260.09391)">
+          <circle
+             style="fill:#000000;stroke-width:0.144671"
+             id="circle79"
+             cx="587.97278"
+             cy="252.74052"
+             r="10"
+             inkscape:label="Circle Back" />
+          <circle
+             style="fill:#ffffff;stroke-width:0.108503"
+             id="circle80"
+             cx="587.97278"
+             cy="252.74052"
+             r="7.5"
+             inkscape:label="Circle Front" />
+        </g>
+      </g>
+      <text
+         xml:space="preserve"
+         style="font-size:35.2778px;font-family:stalinist-one;-inkscape-font-specification:stalinist-one;writing-mode:lr-tb;direction:ltr;fill:#ba160c;stroke-width:0.938001"
+         x="22.745462"
+         y="62.34721"
+         id="text81"><tspan
+           sodipodi:role="line"
+           id="tspan81"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:35.2778px;font-family:'Stalinist One';-inkscape-font-specification:'Stalinist One';stroke-width:0.938"
+           x="22.745462"
+           y="62.34721">2</tspan></text>
+    </g>
+    <g
+       id="g96"
+       inkscape:label="Hex 1"
+       transform="translate(100)">
+      <g
+         id="g95"
+         inkscape:label="Full"
+         transform="matrix(0.8790337,0,0,0.8790337,-145.47497,-103.57014)">
+        <g
+           id="g83"
+           inkscape:label="Hexagon"
+           transform="matrix(0,-0.93806893,0.93806893,0,-114.99479,593.73782)">
+          <path
+             sodipodi:type="star"
+             style="fill:#808080;stroke-width:0.264999"
+             id="path82"
+             inkscape:flatsided="true"
+             sodipodi:sides="6"
+             sodipodi:cx="71.233971"
+             sodipodi:cy="72.251602"
+             sodipodi:r1="62.482704"
+             sodipodi:r2="54.111607"
+             sodipodi:arg1="-2.0943951"
+             sodipodi:arg2="-1.5707963"
+             inkscape:rounded="0"
+             inkscape:randomized="0"
+             d="m 39.992619,18.139993 62.482701,0 31.24135,54.111609 -31.24135,54.111608 -62.482702,0 L 8.7512665,72.251602 Z"
+             transform="matrix(0.85305186,0,0,0.85305186,385.93274,291.22438)"
+             inkscape:label="Hex Back" />
+          <path
+             sodipodi:type="star"
+             style="fill:#ffffff;stroke-width:0.264999"
+             id="path83"
+             inkscape:flatsided="true"
+             sodipodi:sides="6"
+             sodipodi:cx="71.233971"
+             sodipodi:cy="72.251602"
+             sodipodi:r1="62.482704"
+             sodipodi:r2="54.111607"
+             sodipodi:arg1="-2.0943951"
+             sodipodi:arg2="-1.5707963"
+             inkscape:rounded="0"
+             inkscape:randomized="0"
+             d="m 39.992619,18.139993 62.482701,0 31.24135,54.111609 -31.24135,54.111608 -62.482702,0 L 8.7512665,72.251602 Z"
+             transform="matrix(0.76774668,0,0,0.76774668,392.00937,297.38782)"
+             inkscape:label="Hex Front" />
+        </g>
+        <g
+           id="g84"
+           inkscape:label="Top Left Circle"
+           transform="matrix(-0.93806396,0,0,-0.93806396,726.4309,388.04014)">
+          <circle
+             style="fill:#000000;stroke-width:0.144671"
+             id="circle83"
+             cx="587.97278"
+             cy="252.74052"
+             r="10"
+             inkscape:label="Circle Back" />
+          <circle
+             style="fill:#ffffff;stroke-width:0.108503"
+             id="circle84"
+             cx="587.97278"
+             cy="252.74052"
+             r="7.5"
+             inkscape:label="Circle Front" />
+        </g>
+        <g
+           id="g86"
+           inkscape:label="Bottom Left Circle"
+           transform="matrix(-0.41951684,-0.83902897,0.83902897,-0.41951684,209.48269,797.80846)">
+          <circle
+             style="fill:#000000;stroke-width:0.144671"
+             id="circle85"
+             cx="587.97278"
+             cy="252.74052"
+             r="10"
+             inkscape:label="Circle Back" />
+          <circle
+             style="fill:#ffffff;stroke-width:0.108503"
+             id="circle86"
+             cx="587.97278"
+             cy="252.74052"
+             r="7.5"
+             inkscape:label="Circle Front" />
+        </g>
+        <g
+           id="g88"
+           inkscape:label="Bottom Circle"
+           transform="matrix(0.41951684,-0.83902897,0.83902897,0.41951684,-242.71007,609.50065)">
+          <circle
+             style="fill:#000000;stroke-width:0.144671"
+             id="circle87"
+             cx="587.97278"
+             cy="252.74052"
+             r="10"
+             inkscape:label="Circle Back" />
+          <circle
+             style="fill:#ffffff;stroke-width:0.108503"
+             id="circle88"
+             cx="587.97278"
+             cy="252.74052"
+             r="7.5"
+             inkscape:label="Circle Front" />
+        </g>
+        <g
+           id="g90"
+           inkscape:label="Bottom Right Circle"
+           transform="matrix(0.93806396,0,0,0.93806396,-294.40883,-38.633417)">
+          <circle
+             style="fill:#000000;stroke-width:0.144671"
+             id="circle89"
+             cx="587.97278"
+             cy="252.74052"
+             r="10"
+             inkscape:label="Circle Back" />
+          <circle
+             style="fill:#ffffff;stroke-width:0.108503"
+             id="circle90"
+             cx="587.97278"
+             cy="252.74052"
+             r="7.5"
+             inkscape:label="Circle Front" />
+        </g>
+        <g
+           id="g92"
+           inkscape:label="Top Right Circle"
+           transform="matrix(0.41951687,0.83902895,-0.83902895,0.41951687,222.53936,-448.40174)">
+          <circle
+             style="fill:#000000;stroke-width:0.144671"
+             id="circle91"
+             cx="587.97278"
+             cy="252.74052"
+             r="10"
+             inkscape:label="Circle Back" />
+          <circle
+             style="fill:#ffffff;stroke-width:0.108503"
+             id="circle92"
+             cx="587.97278"
+             cy="252.74052"
+             r="7.5"
+             inkscape:label="Circle Front" />
+        </g>
+        <g
+           id="g94"
+           inkscape:label="Top Circle"
+           transform="matrix(-0.41951687,0.83902895,-0.83902895,-0.41951687,674.73215,-260.09391)">
+          <circle
+             style="fill:#000000;stroke-width:0.144671"
+             id="circle93"
+             cx="587.97278"
+             cy="252.74052"
+             r="10"
+             inkscape:label="Circle Back" />
+          <circle
+             style="fill:#ffffff;stroke-width:0.108503"
+             id="circle94"
+             cx="587.97278"
+             cy="252.74052"
+             r="7.5"
+             inkscape:label="Circle Front" />
+        </g>
+      </g>
+      <text
+         xml:space="preserve"
+         style="font-size:35.2778px;font-family:stalinist-one;-inkscape-font-specification:stalinist-one;writing-mode:lr-tb;direction:ltr;fill:#ba160c;stroke-width:0.938001"
+         x="34.051945"
+         y="62.999863"
+         id="text95"><tspan
+           sodipodi:role="line"
+           id="tspan95"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:35.2778px;font-family:'Stalinist One';-inkscape-font-specification:'Stalinist One';stroke-width:0.938"
+           x="34.051945"
+           y="62.999863">1</tspan></text>
     </g>
     <g
        id="g5-2"

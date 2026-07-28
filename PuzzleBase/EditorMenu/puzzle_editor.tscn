@@ -1,66 +1,66 @@
 [gd_scene format=3 uid="uid://bswo25s2ifgjx"]
 
-[ext_resource type="Script" uid="uid://dcs0lm4jvax5i" path="res://PuzzleBase/puzzle_generation.gd" id="1_bau5w"]
-[ext_resource type="Texture2D" uid="uid://chddvyhlpucqv" path="res://PuzzleBase/Tilesets/HexTileSetDownscaled.png" id="2_ifosy"]
-[ext_resource type="Script" uid="uid://buj6ft1vvdf2f" path="res://addons/hexagon_tilemaplayer/hexagon_tilemaplayer.gd" id="3_ri7nl"]
-[ext_resource type="Script" uid="uid://6x2hxiaploah" path="res://PuzzleBase/camera_2d.gd" id="4_fu5wo"]
-[ext_resource type="FontFile" uid="uid://bq5c6mjko0k4c" path="res://Misc/fonts/TextFont/Imperial.otf" id="5_ifosy"]
-[ext_resource type="Script" uid="uid://brtpbbjg65k15" path="res://PuzzleBase/puzzle_menu.gd" id="5_ri7nl"]
-[ext_resource type="Theme" uid="uid://nqeeakofp0hq" path="res://Misc/oppressive.tres" id="7_fu5wo"]
-[ext_resource type="Texture2D" uid="uid://bg1y0pqf0b3ho" path="res://Misc/Buttons/PlacementButtons/MenuButtton.png" id="9_rcetb"]
-[ext_resource type="Texture2D" uid="uid://dq8atk0jxk1py" path="res://Misc/Buttons/DisabledButtons/ZeroButton.png" id="9_tyf1b"]
-[ext_resource type="Texture2D" uid="uid://cot7rheh7oiff" path="res://Misc/Buttons/PlacementButtons/1Buttons/Button1.png" id="10_0geiw"]
-[ext_resource type="Texture2D" uid="uid://bh6qx05hj60gc" path="res://Misc/Buttons/DisabledButtons/ZeroDisabled.png" id="10_1j7lq"]
-[ext_resource type="Texture2D" uid="uid://cas4ju2iur50d" path="res://Misc/Buttons/PlacementButtons/1Buttons/Button1-6.png" id="10_bjplc"]
-[ext_resource type="Script" uid="uid://ckisxmuh77lu5" path="res://PuzzleBase/place_number.gd" id="10_d48ln"]
-[ext_resource type="Texture2D" uid="uid://fespolposvah" path="res://Misc/Buttons/PlacementButtons/2Buttons/Button2.png" id="11_8x6ae"]
-[ext_resource type="Texture2D" uid="uid://cbba7r5p4s8dl" path="res://Misc/Buttons/DisabledButtons/SixButton.png" id="11_btkv1"]
-[ext_resource type="Texture2D" uid="uid://drw00kqppg6y2" path="res://Misc/Buttons/PlacementButtons/1Buttons/Button1-5.png" id="11_d48ln"]
-[ext_resource type="Texture2D" uid="uid://8kyouno0kmmt" path="res://Misc/Buttons/PlacementButtons/1Buttons/Button1-4.png" id="12_brqtx"]
-[ext_resource type="Texture2D" uid="uid://d4lt23tlma6qc" path="res://Misc/Buttons/DisabledButtons/SixDisabled.png" id="12_ey4dr"]
-[ext_resource type="Texture2D" uid="uid://b6g3mybjf0vtc" path="res://Misc/Buttons/PlacementButtons/3Buttons/Button3.png" id="12_ushwr"]
-[ext_resource type="Texture2D" uid="uid://drohqiwhp20qb" path="res://Misc/Buttons/PlacementButtons/1Buttons/Button1-3.png" id="13_iqt6y"]
-[ext_resource type="Texture2D" uid="uid://j4cjc0jissln" path="res://Misc/Buttons/PlacementButtons/4Buttons/Button4.png" id="13_xcjct"]
-[ext_resource type="Texture2D" uid="uid://d6bpreg2nv2i" path="res://Misc/Buttons/PlacementButtons/1Buttons/Button1-2.png" id="14_8mf48"]
-[ext_resource type="Texture2D" uid="uid://0vky7xdofxir" path="res://Misc/Buttons/PlacementButtons/5Buttons/Button5.png" id="14_nind6"]
-[ext_resource type="Texture2D" uid="uid://dkwydmu8kbxl2" path="res://Misc/Buttons/PlacementButtons/OtherButtons/ButtonExpand.png" id="15_h2p4p"]
-[ext_resource type="Texture2D" uid="uid://b22jjp4wddbit" path="res://Misc/Buttons/PlacementButtons/1Buttons/Button1-1.png" id="15_ygggp"]
-[ext_resource type="Texture2D" uid="uid://c0ytc4n4ir46c" path="res://Misc/Buttons/PlacementButtons/2Buttons/Button2-6.png" id="17_d2hf0"]
-[ext_resource type="Texture2D" uid="uid://c4cxas3rjd1ly" path="res://Misc/Buttons/PlacementButtons/2Buttons/Button2-5.png" id="18_pyfps"]
-[ext_resource type="Texture2D" uid="uid://damqfka5lpxb" path="res://Misc/Buttons/PlacementButtons/2Buttons/Button2-4.png" id="19_qdrnf"]
-[ext_resource type="Texture2D" uid="uid://c6pyecib2sawx" path="res://Misc/Buttons/PlacementButtons/2Buttons/Button2-3.png" id="20_c7cro"]
-[ext_resource type="Texture2D" uid="uid://c84cqtjgd1q87" path="res://Misc/Buttons/PlacementButtons/2Buttons/Button2-2.png" id="21_50p8m"]
-[ext_resource type="Texture2D" uid="uid://dsracm80v2t2x" path="res://Misc/Buttons/PlacementButtons/2Buttons/Button2-1.png" id="22_i57bj"]
-[ext_resource type="Texture2D" uid="uid://uhch7rter7hp" path="res://Misc/Buttons/PlacementButtons/3Buttons/Button3-6.png" id="24_j4uqv"]
-[ext_resource type="Texture2D" uid="uid://4teld20so21u" path="res://Misc/Buttons/PlacementButtons/3Buttons/Button3-5.png" id="25_ge38y"]
-[ext_resource type="Texture2D" uid="uid://brto2crnfy65c" path="res://Misc/Buttons/PlacementButtons/3Buttons/Button3-4.png" id="26_puktc"]
-[ext_resource type="Texture2D" uid="uid://3q5qxypevhx6" path="res://Misc/Buttons/PlacementButtons/3Buttons/Button3-3.png" id="27_5hb74"]
-[ext_resource type="Texture2D" uid="uid://bs5kl10uot04j" path="res://Misc/Buttons/PlacementButtons/3Buttons/Button3-2.png" id="28_1rjvv"]
-[ext_resource type="Texture2D" uid="uid://b2pnq6ghxm32h" path="res://Misc/Buttons/PlacementButtons/3Buttons/Button3-1.png" id="29_pwiap"]
-[ext_resource type="Texture2D" uid="uid://mmcrg7jldgp4" path="res://Misc/Buttons/PlacementButtons/4Buttons/Button4-9.png" id="31_42c63"]
-[ext_resource type="Texture2D" uid="uid://ckye17bmskkmp" path="res://Misc/Buttons/PlacementButtons/4Buttons/Button4-8.png" id="32_awejq"]
-[ext_resource type="Texture2D" uid="uid://1x873rjjtfhp" path="res://Misc/Buttons/PlacementButtons/4Buttons/Button4-7.png" id="33_1wjuy"]
-[ext_resource type="Texture2D" uid="uid://db7l082eoamsj" path="res://Misc/Buttons/PlacementButtons/4Buttons/Button4-6.png" id="34_3nblv"]
-[ext_resource type="Texture2D" uid="uid://b38hklqtuo2hk" path="res://Misc/Buttons/PlacementButtons/4Buttons/Button4-5.png" id="35_7unr7"]
-[ext_resource type="Texture2D" uid="uid://1mpbkrrpigvw" path="res://Misc/Buttons/PlacementButtons/4Buttons/Button4-4.png" id="36_yyc4v"]
-[ext_resource type="Texture2D" uid="uid://c2v8gbumb2rgs" path="res://Misc/Buttons/PlacementButtons/4Buttons/Button4-3.png" id="37_2601v"]
-[ext_resource type="Texture2D" uid="uid://28fxeabqdc07" path="res://Misc/Buttons/PlacementButtons/4Buttons/Button4-2.png" id="38_5x2sd"]
-[ext_resource type="Texture2D" uid="uid://cst338pla36hp" path="res://Misc/Buttons/PlacementButtons/4Buttons/Button4-1.png" id="39_77msa"]
-[ext_resource type="Texture2D" uid="uid://vycuucqy7slo" path="res://Misc/Buttons/PlacementButtons/5Buttons/Button5-6.png" id="41_pperj"]
-[ext_resource type="Texture2D" uid="uid://ckm64pu33uhj" path="res://Misc/Buttons/PlacementButtons/5Buttons/Button5-5.png" id="42_n35uf"]
-[ext_resource type="Texture2D" uid="uid://bf8colxsgk2jn" path="res://Misc/Buttons/PlacementButtons/5Buttons/Button5-4.png" id="43_p21vb"]
-[ext_resource type="Texture2D" uid="uid://bymwypphep541" path="res://Misc/Buttons/PlacementButtons/5Buttons/Button5-3.png" id="44_t76ou"]
-[ext_resource type="Texture2D" uid="uid://du7mfyqpxs03d" path="res://Misc/Buttons/PlacementButtons/5Buttons/Button5-2.png" id="45_6im7j"]
-[ext_resource type="Texture2D" uid="uid://b4houqpp7qegp" path="res://Misc/Buttons/PlacementButtons/5Buttons/Button5-1.png" id="46_ly1gt"]
-[ext_resource type="Texture2D" uid="uid://botpta3qmmcjn" path="res://Misc/Buttons/PlacementButtons/OtherButtons/ButtonHole.png" id="48_s4kll"]
-[ext_resource type="Texture2D" uid="uid://x2s0n6r6xesx" path="res://Misc/Buttons/PlacementButtons/OtherButtons/ButtonUnknown.png" id="49_xti5w"]
-[ext_resource type="Texture2D" uid="uid://xt2w4rg5mrpe" path="res://Misc/Buttons/PlacementButtons/OtherButtons/Button0-1.png" id="50_lxtde"]
-[ext_resource type="Texture2D" uid="uid://cg1sex8is4r1g" path="res://Misc/Buttons/PlacementButtons/OtherButtons/Button6-1.png" id="51_k3lkr"]
+[ext_resource type="Script" uid="uid://byrsmprggnbnr" path="res://PuzzleBase/EditorMenu/puzzle_generation.gd" id="1_tljj5"]
+[ext_resource type="Texture2D" uid="uid://h7dhk4y2gef8" path="res://PuzzleBase/Tilesets/HexTileSet.png" id="2_tljj5"]
+[ext_resource type="Script" uid="uid://buj6ft1vvdf2f" path="res://addons/hexagon_tilemaplayer/hexagon_tilemaplayer.gd" id="3_oo1l2"]
+[ext_resource type="Script" uid="uid://6x2hxiaploah" path="res://PuzzleBase/camera_2d.gd" id="4_nc3ip"]
+[ext_resource type="Script" uid="uid://brtpbbjg65k15" path="res://PuzzleBase/EditorMenu/puzzle_menu.gd" id="5_804aa"]
+[ext_resource type="FontFile" uid="uid://bq5c6mjko0k4c" path="res://Misc/fonts/TextFont/Imperial.otf" id="6_kyo17"]
+[ext_resource type="Theme" uid="uid://nqeeakofp0hq" path="res://Misc/oppressive.tres" id="7_pjvge"]
+[ext_resource type="Texture2D" uid="uid://bg1y0pqf0b3ho" path="res://Misc/Buttons/PlacementButtons/MenuButtton.png" id="8_0f1nv"]
+[ext_resource type="Script" uid="uid://ckisxmuh77lu5" path="res://PuzzleBase/EditorMenu/place_number.gd" id="9_qj8yn"]
+[ext_resource type="Texture2D" uid="uid://cas4ju2iur50d" path="res://Misc/Buttons/PlacementButtons/1Buttons/Button1-6.png" id="10_leieo"]
+[ext_resource type="Texture2D" uid="uid://drw00kqppg6y2" path="res://Misc/Buttons/PlacementButtons/1Buttons/Button1-5.png" id="11_rxr8t"]
+[ext_resource type="Texture2D" uid="uid://8kyouno0kmmt" path="res://Misc/Buttons/PlacementButtons/1Buttons/Button1-4.png" id="12_qudsn"]
+[ext_resource type="Texture2D" uid="uid://drohqiwhp20qb" path="res://Misc/Buttons/PlacementButtons/1Buttons/Button1-3.png" id="13_22r7j"]
+[ext_resource type="Texture2D" uid="uid://d6bpreg2nv2i" path="res://Misc/Buttons/PlacementButtons/1Buttons/Button1-2.png" id="14_ccp8m"]
+[ext_resource type="Texture2D" uid="uid://b22jjp4wddbit" path="res://Misc/Buttons/PlacementButtons/1Buttons/Button1-1.png" id="15_xnpql"]
+[ext_resource type="Texture2D" uid="uid://cot7rheh7oiff" path="res://Misc/Buttons/PlacementButtons/1Buttons/Button1.png" id="16_ho05q"]
+[ext_resource type="Texture2D" uid="uid://c0ytc4n4ir46c" path="res://Misc/Buttons/PlacementButtons/2Buttons/Button2-6.png" id="17_rb8pf"]
+[ext_resource type="Texture2D" uid="uid://c4cxas3rjd1ly" path="res://Misc/Buttons/PlacementButtons/2Buttons/Button2-5.png" id="18_bir5d"]
+[ext_resource type="Texture2D" uid="uid://damqfka5lpxb" path="res://Misc/Buttons/PlacementButtons/2Buttons/Button2-4.png" id="19_5dnsm"]
+[ext_resource type="Texture2D" uid="uid://c6pyecib2sawx" path="res://Misc/Buttons/PlacementButtons/2Buttons/Button2-3.png" id="20_by7ow"]
+[ext_resource type="Texture2D" uid="uid://c84cqtjgd1q87" path="res://Misc/Buttons/PlacementButtons/2Buttons/Button2-2.png" id="21_ux50u"]
+[ext_resource type="Texture2D" uid="uid://dsracm80v2t2x" path="res://Misc/Buttons/PlacementButtons/2Buttons/Button2-1.png" id="22_gmhj5"]
+[ext_resource type="Texture2D" uid="uid://fespolposvah" path="res://Misc/Buttons/PlacementButtons/2Buttons/Button2.png" id="23_fvney"]
+[ext_resource type="Texture2D" uid="uid://uhch7rter7hp" path="res://Misc/Buttons/PlacementButtons/3Buttons/Button3-6.png" id="24_br3k1"]
+[ext_resource type="Texture2D" uid="uid://4teld20so21u" path="res://Misc/Buttons/PlacementButtons/3Buttons/Button3-5.png" id="25_baiw5"]
+[ext_resource type="Texture2D" uid="uid://brto2crnfy65c" path="res://Misc/Buttons/PlacementButtons/3Buttons/Button3-4.png" id="26_splo2"]
+[ext_resource type="Texture2D" uid="uid://3q5qxypevhx6" path="res://Misc/Buttons/PlacementButtons/3Buttons/Button3-3.png" id="27_t5ugo"]
+[ext_resource type="Texture2D" uid="uid://bs5kl10uot04j" path="res://Misc/Buttons/PlacementButtons/3Buttons/Button3-2.png" id="28_ay2vd"]
+[ext_resource type="Texture2D" uid="uid://b2pnq6ghxm32h" path="res://Misc/Buttons/PlacementButtons/3Buttons/Button3-1.png" id="29_1pco1"]
+[ext_resource type="Texture2D" uid="uid://b6g3mybjf0vtc" path="res://Misc/Buttons/PlacementButtons/3Buttons/Button3.png" id="30_g6e71"]
+[ext_resource type="Texture2D" uid="uid://mmcrg7jldgp4" path="res://Misc/Buttons/PlacementButtons/4Buttons/Button4-9.png" id="31_5nuh3"]
+[ext_resource type="Texture2D" uid="uid://ckye17bmskkmp" path="res://Misc/Buttons/PlacementButtons/4Buttons/Button4-8.png" id="32_tmn6r"]
+[ext_resource type="Texture2D" uid="uid://1x873rjjtfhp" path="res://Misc/Buttons/PlacementButtons/4Buttons/Button4-7.png" id="33_wsfxq"]
+[ext_resource type="Texture2D" uid="uid://db7l082eoamsj" path="res://Misc/Buttons/PlacementButtons/4Buttons/Button4-6.png" id="34_5bolf"]
+[ext_resource type="Texture2D" uid="uid://b38hklqtuo2hk" path="res://Misc/Buttons/PlacementButtons/4Buttons/Button4-5.png" id="35_gqd1i"]
+[ext_resource type="Texture2D" uid="uid://1mpbkrrpigvw" path="res://Misc/Buttons/PlacementButtons/4Buttons/Button4-4.png" id="36_ubm3g"]
+[ext_resource type="Texture2D" uid="uid://c2v8gbumb2rgs" path="res://Misc/Buttons/PlacementButtons/4Buttons/Button4-3.png" id="37_bcfvp"]
+[ext_resource type="Texture2D" uid="uid://28fxeabqdc07" path="res://Misc/Buttons/PlacementButtons/4Buttons/Button4-2.png" id="38_5v6ip"]
+[ext_resource type="Texture2D" uid="uid://cst338pla36hp" path="res://Misc/Buttons/PlacementButtons/4Buttons/Button4-1.png" id="39_7fuhr"]
+[ext_resource type="Texture2D" uid="uid://j4cjc0jissln" path="res://Misc/Buttons/PlacementButtons/4Buttons/Button4.png" id="40_5wycc"]
+[ext_resource type="Texture2D" uid="uid://vycuucqy7slo" path="res://Misc/Buttons/PlacementButtons/5Buttons/Button5-6.png" id="41_mou5b"]
+[ext_resource type="Texture2D" uid="uid://ckm64pu33uhj" path="res://Misc/Buttons/PlacementButtons/5Buttons/Button5-5.png" id="42_akyxl"]
+[ext_resource type="Texture2D" uid="uid://bf8colxsgk2jn" path="res://Misc/Buttons/PlacementButtons/5Buttons/Button5-4.png" id="43_s4nvs"]
+[ext_resource type="Texture2D" uid="uid://bymwypphep541" path="res://Misc/Buttons/PlacementButtons/5Buttons/Button5-3.png" id="44_kikwt"]
+[ext_resource type="Texture2D" uid="uid://du7mfyqpxs03d" path="res://Misc/Buttons/PlacementButtons/5Buttons/Button5-2.png" id="45_ldudk"]
+[ext_resource type="Texture2D" uid="uid://b4houqpp7qegp" path="res://Misc/Buttons/PlacementButtons/5Buttons/Button5-1.png" id="46_bxrt6"]
+[ext_resource type="Texture2D" uid="uid://0vky7xdofxir" path="res://Misc/Buttons/PlacementButtons/5Buttons/Button5.png" id="47_cgj67"]
+[ext_resource type="Texture2D" uid="uid://botpta3qmmcjn" path="res://Misc/Buttons/PlacementButtons/OtherButtons/ButtonHole.png" id="48_lulig"]
+[ext_resource type="Texture2D" uid="uid://x2s0n6r6xesx" path="res://Misc/Buttons/PlacementButtons/OtherButtons/ButtonUnknown.png" id="49_moet8"]
+[ext_resource type="Texture2D" uid="uid://xt2w4rg5mrpe" path="res://Misc/Buttons/PlacementButtons/OtherButtons/Button0-1.png" id="50_0wok4"]
+[ext_resource type="Texture2D" uid="uid://cg1sex8is4r1g" path="res://Misc/Buttons/PlacementButtons/OtherButtons/Button6-1.png" id="51_x2y0o"]
+[ext_resource type="Texture2D" uid="uid://dkwydmu8kbxl2" path="res://Misc/Buttons/PlacementButtons/OtherButtons/ButtonExpand.png" id="52_aei5n"]
+[ext_resource type="Texture2D" uid="uid://dq8atk0jxk1py" path="res://Misc/Buttons/DisabledButtons/ZeroButton.png" id="53_vafli"]
+[ext_resource type="Texture2D" uid="uid://bh6qx05hj60gc" path="res://Misc/Buttons/DisabledButtons/ZeroDisabled.png" id="54_suy35"]
+[ext_resource type="Texture2D" uid="uid://cbba7r5p4s8dl" path="res://Misc/Buttons/DisabledButtons/SixButton.png" id="55_wvqh4"]
+[ext_resource type="Texture2D" uid="uid://d4lt23tlma6qc" path="res://Misc/Buttons/DisabledButtons/SixDisabled.png" id="56_0yjxr"]
 
 [sub_resource type="GDScript" id="GDScript_wbw2b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_id0ix"]
-texture = ExtResource("2_ifosy")
+texture = ExtResource("2_tljj5")
 separation = Vector2i(11, 0)
 texture_region_size = Vector2i(89, 100)
 8:4/0 = 0
@@ -133,7 +133,19 @@ texture_region_size = Vector2i(89, 100)
 2:1/0/custom_data_0 = 4
 0:0/0 = 0
 8:1/0 = 0
-8:1/0/custom_data_0 = -1
+8:1/0/custom_data_0 = 64
+1:0/0 = 0
+1:0/0/custom_data_0 = -1
+2:0/0 = 0
+2:0/0/custom_data_0 = -2
+3:0/0 = 0
+3:0/0/custom_data_0 = -3
+4:0/0 = 0
+4:0/0/custom_data_0 = -4
+5:0/0 = 0
+5:0/0/custom_data_0 = -5
+6:0/0 = 0
+6:0/0/custom_data_0 = -6
 
 [sub_resource type="TileSet" id="TileSet_64ccv"]
 tile_shape = 3
@@ -144,26 +156,26 @@ sources/0 = SubResource("TileSetAtlasSource_id0ix")
 script = SubResource("GDScript_wbw2b")
 
 [sub_resource type="Theme" id="Theme_ri7nl"]
-Button/fonts/font = ExtResource("5_ifosy")
+Button/fonts/font = ExtResource("6_kyo17")
 Label/colors/font_color = Color(0, 0, 0, 1)
 Label/font_sizes/font_size = 90
-Label/fonts/font = ExtResource("5_ifosy")
+Label/fonts/font = ExtResource("6_kyo17")
 
-[node name="PuzzleStart" type="Node2D" unique_id=1238033591]
-script = ExtResource("1_bau5w")
+[node name="PuzzleEditor" type="Node2D" unique_id=1238033591]
+script = ExtResource("1_tljj5")
 
 [node name="PuzzleBaseLayer" type="TileMapLayer" parent="." unique_id=1992048798]
 unique_name_in_owner = true
 position = Vector2(203.39993, -67.50003)
 tile_set = SubResource("TileSet_64ccv")
-script = ExtResource("3_ri7nl")
+script = ExtResource("3_oo1l2")
 metadata/_custom_type_script = "uid://buj6ft1vvdf2f"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1530048648]
-script = ExtResource("4_fu5wo")
+script = ExtResource("4_nc3ip")
 
 [node name="PuzzleMenu" type="CanvasLayer" parent="." unique_id=2004726587]
-script = ExtResource("5_ri7nl")
+script = ExtResource("5_804aa")
 
 [node name="TopLeft" type="HBoxContainer" parent="PuzzleMenu" unique_id=2031044140]
 offset_left = 50.0
@@ -176,7 +188,7 @@ theme = SubResource("Theme_ri7nl")
 z_index = 1
 layout_mode = 2
 size_flags_horizontal = 3
-theme = ExtResource("7_fu5wo")
+theme = ExtResource("7_pjvge")
 theme_override_constants/separation = 50
 
 [node name="Save" type="Button" parent="PuzzleMenu/TopLeft/Buttons" unique_id=629144684]
@@ -203,29 +215,29 @@ offset_bottom = 470.0
 
 [node name="SaveSlot1" type="Button" parent="PuzzleMenu/TopLeft/SaveLoadBG/SaveCont" unique_id=1297921625]
 layout_mode = 2
-theme = ExtResource("7_fu5wo")
+theme = ExtResource("7_pjvge")
 text = "Slot 1
 "
 
 [node name="SaveSlot2" type="Button" parent="PuzzleMenu/TopLeft/SaveLoadBG/SaveCont" unique_id=1822270698]
 layout_mode = 2
-theme = ExtResource("7_fu5wo")
+theme = ExtResource("7_pjvge")
 text = "Slot 2
 "
 
 [node name="SaveSlot3" type="Button" parent="PuzzleMenu/TopLeft/SaveLoadBG/SaveCont" unique_id=703887511]
 layout_mode = 2
-theme = ExtResource("7_fu5wo")
+theme = ExtResource("7_pjvge")
 text = "Slot 3"
 
 [node name="SaveSlot4" type="Button" parent="PuzzleMenu/TopLeft/SaveLoadBG/SaveCont" unique_id=259221186]
 layout_mode = 2
-theme = ExtResource("7_fu5wo")
+theme = ExtResource("7_pjvge")
 text = "Slot 4"
 
 [node name="SaveSlot5" type="Button" parent="PuzzleMenu/TopLeft/SaveLoadBG/SaveCont" unique_id=276298162]
 layout_mode = 2
-theme = ExtResource("7_fu5wo")
+theme = ExtResource("7_pjvge")
 text = "Slot 5"
 
 [node name="HSeparator" type="HSeparator" parent="PuzzleMenu/TopLeft/SaveLoadBG/SaveCont" unique_id=1890285092]
@@ -236,7 +248,7 @@ size_flags_vertical = 3
 layout_mode = 2
 offset_transform_position = Vector2(0, 15)
 offset_transform_visual_only = false
-theme = ExtResource("7_fu5wo")
+theme = ExtResource("7_pjvge")
 text = "Exit Saving"
 
 [node name="LoadCont" type="VBoxContainer" parent="PuzzleMenu/TopLeft/SaveLoadBG" unique_id=1833088040]
@@ -249,29 +261,29 @@ offset_bottom = 470.0
 
 [node name="LoadSlot1" type="Button" parent="PuzzleMenu/TopLeft/SaveLoadBG/LoadCont" unique_id=1213807612]
 layout_mode = 2
-theme = ExtResource("7_fu5wo")
+theme = ExtResource("7_pjvge")
 text = "Slot 1
 "
 
 [node name="LoadSlot2" type="Button" parent="PuzzleMenu/TopLeft/SaveLoadBG/LoadCont" unique_id=1850549113]
 layout_mode = 2
-theme = ExtResource("7_fu5wo")
+theme = ExtResource("7_pjvge")
 text = "Slot 2
 "
 
 [node name="LoadSlot3" type="Button" parent="PuzzleMenu/TopLeft/SaveLoadBG/LoadCont" unique_id=1831760402]
 layout_mode = 2
-theme = ExtResource("7_fu5wo")
+theme = ExtResource("7_pjvge")
 text = "Slot 3"
 
 [node name="LoadSlot4" type="Button" parent="PuzzleMenu/TopLeft/SaveLoadBG/LoadCont" unique_id=604941923]
 layout_mode = 2
-theme = ExtResource("7_fu5wo")
+theme = ExtResource("7_pjvge")
 text = "Slot 4"
 
 [node name="LoadSlot5" type="Button" parent="PuzzleMenu/TopLeft/SaveLoadBG/LoadCont" unique_id=665497980]
 layout_mode = 2
-theme = ExtResource("7_fu5wo")
+theme = ExtResource("7_pjvge")
 text = "Slot 5"
 
 [node name="HSeparator" type="HSeparator" parent="PuzzleMenu/TopLeft/SaveLoadBG/LoadCont" unique_id=1654695631]
@@ -282,7 +294,7 @@ size_flags_vertical = 3
 layout_mode = 2
 offset_transform_position = Vector2(0, 15)
 offset_transform_visual_only = false
-theme = ExtResource("7_fu5wo")
+theme = ExtResource("7_pjvge")
 text = "Exit Loading"
 
 [node name="BottomLeft" type="HBoxContainer" parent="PuzzleMenu" unique_id=1209912280]
@@ -295,7 +307,7 @@ theme = SubResource("Theme_ri7nl")
 [node name="Buttons" type="VBoxContainer" parent="PuzzleMenu/BottomLeft" unique_id=15915904]
 z_index = 1
 layout_mode = 2
-theme = ExtResource("7_fu5wo")
+theme = ExtResource("7_pjvge")
 theme_override_constants/separation = 50
 alignment = 2
 
@@ -329,12 +341,12 @@ alignment = 2
 [node name="MenuButton" type="TextureButton" parent="PuzzleMenu/TopRight/Menu" unique_id=660321327]
 layout_mode = 2
 toggle_mode = true
-texture_normal = ExtResource("9_rcetb")
+texture_normal = ExtResource("8_0f1nv")
 
 [node name="NumberButtons" type="VBoxContainer" parent="PuzzleMenu/TopRight" unique_id=406033973]
 visible = false
 layout_mode = 2
-script = ExtResource("10_d48ln")
+script = ExtResource("9_qj8yn")
 
 [node name="OneButtons" type="HBoxContainer" parent="PuzzleMenu/TopRight/NumberButtons" unique_id=2078481281]
 layout_mode = 2
@@ -346,31 +358,31 @@ layout_mode = 2
 
 [node name="Button1-6" type="TextureButton" parent="PuzzleMenu/TopRight/NumberButtons/OneButtons/OneSubButtons" unique_id=737279042]
 layout_mode = 2
-texture_normal = ExtResource("10_bjplc")
+texture_normal = ExtResource("10_leieo")
 
 [node name="Button1-5" type="TextureButton" parent="PuzzleMenu/TopRight/NumberButtons/OneButtons/OneSubButtons" unique_id=13110325]
 layout_mode = 2
-texture_normal = ExtResource("11_d48ln")
+texture_normal = ExtResource("11_rxr8t")
 
 [node name="Button1-4" type="TextureButton" parent="PuzzleMenu/TopRight/NumberButtons/OneButtons/OneSubButtons" unique_id=2059825102]
 layout_mode = 2
-texture_normal = ExtResource("12_brqtx")
+texture_normal = ExtResource("12_qudsn")
 
 [node name="Button1-3" type="TextureButton" parent="PuzzleMenu/TopRight/NumberButtons/OneButtons/OneSubButtons" unique_id=336855998]
 layout_mode = 2
-texture_normal = ExtResource("13_iqt6y")
+texture_normal = ExtResource("13_22r7j")
 
 [node name="Button1-2" type="TextureButton" parent="PuzzleMenu/TopRight/NumberButtons/OneButtons/OneSubButtons" unique_id=401334610]
 layout_mode = 2
-texture_normal = ExtResource("14_8mf48")
+texture_normal = ExtResource("14_ccp8m")
 
 [node name="Button1-1" type="TextureButton" parent="PuzzleMenu/TopRight/NumberButtons/OneButtons/OneSubButtons" unique_id=670163870]
 layout_mode = 2
-texture_normal = ExtResource("15_ygggp")
+texture_normal = ExtResource("15_xnpql")
 
 [node name="Button1" type="TextureButton" parent="PuzzleMenu/TopRight/NumberButtons/OneButtons" unique_id=632641339]
 layout_mode = 2
-texture_normal = ExtResource("10_0geiw")
+texture_normal = ExtResource("16_ho05q")
 
 [node name="TwoButtons" type="HBoxContainer" parent="PuzzleMenu/TopRight/NumberButtons" unique_id=170418154]
 layout_mode = 2
@@ -382,31 +394,31 @@ layout_mode = 2
 
 [node name="Button2-6" type="TextureButton" parent="PuzzleMenu/TopRight/NumberButtons/TwoButtons/TwoSubButtons" unique_id=1829627407]
 layout_mode = 2
-texture_normal = ExtResource("17_d2hf0")
+texture_normal = ExtResource("17_rb8pf")
 
 [node name="Button2-5" type="TextureButton" parent="PuzzleMenu/TopRight/NumberButtons/TwoButtons/TwoSubButtons" unique_id=1405011988]
 layout_mode = 2
-texture_normal = ExtResource("18_pyfps")
+texture_normal = ExtResource("18_bir5d")
 
 [node name="Button2-4" type="TextureButton" parent="PuzzleMenu/TopRight/NumberButtons/TwoButtons/TwoSubButtons" unique_id=639480414]
 layout_mode = 2
-texture_normal = ExtResource("19_qdrnf")
+texture_normal = ExtResource("19_5dnsm")
 
 [node name="Button2-3" type="TextureButton" parent="PuzzleMenu/TopRight/NumberButtons/TwoButtons/TwoSubButtons" unique_id=512351527]
 layout_mode = 2
-texture_normal = ExtResource("20_c7cro")
+texture_normal = ExtResource("20_by7ow")
 
 [node name="Button2-2" type="TextureButton" parent="PuzzleMenu/TopRight/NumberButtons/TwoButtons/TwoSubButtons" unique_id=2019046650]
 layout_mode = 2
-texture_normal = ExtResource("21_50p8m")
+texture_normal = ExtResource("21_ux50u")
 
 [node name="Button2-1" type="TextureButton" parent="PuzzleMenu/TopRight/NumberButtons/TwoButtons/TwoSubButtons" unique_id=1201745972]
 layout_mode = 2
-texture_normal = ExtResource("22_i57bj")
+texture_normal = ExtResource("22_gmhj5")
 
 [node name="Button2" type="TextureButton" parent="PuzzleMenu/TopRight/NumberButtons/TwoButtons" unique_id=1895684100]
 layout_mode = 2
-texture_normal = ExtResource("11_8x6ae")
+texture_normal = ExtResource("23_fvney")
 
 [node name="ThreeButtons" type="HBoxContainer" parent="PuzzleMenu/TopRight/NumberButtons" unique_id=1558454405]
 layout_mode = 2
@@ -418,31 +430,31 @@ layout_mode = 2
 
 [node name="Button3-6" type="TextureButton" parent="PuzzleMenu/TopRight/NumberButtons/ThreeButtons/ThreeSubButtons" unique_id=1754942522]
 layout_mode = 2
-texture_normal = ExtResource("24_j4uqv")
+texture_normal = ExtResource("24_br3k1")
 
 [node name="Button3-5" type="TextureButton" parent="PuzzleMenu/TopRight/NumberButtons/ThreeButtons/ThreeSubButtons" unique_id=355601049]
 layout_mode = 2
-texture_normal = ExtResource("25_ge38y")
+texture_normal = ExtResource("25_baiw5")
 
 [node name="Button3-4" type="TextureButton" parent="PuzzleMenu/TopRight/NumberButtons/ThreeButtons/ThreeSubButtons" unique_id=1713826737]
 layout_mode = 2
-texture_normal = ExtResource("26_puktc")
+texture_normal = ExtResource("26_splo2")
 
 [node name="Button3-3" type="TextureButton" parent="PuzzleMenu/TopRight/NumberButtons/ThreeButtons/ThreeSubButtons" unique_id=500884960]
 layout_mode = 2
-texture_normal = ExtResource("27_5hb74")
+texture_normal = ExtResource("27_t5ugo")
 
 [node name="Button3-2" type="TextureButton" parent="PuzzleMenu/TopRight/NumberButtons/ThreeButtons/ThreeSubButtons" unique_id=767671679]
 layout_mode = 2
-texture_normal = ExtResource("28_1rjvv")
+texture_normal = ExtResource("28_ay2vd")
 
 [node name="Button3-1" type="TextureButton" parent="PuzzleMenu/TopRight/NumberButtons/ThreeButtons/ThreeSubButtons" unique_id=1566911179]
 layout_mode = 2
-texture_normal = ExtResource("29_pwiap")
+texture_normal = ExtResource("29_1pco1")
 
 [node name="Button3" type="TextureButton" parent="PuzzleMenu/TopRight/NumberButtons/ThreeButtons" unique_id=465434905]
 layout_mode = 2
-texture_normal = ExtResource("12_ushwr")
+texture_normal = ExtResource("30_g6e71")
 
 [node name="FourButtons" type="HBoxContainer" parent="PuzzleMenu/TopRight/NumberButtons" unique_id=112731432]
 layout_mode = 2
@@ -454,43 +466,43 @@ layout_mode = 2
 
 [node name="Button4-9" type="TextureButton" parent="PuzzleMenu/TopRight/NumberButtons/FourButtons/FourSubButtons" unique_id=2007543349]
 layout_mode = 2
-texture_normal = ExtResource("31_42c63")
+texture_normal = ExtResource("31_5nuh3")
 
 [node name="Button4-8" type="TextureButton" parent="PuzzleMenu/TopRight/NumberButtons/FourButtons/FourSubButtons" unique_id=1452551711]
 layout_mode = 2
-texture_normal = ExtResource("32_awejq")
+texture_normal = ExtResource("32_tmn6r")
 
 [node name="Button4-7" type="TextureButton" parent="PuzzleMenu/TopRight/NumberButtons/FourButtons/FourSubButtons" unique_id=449176902]
 layout_mode = 2
-texture_normal = ExtResource("33_1wjuy")
+texture_normal = ExtResource("33_wsfxq")
 
 [node name="Button4-6" type="TextureButton" parent="PuzzleMenu/TopRight/NumberButtons/FourButtons/FourSubButtons" unique_id=513950366]
 layout_mode = 2
-texture_normal = ExtResource("34_3nblv")
+texture_normal = ExtResource("34_5bolf")
 
 [node name="Button4-5" type="TextureButton" parent="PuzzleMenu/TopRight/NumberButtons/FourButtons/FourSubButtons" unique_id=779173039]
 layout_mode = 2
-texture_normal = ExtResource("35_7unr7")
+texture_normal = ExtResource("35_gqd1i")
 
 [node name="Button4-4" type="TextureButton" parent="PuzzleMenu/TopRight/NumberButtons/FourButtons/FourSubButtons" unique_id=1619898719]
 layout_mode = 2
-texture_normal = ExtResource("36_yyc4v")
+texture_normal = ExtResource("36_ubm3g")
 
 [node name="Button4-3" type="TextureButton" parent="PuzzleMenu/TopRight/NumberButtons/FourButtons/FourSubButtons" unique_id=339623702]
 layout_mode = 2
-texture_normal = ExtResource("37_2601v")
+texture_normal = ExtResource("37_bcfvp")
 
 [node name="Button4-2" type="TextureButton" parent="PuzzleMenu/TopRight/NumberButtons/FourButtons/FourSubButtons" unique_id=1542175426]
 layout_mode = 2
-texture_normal = ExtResource("38_5x2sd")
+texture_normal = ExtResource("38_5v6ip")
 
 [node name="Button4-1" type="TextureButton" parent="PuzzleMenu/TopRight/NumberButtons/FourButtons/FourSubButtons" unique_id=1334234672]
 layout_mode = 2
-texture_normal = ExtResource("39_77msa")
+texture_normal = ExtResource("39_7fuhr")
 
 [node name="Button4" type="TextureButton" parent="PuzzleMenu/TopRight/NumberButtons/FourButtons" unique_id=1799637272]
 layout_mode = 2
-texture_normal = ExtResource("13_xcjct")
+texture_normal = ExtResource("40_5wycc")
 
 [node name="FiveButtons" type="HBoxContainer" parent="PuzzleMenu/TopRight/NumberButtons" unique_id=1170935391]
 layout_mode = 2
@@ -502,31 +514,31 @@ layout_mode = 2
 
 [node name="Button5-6" type="TextureButton" parent="PuzzleMenu/TopRight/NumberButtons/FiveButtons/FiveSubButtons" unique_id=64524996]
 layout_mode = 2
-texture_normal = ExtResource("41_pperj")
+texture_normal = ExtResource("41_mou5b")
 
 [node name="Button5-5" type="TextureButton" parent="PuzzleMenu/TopRight/NumberButtons/FiveButtons/FiveSubButtons" unique_id=284284520]
 layout_mode = 2
-texture_normal = ExtResource("42_n35uf")
+texture_normal = ExtResource("42_akyxl")
 
 [node name="Button5-4" type="TextureButton" parent="PuzzleMenu/TopRight/NumberButtons/FiveButtons/FiveSubButtons" unique_id=238719089]
 layout_mode = 2
-texture_normal = ExtResource("43_p21vb")
+texture_normal = ExtResource("43_s4nvs")
 
 [node name="Button5-3" type="TextureButton" parent="PuzzleMenu/TopRight/NumberButtons/FiveButtons/FiveSubButtons" unique_id=1275738972]
 layout_mode = 2
-texture_normal = ExtResource("44_t76ou")
+texture_normal = ExtResource("44_kikwt")
 
 [node name="Button5-2" type="TextureButton" parent="PuzzleMenu/TopRight/NumberButtons/FiveButtons/FiveSubButtons" unique_id=988091314]
 layout_mode = 2
-texture_normal = ExtResource("45_6im7j")
+texture_normal = ExtResource("45_ldudk")
 
 [node name="Button5-1" type="TextureButton" parent="PuzzleMenu/TopRight/NumberButtons/FiveButtons/FiveSubButtons" unique_id=868181055]
 layout_mode = 2
-texture_normal = ExtResource("46_ly1gt")
+texture_normal = ExtResource("46_bxrt6")
 
 [node name="Button5" type="TextureButton" parent="PuzzleMenu/TopRight/NumberButtons/FiveButtons" unique_id=2100514393]
 layout_mode = 2
-texture_normal = ExtResource("14_nind6")
+texture_normal = ExtResource("47_cgj67")
 
 [node name="OtherButtons" type="HBoxContainer" parent="PuzzleMenu/TopRight/NumberButtons" unique_id=2073584963]
 layout_mode = 2
@@ -538,23 +550,23 @@ layout_mode = 2
 
 [node name="ButtonHole" type="TextureButton" parent="PuzzleMenu/TopRight/NumberButtons/OtherButtons/OtherSubButtons" unique_id=2022159652]
 layout_mode = 2
-texture_normal = ExtResource("48_s4kll")
+texture_normal = ExtResource("48_lulig")
 
 [node name="ButtonNull" type="TextureButton" parent="PuzzleMenu/TopRight/NumberButtons/OtherButtons/OtherSubButtons" unique_id=1093042481]
 layout_mode = 2
-texture_normal = ExtResource("49_xti5w")
+texture_normal = ExtResource("49_moet8")
 
 [node name="Button0-1" type="TextureButton" parent="PuzzleMenu/TopRight/NumberButtons/OtherButtons/OtherSubButtons" unique_id=477856346]
 layout_mode = 2
-texture_normal = ExtResource("50_lxtde")
+texture_normal = ExtResource("50_0wok4")
 
 [node name="Button6-1" type="TextureButton" parent="PuzzleMenu/TopRight/NumberButtons/OtherButtons/OtherSubButtons" unique_id=1626749524]
 layout_mode = 2
-texture_normal = ExtResource("51_k3lkr")
+texture_normal = ExtResource("51_x2y0o")
 
 [node name="ButtonOther" type="TextureButton" parent="PuzzleMenu/TopRight/NumberButtons/OtherButtons" unique_id=1385564310]
 layout_mode = 2
-texture_normal = ExtResource("15_h2p4p")
+texture_normal = ExtResource("52_aei5n")
 
 [node name="BottomRight" type="HBoxContainer" parent="PuzzleMenu" unique_id=2013096846]
 offset_left = 1403.0
@@ -567,14 +579,14 @@ alignment = 2
 [node name="DisableZeros" type="TextureButton" parent="PuzzleMenu/BottomRight" unique_id=379044379]
 layout_mode = 2
 toggle_mode = true
-texture_normal = ExtResource("9_tyf1b")
-texture_pressed = ExtResource("10_1j7lq")
+texture_normal = ExtResource("53_vafli")
+texture_pressed = ExtResource("54_suy35")
 
 [node name="DisableSixes" type="TextureButton" parent="PuzzleMenu/BottomRight" unique_id=633297242]
 layout_mode = 2
 toggle_mode = true
-texture_normal = ExtResource("11_btkv1")
-texture_pressed = ExtResource("12_ey4dr")
+texture_normal = ExtResource("55_wvqh4")
+texture_pressed = ExtResource("56_0yjxr")
 
 [connection signal="pressed" from="PuzzleMenu/TopLeft/Buttons/Save" to="PuzzleMenu" method="_on_save_pressed"]
 [connection signal="pressed" from="PuzzleMenu/TopLeft/Buttons/Load" to="PuzzleMenu" method="_on_load_pressed"]

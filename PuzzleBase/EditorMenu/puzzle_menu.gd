@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-@onready var tilemap = $/root/PuzzleStart/PuzzleBaseLayer
+@onready var tilemap = $/root/PuzzleEditor/PuzzleBaseLayer
 
 # Called when the node enters the scene tree for the first time.
 #func _ready() -> void:
@@ -10,7 +10,55 @@ extends CanvasLayer
 #func _process(_delta: float) -> void:
 #	pass
 
-func saveJSON(filepath: String):
+func saveHughes(filename: String) -> void:
+	var filepath = "user://SaveDataHughes"
+
+	if not DirAccess.dir_exists_absolute(filepath):
+		var error = DirAccess.make_dir_recursive_absolute(filepath)
+		if error != OK:
+			print("Failed to create directory: ", error)
+		else:
+			print("Directory created!")
+	else:
+		print("Directory already exists.")
+	
+	filepath += '/' + filename + ".hex"
+	var tiles = ""
+	
+	var size = 3
+	for ring in range(size):
+		var hexes = tilemap.cube_ring(Vector3i(0, 0, 0), ring)
+		for cell in hexes:
+			cell = tilemap.cube_to_map(cell)
+			var source_id = tilemap.get_cell_source_id(cell)
+			
+			if source_id == -1:
+				continue
+			
+			var atlas_coords = tilemap.get_cell_atlas_coords(cell) #hypothetically unneeded due to IntNodes, but its a very small file already & makes runtime faster
+			#var source = tilemap.tile_set.get_source(source_id)
+			tiles = (tiles + str(atlas_coords.y) + ' ')
+	#print(tiles)
+	var file = FileAccess.open(filepath, FileAccess.WRITE) 
+	if file:
+		file.store_string(tiles)
+		file.close()
+
+func saveJSON(filename: String) -> void:
+	var filepath = "user://SaveData"
+
+	if not DirAccess.dir_exists_absolute(filepath):
+		var error = DirAccess.make_dir_recursive_absolute(filepath)
+		if error != OK:
+			print("Failed to create directory: ", error)
+		#else:
+			#print("Directory created!")
+	#else:
+		#print("Directory already exists.")
+	
+	filepath += '/' + filename + ".json"
+	print(filepath)
+	
 	var tiles := []
 	
 	for cell in tilemap.get_used_cells():
@@ -51,19 +99,20 @@ func _on_save_pressed():
 	$TopLeft/SaveLoadBG/SaveCont.visible = true
 
 func _on_save_slot_1_pressed() -> void:
-	saveJSON("user://SaveData/slot1.json")
+	saveJSON("slot1")
 func _on_save_slot_2_pressed() -> void:
-	saveJSON("user://SaveData/slot2.json")
+	saveJSON("slot2")
 func _on_save_slot_3_pressed() -> void:
-	saveJSON("user://SaveData/slot3.json")
+	saveJSON("slot3")
 func _on_save_slot_4_pressed() -> void:
-	saveJSON("user://SaveData/slot4.json")
+	saveJSON("slot4")
 func _on_save_slot_5_pressed() -> void:
-	saveJSON("user://SaveData/slot5.json")
+	saveJSON("slot5")
 
 
-func loadJSON(filepath: String):
+func loadJSON(filename: String):
 	# Reading from the file at /home/daniel/.local/share/godot/app_userdata/
+	var filepath = "user://SaveData/" + filename + ".json"
 	tilemap.clear()
 	if FileAccess.file_exists(filepath):
 		var file = FileAccess.open(filepath, FileAccess.READ)
@@ -88,15 +137,15 @@ func _on_load_pressed() -> void:
 	$TopLeft/SaveLoadBG/LoadCont.visible = true
 
 func _on_load_slot_1_pressed() -> void:
-	loadJSON("user://SaveData/slot1.json")
+	loadJSON("slot1")
 func _on_load_slot_2_pressed() -> void:
-	loadJSON("user://SaveData/slot2.json")
+	loadJSON("slot2")
 func _on_load_slot_3_pressed() -> void:
-	loadJSON("user://SaveData/slot3.json")
+	loadJSON("slot3")
 func _on_load_slot_4_pressed() -> void:
-	loadJSON("user://SaveData/slot4.json")
+	loadJSON("slot4")
 func _on_load_slot_5_pressed() -> void:
-	loadJSON("user://SaveData/slot5.json")
+	loadJSON("slot5")
 
 
 func _on_back_pressed() -> void:
@@ -105,8 +154,6 @@ func _on_back_pressed() -> void:
 
 func _on_return_pressed() -> void:
 	get_tree().change_scene_to_file("uid://c4kk82bvm81ni")
-
-
 
 func menuOpening(userChoice: int):
 	var oneSubmenu = $TopRight/NumberButtons/OneButtons/OneSubButtons
