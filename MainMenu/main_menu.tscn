@@ -85,11 +85,9 @@ theme_override_font_sizes/font_size = 75
 text = "Back"
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1748961142]
-custom_minimum_size = Vector2(2400, 1350)
-offset_left = -240.0
-offset_top = -135.0
-offset_right = 2160.0
-offset_bottom = 1215.0
+custom_minimum_size = Vector2(1920, 1080)
+offset_right = 1920.0
+offset_bottom = 1080.0
 mouse_filter = 2
 color = Color(0.9411765, 0.8784314, 0.8627451, 1)
 

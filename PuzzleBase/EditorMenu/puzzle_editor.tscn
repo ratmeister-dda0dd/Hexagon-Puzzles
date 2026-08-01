@@ -171,6 +171,14 @@ tile_set = SubResource("TileSet_64ccv")
 script = ExtResource("3_oo1l2")
 metadata/_custom_type_script = "uid://buj6ft1vvdf2f"
 
+[node name="PuzzleSolvingLayer" type="TileMapLayer" parent="." unique_id=1290241646]
+unique_name_in_owner = true
+visible = false
+position = Vector2(203.39993, -67.50003)
+tile_set = SubResource("TileSet_64ccv")
+script = ExtResource("3_oo1l2")
+metadata/_custom_type_script = "uid://buj6ft1vvdf2f"
+
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1530048648]
 script = ExtResource("4_nc3ip")
 

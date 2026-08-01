@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var tilemap = $PuzzleBaseLayer
+@onready var tilemapSolving = $PuzzleSolvingLayer
 @onready var sideLen = $PuzzleMenu/BottomLeft/Buttons/UserSize
 #@onready var disable6s = $PuzzleMenu/BottomRight/DisableSixes
 #@onready var disable0s = $PuzzleMenu/BottomRight/DisableZeros
@@ -32,18 +33,19 @@ func buildTileDict():
 	#var layer_name = "IntNodes"
 	
 	# Takes each id in the tileset & saves its source & data.
-	for source_id in tileset.get_source_count():
-		var source = tileset.get_source(source_id)
-		if source is TileSetAtlasSource:
-			for i in range(source.get_tiles_count()):
-				var coords = source.get_tile_id(i)
-				var data = source.get_tile_data(coords, 0)
-				
-				# Using the data we save the IntNode values to a dict as the keys to atlas coords.
-				if data:
-					var id = data.get_custom_data("IntNodes")
-					if id != null:
-						tileDict[id] = {"source_id": source_id, "coords": coords}
+	#for source_id in tileset.get_source_count():
+		#print(source_id)
+	var source = tileset.get_source(0) #originally source_id
+		#if source is TileSetAtlasSource:
+	for i in range(source.get_tiles_count()):
+		var coords = source.get_tile_id(i)
+		var data = source.get_tile_data(coords, 0)
+		
+		# Using the data we save the IntNode values to a dict as the keys to atlas coords.
+		if data:
+			var id = data.get_custom_data("IntNodes")
+			if id != null:
+				tileDict[id] = {"coords": coords} #"source_id": source_id,
 
 # Takes an integer representation of a hex & turns it into an array of statuses.
 func int2NodeVals(hex: int):
@@ -82,7 +84,7 @@ func setAllowedTiles(allowed: Array):
 	return totalTiles
 
 # Will return valid Atlas Cords
-func placeValidHex(cell, lowBound: int = 0, highBound: int = 6, restrictions: Array = [0, 0, 0, 0, 0, 0]):
+func placeValidHex(cell: Vector3i, size: int, lowBound: int = 0, highBound: int = 6, restrictions: Array = [0, 0, 0, 0, 0, 0]):
 	# Restricts the total tiles we look at to the ones fitting the min  max valid values
 	#print(lowBound, ' ', highBound, ' ', restrictions)
 	var bound: Array[bool] = [false, false, false, false, false, false, false]
@@ -191,15 +193,6 @@ func invalidAdjacency(cell: Vector3i, toCheck: Array[bool] = [true, true, true, 
 	#print('EXITED INVALID')
 	return false
 
-# Debug function to test if the IntNode layer works.
-func printTileVals() -> void:
-	# Returns the value of IntNode layer when you hover over it.
-	var clicked_cell = tilemap.local_to_map(tilemap.get_local_mouse_position())
-	var data = tilemap.get_cell_tile_data(clicked_cell)
-	print(clicked_cell)
-	if data:
-		print(data.get_custom_data("IntNode"))
-
 func _ready() -> void:
 	# Builds a dictonary that uses source ID or node value as a key for atlas coords.
 	tileset = tilemap.tile_set
@@ -207,7 +200,13 @@ func _ready() -> void:
 	#Note that set_cell works like set_cell(cords in tilemap, id (always 0 for me), cords in the tileset (0,0) = 0, (0,1) = 1
 	
 	if false:
-		var filepath = "user://SaveDataHughes.hex"
+		var solutions: Array[int] = []
+		solutions.resize(10000)
+		for x in range(10000):
+			solutions[x] = 0
+			
+		var filepath = "user://solutionsCnt.txt"
+		#var filepath = "user://HughesHex.hex"
 		var file = FileAccess.open(filepath, FileAccess.WRITE) 
 		for map in range(10000):
 			$PuzzleMenu/BottomLeft/Buttons/BadPuzzle.visible = false
@@ -245,10 +244,14 @@ func _ready() -> void:
 				
 				# Finds a hexagon that fits & places it.
 				#print(lowBound, ' ', highBound, ' ', restrictions)
-				if !placeValidHex(cell, lowBound, highBound, restrictions):
+				if !placeValidHex(cell, customSize, lowBound, highBound, restrictions):
 					$PuzzleMenu/BottomLeft/Buttons/BadPuzzle.visible = true
-			var tiles = ""
 			
+			var solution = solvePuzzle(spiral)
+			print(solution)
+			solutions[solution] += 1
+			'''
+			var tiles = ""
 			var size = 3
 			for ring in range(size):
 				var hexes = tilemap.cube_ring(Vector3i(0, 0, 0), ring)
@@ -263,10 +266,14 @@ func _ready() -> void:
 					var source = tilemap.tile_set.get_source(source_id)
 					tiles = (tiles + str(atlas_coords.y) + ' ')
 			#print(tiles)
+			'''
 			
-			if file:
-				file.store_string(tiles + '\n')
+		if file:
+			#file.store_string(tiles + '\n')
+			for val in range(10000):
+				file.store_string(str(solutions[val]) + '\n')
 		file.close()
+		
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(_delta: float) -> void:
@@ -310,5 +317,84 @@ func _on_generate_pressed() -> void:
 		
 		# Finds a hexagon that fits & places it.
 		#print(lowBound, ' ', highBound, ' ', restrictions)
-		if !placeValidHex(cell, lowBound, highBound, restrictions):
+		if !placeValidHex(cell, customSize, lowBound, highBound, restrictions):
 			$PuzzleMenu/BottomLeft/Buttons/BadPuzzle.visible = true
+	#print(spiral)
+	#print("There are ", solvePuzzle(spiral), ' solutions.')
+	
+# Solves puzzle to check validity
+func solvePuzzle(hexes: Array[Vector3i], pos: int = 0, solutions: int = 0):
+	#print(solutions)
+	
+	# Checks if we finished yet & if so, adds one to our solutions (our base case).
+	if pos >= hexes.size():
+		#print("base case reached")
+		solutions += 1
+		return solutions
+		
+		
+	# We see the hexagon at current position & its restrictions
+	var restrictions: Array[int] = [0, 0, 0, 0, 0, 0]
+	var hexPos = tilemap.cube_to_map(hexes[pos]) #regular tilemap (not solving)
+	var hexVal = tilemap.get_cell_atlas_coords(hexPos)[1]
+	#var tiledata = tilemap.get_cell_tile_data(hexPos)
+	var neighbors = tilemapSolving.cube_neighbors(hexes[pos])
+	for neighborPos in range(6):
+		var vectorCoords = tilemapSolving.cube_to_map(neighbors[neighborPos])
+		var neighborTiledata = tilemapSolving.get_cell_tile_data(vectorCoords)
+		if neighborTiledata:
+			restrictions = findRestrictions(neighborPos, neighborTiledata, restrictions)
+	
+	# Determines which tileset we will be useing based on the number that we draw
+	var totalTiles: Array[int]
+	var tileChoices: int
+	match hexVal:
+		0:
+			tileChoices = 1
+			totalTiles = zeroTiles
+		1:
+			tileChoices = 6
+			totalTiles = oneTiles
+		2:
+			tileChoices = 6
+			totalTiles = twoTiles
+		3:
+			tileChoices = 6
+			totalTiles = threeTiles
+		4:
+			tileChoices = 9
+			totalTiles = fourTiles
+		5:
+			tileChoices = 6
+			totalTiles = fiveTiles
+		6:
+			tileChoices = 1
+			totalTiles = sixTiles
+	
+	# Sets the current cell to one of the valid hex permutations
+	for choice in range(tileChoices):
+		var hexAtlas = Vector2i(choice, hexVal)
+		var tileset = tilemap.tile_set
+		var source = tileset.get_source(0) as TileSetAtlasSource
+		var tile_data = source.get_tile_data(hexAtlas, 0) # 0 = alternative tile
+		
+		var hexNodes = int2NodeVals(tile_data.get_custom_data("IntNodes"))
+		
+		
+		#print(Vector2i(choice, hexVal))
+		var fits = true
+		for i in range(6):
+			if restrictions[i] and restrictions[i] != hexNodes[i]:
+				#print(restrictions[i], ' ', randTileVals)
+				fits = false
+				break
+				
+		if fits:
+			pos += 1
+			tilemapSolving.set_cell(hexPos, 0, hexAtlas) #(location on map, layer, location in tileset)
+			solutions = solvePuzzle(hexes, pos, solutions)
+			pos -= 1
+	tilemapSolving.set_cell(hexPos) #(location on map, layer, location in tileset)
+	return solutions
+
+	
