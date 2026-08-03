@@ -193,64 +193,61 @@ func invalidAdjacency(cell: Vector3i, toCheck: Array[bool] = [true, true, true, 
 	#print('EXITED INVALID')
 	return false
 
-func _ready() -> void:
-	# Builds a dictonary that uses source ID or node value as a key for atlas coords.
-	tileset = tilemap.tile_set
-	buildTileDict()
-	#Note that set_cell works like set_cell(cords in tilemap, id (always 0 for me), cords in the tileset (0,0) = 0, (0,1) = 1
+func performaceTest(puzzles: int = 10000, cutoff: int = 50):
+	var solutions: Array[int] = []
 	
-	if false:
-		var solutions: Array[int] = []
-		solutions.resize(10000)
-		for x in range(10000):
-			solutions[x] = 0
+	solutions.resize(cutoff+1)
+	for x in range(cutoff+1):
+		solutions[x] = 0
+		
+	var filepath = "user://solutionsCnt.txt"
+	#var filepath = "user://HughesHex.hex"
+	var file = FileAccess.open(filepath, FileAccess.WRITE) 
+	for map in range(puzzles):
+		tilemap.clear()
+		
+		# Sets the spiral's size to the user's input or 2 if that's not possible.
+		var customSize = 2
+		if sideLen.text.is_valid_int():
+			customSize = sideLen.text.to_int() - 1
+			if customSize < 0:
+				customSize = 2
+		var spiral = tilemap.cube_spiral(Vector3i(0,0,0), customSize) #returns a list of coords needed to spiral
+		#print(spiral)
+		
+		# Reads each coord & places the hexes.
+		for cell in spiral:
+			var neighbors = tilemap.cube_neighbors(cell)
+			var lowBound = 0
+			var highBound = 6
+			var restrictions: Array[int] = [0, 0, 0, 0, 0, 0]
+			#print(cell, ' has ', neighbors)
+			#print(neighbors[0])
 			
-		var filepath = "user://solutionsCnt.txt"
-		#var filepath = "user://HughesHex.hex"
-		var file = FileAccess.open(filepath, FileAccess.WRITE) 
-		for map in range(10000):
-			$PuzzleMenu/BottomLeft/Buttons/BadPuzzle.visible = false
-			tilemap.clear()
+			# Sets restrictions & bounds.
+			for i in range(6):
+				var vectorCoords = tilemap.cube_to_map(neighbors[i])
+				var tiledata = tilemap.get_cell_tile_data(vectorCoords)
+				if tiledata:
+					restrictions = findRestrictions(i, tiledata, restrictions)
+			for i in restrictions:
+				if i > 0:
+					lowBound += 1
+				if i < 0:
+					highBound -= 1
 			
-			# Sets the spiral's size to the user's input or 2 if that's not possible.
-			var customSize = 2
-			if sideLen.text.is_valid_int():
-				customSize = sideLen.text.to_int() - 1
-				if customSize < 0:
-					customSize = 2
-			var spiral = tilemap.cube_spiral(Vector3i(0,0,0), customSize) #returns a list of coords needed to spiral
-			#print(spiral)
-			
-			# Reads each coord & places the hexes.
-			for cell in spiral:
-				var neighbors = tilemap.cube_neighbors(cell)
-				var lowBound = 0
-				var highBound = 6
-				var restrictions: Array[int] = [0, 0, 0, 0, 0, 0]
-				#print(cell, ' has ', neighbors)
-				#print(neighbors[0])
-				
-				# Sets restrictions & bounds.
-				for i in range(6):
-					var vectorCoords = tilemap.cube_to_map(neighbors[i])
-					var tiledata = tilemap.get_cell_tile_data(vectorCoords)
-					if tiledata:
-						restrictions = findRestrictions(i, tiledata, restrictions)
-				for i in restrictions:
-					if i > 0:
-						lowBound += 1
-					if i < 0:
-						highBound -= 1
-				
-				# Finds a hexagon that fits & places it.
-				#print(lowBound, ' ', highBound, ' ', restrictions)
-				if !placeValidHex(cell, customSize, lowBound, highBound, restrictions):
-					$PuzzleMenu/BottomLeft/Buttons/BadPuzzle.visible = true
-			
-			var solution = solvePuzzle(spiral)
-			print(solution)
-			solutions[solution] += 1
-			'''
+			# Finds a hexagon that fits & places it.
+			#print(lowBound, ' ', highBound, ' ', restrictions)
+			if !placeValidHex(cell, customSize, lowBound, highBound, restrictions):
+				$PuzzleMenu/BottomLeft/Buttons/TextBox.text = "Puzzle Failed"
+				$PuzzleMenu/BottomLeft/Buttons/TextBox.visible = true
+		
+		var solution = solvePuzzle(spiral)
+		print(map)
+		if solution > cutoff:
+			solution = cutoff
+		solutions[solution] += 1
+		if false:
 			var tiles = ""
 			var size = 3
 			for ring in range(size):
@@ -266,14 +263,19 @@ func _ready() -> void:
 					var source = tilemap.tile_set.get_source(source_id)
 					tiles = (tiles + str(atlas_coords.y) + ' ')
 			#print(tiles)
-			'''
-			
-		if file:
-			#file.store_string(tiles + '\n')
-			for val in range(10000):
-				file.store_string(str(solutions[val]) + '\n')
-		file.close()
 		
+	if file:
+		#file.store_string(tiles + '\n')
+		for val in range(cutoff+1):
+			file.store_string(str(solutions[val]) + '\n')
+	file.close()
+
+func _ready() -> void:
+	# Builds a dictonary that uses source ID or node value as a key for atlas coords.
+	tileset = tilemap.tile_set
+	buildTileDict()
+	#Note that set_cell works like set_cell(cords in tilemap, id (always 0 as we only have 1 set), cords in the tileset (0,0) = 0, (0,1) = 1
+	#performaceTest()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(_delta: float) -> void:
@@ -295,33 +297,40 @@ func _on_generate_pressed() -> void:
 	#print(spiral)
 	
 	# Reads each coord & places the hexes.
-	for cell in spiral:
-		var neighbors = tilemap.cube_neighbors(cell)
-		var lowBound = 0
-		var highBound = 6
-		var restrictions: Array[int] = [0, 0, 0, 0, 0, 0]
-		#print(cell, ' has ', neighbors)
-		#print(neighbors[0])
-		
-		# Sets restrictions & bounds.
-		for i in range(6):
-			var vectorCoords = tilemap.cube_to_map(neighbors[i])
-			var tiledata = tilemap.get_cell_tile_data(vectorCoords)
-			if tiledata:
-				restrictions = findRestrictions(i, tiledata, restrictions)
-		for i in restrictions:
-			if i > 0:
-				lowBound += 1
-			if i < 0:
-				highBound -= 1
-		
-		# Finds a hexagon that fits & places it.
-		#print(lowBound, ' ', highBound, ' ', restrictions)
-		if !placeValidHex(cell, customSize, lowBound, highBound, restrictions):
-			$PuzzleMenu/BottomLeft/Buttons/TextBox.text = "Puzzle Failed"
+	var toSolve = true
+	while toSolve:
+		for cell in spiral:
+			var neighbors = tilemap.cube_neighbors(cell)
+			var lowBound = 0
+			var highBound = 6
+			var restrictions: Array[int] = [0, 0, 0, 0, 0, 0]
+			#print(cell, ' has ', neighbors)
+			#print(neighbors[0])
+			
+			# Sets restrictions & bounds.
+			for i in range(6):
+				var vectorCoords = tilemap.cube_to_map(neighbors[i])
+				var tiledata = tilemap.get_cell_tile_data(vectorCoords)
+				if tiledata:
+					restrictions = findRestrictions(i, tiledata, restrictions)
+			for i in restrictions:
+				if i > 0:
+					lowBound += 1
+				if i < 0:
+					highBound -= 1
+			
+			# Finds a hexagon that fits & places it.
+			#print(lowBound, ' ', highBound, ' ', restrictions)
+			if !placeValidHex(cell, customSize, lowBound, highBound, restrictions):
+				$PuzzleMenu/BottomLeft/Buttons/TextBox.text = "Puzzle Failed"
+			else:
+				$PuzzleMenu/BottomLeft/Buttons/TextBox.text = "Puzzle Finished"
+			$PuzzleMenu/BottomLeft/Buttons/TextBox.visible = true
+		if $PuzzleMenu/BottomLeft/Buttons/SatisfactoryToggle.button_pressed:
+			if solvePuzzle(spiral) == 1:
+				toSolve = false
 		else:
-			$PuzzleMenu/BottomLeft/Buttons/TextBox.text = "Puzzle Finished"
-		$PuzzleMenu/BottomLeft/Buttons/TextBox.visible = true
+			toSolve = false
 	
 # Solves puzzle to check validity
 func solvePuzzle(hexes: Array[Vector3i], pos: int = 0, solutions: int = 0):
