@@ -282,7 +282,7 @@ func _ready() -> void:
 
 func _on_generate_pressed() -> void:
 	# Hide the Failure label & clear the old puzzle.
-	$PuzzleMenu/BottomLeft/Buttons/BadPuzzle.visible = false
+	$PuzzleMenu/BottomLeft/Buttons/TextBox.visible = false
 	tilemap.clear()
 	
 	# Sets the spiral's size to the user's input or 2 if that's not possible.
@@ -318,9 +318,10 @@ func _on_generate_pressed() -> void:
 		# Finds a hexagon that fits & places it.
 		#print(lowBound, ' ', highBound, ' ', restrictions)
 		if !placeValidHex(cell, customSize, lowBound, highBound, restrictions):
-			$PuzzleMenu/BottomLeft/Buttons/BadPuzzle.visible = true
-	#print(spiral)
-	#print("There are ", solvePuzzle(spiral), ' solutions.')
+			$PuzzleMenu/BottomLeft/Buttons/TextBox.text = "Puzzle Failed"
+		else:
+			$PuzzleMenu/BottomLeft/Buttons/TextBox.text = "Puzzle Finished"
+		$PuzzleMenu/BottomLeft/Buttons/TextBox.visible = true
 	
 # Solves puzzle to check validity
 func solvePuzzle(hexes: Array[Vector3i], pos: int = 0, solutions: int = 0):

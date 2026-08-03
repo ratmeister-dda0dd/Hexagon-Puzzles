@@ -2,6 +2,9 @@
 
 [ext_resource type="FontFile" uid="uid://bq5c6mjko0k4c" path="res://Misc/fonts/TextFont/Imperial.otf" id="1_fcubb"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8bdhr"]
+bg_color = Color(0.9411765, 0.8784314, 0.8627451, 0.78431374)
+
 [resource]
 Button/font_sizes/font_size = 50
 Button/fonts/font = ExtResource("1_fcubb")
@@ -10,3 +13,5 @@ Label/font_sizes/font_size = 50
 Label/fonts/font = ExtResource("1_fcubb")
 LineEdit/font_sizes/font_size = 50
 LineEdit/fonts/font = ExtResource("1_fcubb")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_8bdhr")
+VBoxContainer/constants/separation = 50

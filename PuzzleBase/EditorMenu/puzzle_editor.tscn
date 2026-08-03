@@ -199,111 +199,78 @@ size_flags_horizontal = 3
 theme = ExtResource("7_pjvge")
 theme_override_constants/separation = 50
 
-[node name="Save" type="Button" parent="PuzzleMenu/TopLeft/Buttons" unique_id=629144684]
+[node name="OpenImport" type="Button" parent="PuzzleMenu/TopLeft/Buttons" unique_id=1599151511]
 layout_mode = 2
-text = "Save Puzzle"
+text = "Import"
 
-[node name="Load" type="Button" parent="PuzzleMenu/TopLeft/Buttons" unique_id=1599151511]
+[node name="OpenExport" type="Button" parent="PuzzleMenu/TopLeft/Buttons" unique_id=629144684]
 layout_mode = 2
-text = "Load Puzzle"
+text = "Export"
 
-[node name="SaveLoadBG" type="ColorRect" parent="PuzzleMenu/TopLeft" unique_id=697290006]
+[node name="ExportPanel" type="PanelContainer" parent="PuzzleMenu/TopLeft" unique_id=1427271110]
 visible = false
 layout_mode = 2
 size_flags_horizontal = 3
-color = Color(0.9411765, 0.8784314, 0.8627451, 1)
+theme = ExtResource("7_pjvge")
 
-[node name="SaveCont" type="VBoxContainer" parent="PuzzleMenu/TopLeft/SaveLoadBG" unique_id=572697344]
+[node name="ExportCont" type="VBoxContainer" parent="PuzzleMenu/TopLeft/ExportPanel" unique_id=572697344]
+layout_mode = 2
+size_flags_vertical = 4
+offset_transform_enabled = true
+offset_transform_scale = Vector2(0.9, 1)
+
+[node name="ExportFilename" type="LineEdit" parent="PuzzleMenu/TopLeft/ExportPanel/ExportCont" unique_id=305185532]
+layout_mode = 2
+placeholder_text = "Filename?"
+
+[node name="Export" type="Button" parent="PuzzleMenu/TopLeft/ExportPanel/ExportCont" unique_id=1841717711]
+layout_mode = 2
+theme = ExtResource("7_pjvge")
+text = "Export"
+
+[node name="Hughes" type="Button" parent="PuzzleMenu/TopLeft/ExportPanel/ExportCont" unique_id=1115902101]
+layout_mode = 2
+theme = ExtResource("7_pjvge")
+text = "Export .hex"
+
+[node name="BackButton" type="Button" parent="PuzzleMenu/TopLeft/ExportPanel/ExportCont" unique_id=1993819984]
+layout_mode = 2
+theme = ExtResource("7_pjvge")
+text = "Close
+"
+
+[node name="ImportPanel" type="PanelContainer" parent="PuzzleMenu/TopLeft" unique_id=1717680600]
 visible = false
-layout_mode = 0
-offset_left = 20.0
-offset_top = 20.0
-offset_right = 447.0
-offset_bottom = 470.0
-
-[node name="SaveSlot1" type="Button" parent="PuzzleMenu/TopLeft/SaveLoadBG/SaveCont" unique_id=1297921625]
 layout_mode = 2
+size_flags_horizontal = 3
 theme = ExtResource("7_pjvge")
-text = "Slot 1
-"
 
-[node name="SaveSlot2" type="Button" parent="PuzzleMenu/TopLeft/SaveLoadBG/SaveCont" unique_id=1822270698]
+[node name="ImportCont" type="VBoxContainer" parent="PuzzleMenu/TopLeft/ImportPanel" unique_id=1479422280]
 layout_mode = 2
-theme = ExtResource("7_pjvge")
-text = "Slot 2
-"
-
-[node name="SaveSlot3" type="Button" parent="PuzzleMenu/TopLeft/SaveLoadBG/SaveCont" unique_id=703887511]
-layout_mode = 2
-theme = ExtResource("7_pjvge")
-text = "Slot 3"
-
-[node name="SaveSlot4" type="Button" parent="PuzzleMenu/TopLeft/SaveLoadBG/SaveCont" unique_id=259221186]
-layout_mode = 2
-theme = ExtResource("7_pjvge")
-text = "Slot 4"
-
-[node name="SaveSlot5" type="Button" parent="PuzzleMenu/TopLeft/SaveLoadBG/SaveCont" unique_id=276298162]
-layout_mode = 2
-theme = ExtResource("7_pjvge")
-text = "Slot 5"
-
-[node name="HSeparator" type="HSeparator" parent="PuzzleMenu/TopLeft/SaveLoadBG/SaveCont" unique_id=1890285092]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="Back" type="Button" parent="PuzzleMenu/TopLeft/SaveLoadBG/SaveCont" unique_id=1993819984]
-layout_mode = 2
-offset_transform_position = Vector2(0, 15)
+size_flags_vertical = 4
+offset_transform_enabled = true
+offset_transform_scale = Vector2(0.9, 1)
 offset_transform_visual_only = false
-theme = ExtResource("7_pjvge")
-text = "Exit Saving"
 
-[node name="LoadCont" type="VBoxContainer" parent="PuzzleMenu/TopLeft/SaveLoadBG" unique_id=1833088040]
-visible = false
-layout_mode = 0
-offset_left = 20.0
-offset_top = 20.0
-offset_right = 447.0
-offset_bottom = 470.0
+[node name="FileDropdown" type="OptionButton" parent="PuzzleMenu/TopLeft/ImportPanel/ImportCont" unique_id=6099046]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+search_bar_enabled = true
 
-[node name="LoadSlot1" type="Button" parent="PuzzleMenu/TopLeft/SaveLoadBG/LoadCont" unique_id=1213807612]
+[node name="HSeparator" type="HSeparator" parent="PuzzleMenu/TopLeft/ImportPanel/ImportCont" unique_id=1736378690]
+layout_mode = 2
+theme_override_constants/separation = 71
+
+[node name="Import" type="Button" parent="PuzzleMenu/TopLeft/ImportPanel/ImportCont" unique_id=260182845]
 layout_mode = 2
 theme = ExtResource("7_pjvge")
-text = "Slot 1
+text = "Import"
+
+[node name="BackButton" type="Button" parent="PuzzleMenu/TopLeft/ImportPanel/ImportCont" unique_id=170598]
+layout_mode = 2
+theme = ExtResource("7_pjvge")
+text = "Close
 "
-
-[node name="LoadSlot2" type="Button" parent="PuzzleMenu/TopLeft/SaveLoadBG/LoadCont" unique_id=1850549113]
-layout_mode = 2
-theme = ExtResource("7_pjvge")
-text = "Slot 2
-"
-
-[node name="LoadSlot3" type="Button" parent="PuzzleMenu/TopLeft/SaveLoadBG/LoadCont" unique_id=1831760402]
-layout_mode = 2
-theme = ExtResource("7_pjvge")
-text = "Slot 3"
-
-[node name="LoadSlot4" type="Button" parent="PuzzleMenu/TopLeft/SaveLoadBG/LoadCont" unique_id=604941923]
-layout_mode = 2
-theme = ExtResource("7_pjvge")
-text = "Slot 4"
-
-[node name="LoadSlot5" type="Button" parent="PuzzleMenu/TopLeft/SaveLoadBG/LoadCont" unique_id=665497980]
-layout_mode = 2
-theme = ExtResource("7_pjvge")
-text = "Slot 5"
-
-[node name="HSeparator" type="HSeparator" parent="PuzzleMenu/TopLeft/SaveLoadBG/LoadCont" unique_id=1654695631]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="Back" type="Button" parent="PuzzleMenu/TopLeft/SaveLoadBG/LoadCont" unique_id=553630940]
-layout_mode = 2
-offset_transform_position = Vector2(0, 15)
-offset_transform_visual_only = false
-theme = ExtResource("7_pjvge")
-text = "Exit Loading"
 
 [node name="BottomLeft" type="HBoxContainer" parent="PuzzleMenu" unique_id=1209912280]
 offset_left = 50.0
@@ -316,17 +283,23 @@ theme = SubResource("Theme_ri7nl")
 z_index = 1
 layout_mode = 2
 theme = ExtResource("7_pjvge")
-theme_override_constants/separation = 50
 alignment = 2
 
-[node name="BadPuzzle" type="Label" parent="PuzzleMenu/BottomLeft/Buttons" unique_id=674147259]
+[node name="TextBox" type="Label" parent="PuzzleMenu/BottomLeft/Buttons" unique_id=674147259]
 visible = false
 layout_mode = 2
-text = "Puzzle Failed!"
+theme_override_font_sizes/font_size = 30
+text = "Placeholder"
+horizontal_alignment = 1
+
+[node name="CheckBox" type="CheckBox" parent="PuzzleMenu/BottomLeft/Buttons" unique_id=419281362]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Force Valid Puzzles"
 
 [node name="UserSize" type="LineEdit" parent="PuzzleMenu/BottomLeft/Buttons" unique_id=1546415306]
 layout_mode = 2
-placeholder_text = "Enter Size..."
+placeholder_text = "Size?"
 
 [node name="Generate" type="Button" parent="PuzzleMenu/BottomLeft/Buttons" unique_id=1188066836]
 layout_mode = 2
@@ -596,20 +569,12 @@ toggle_mode = true
 texture_normal = ExtResource("55_wvqh4")
 texture_pressed = ExtResource("56_0yjxr")
 
-[connection signal="pressed" from="PuzzleMenu/TopLeft/Buttons/Save" to="PuzzleMenu" method="_on_save_pressed"]
-[connection signal="pressed" from="PuzzleMenu/TopLeft/Buttons/Load" to="PuzzleMenu" method="_on_load_pressed"]
-[connection signal="pressed" from="PuzzleMenu/TopLeft/SaveLoadBG/SaveCont/SaveSlot1" to="PuzzleMenu" method="_on_save_slot_1_pressed"]
-[connection signal="pressed" from="PuzzleMenu/TopLeft/SaveLoadBG/SaveCont/SaveSlot2" to="PuzzleMenu" method="_on_save_slot_2_pressed"]
-[connection signal="pressed" from="PuzzleMenu/TopLeft/SaveLoadBG/SaveCont/SaveSlot3" to="PuzzleMenu" method="_on_save_slot_3_pressed"]
-[connection signal="pressed" from="PuzzleMenu/TopLeft/SaveLoadBG/SaveCont/SaveSlot4" to="PuzzleMenu" method="_on_save_slot_4_pressed"]
-[connection signal="pressed" from="PuzzleMenu/TopLeft/SaveLoadBG/SaveCont/SaveSlot5" to="PuzzleMenu" method="_on_save_slot_5_pressed"]
-[connection signal="pressed" from="PuzzleMenu/TopLeft/SaveLoadBG/SaveCont/Back" to="PuzzleMenu" method="_on_back_pressed"]
-[connection signal="pressed" from="PuzzleMenu/TopLeft/SaveLoadBG/LoadCont/LoadSlot1" to="PuzzleMenu" method="_on_load_slot_1_pressed"]
-[connection signal="pressed" from="PuzzleMenu/TopLeft/SaveLoadBG/LoadCont/LoadSlot2" to="PuzzleMenu" method="_on_load_slot_2_pressed"]
-[connection signal="pressed" from="PuzzleMenu/TopLeft/SaveLoadBG/LoadCont/LoadSlot3" to="PuzzleMenu" method="_on_load_slot_3_pressed"]
-[connection signal="pressed" from="PuzzleMenu/TopLeft/SaveLoadBG/LoadCont/LoadSlot4" to="PuzzleMenu" method="_on_load_slot_4_pressed"]
-[connection signal="pressed" from="PuzzleMenu/TopLeft/SaveLoadBG/LoadCont/LoadSlot5" to="PuzzleMenu" method="_on_load_slot_5_pressed"]
-[connection signal="pressed" from="PuzzleMenu/TopLeft/SaveLoadBG/LoadCont/Back" to="PuzzleMenu" method="_on_back_pressed"]
+[connection signal="pressed" from="PuzzleMenu/TopLeft/Buttons/OpenImport" to="PuzzleMenu" method="_on_open_import_pressed"]
+[connection signal="pressed" from="PuzzleMenu/TopLeft/Buttons/OpenExport" to="PuzzleMenu" method="_on_open_export_pressed"]
+[connection signal="pressed" from="PuzzleMenu/TopLeft/ExportPanel/ExportCont/Export" to="PuzzleMenu" method="_on_export_pressed"]
+[connection signal="pressed" from="PuzzleMenu/TopLeft/ExportPanel/ExportCont/BackButton" to="PuzzleMenu" method="_on_back_pressed"]
+[connection signal="pressed" from="PuzzleMenu/TopLeft/ImportPanel/ImportCont/Import" to="PuzzleMenu" method="_on_import_pressed"]
+[connection signal="pressed" from="PuzzleMenu/TopLeft/ImportPanel/ImportCont/BackButton" to="PuzzleMenu" method="_on_back_pressed"]
 [connection signal="pressed" from="PuzzleMenu/BottomLeft/Buttons/Generate" to="." method="_on_generate_pressed"]
 [connection signal="pressed" from="PuzzleMenu/BottomLeft/Buttons/Return" to="PuzzleMenu" method="_on_return_pressed"]
 [connection signal="pressed" from="PuzzleMenu/TopRight/Menu/MenuButton" to="PuzzleMenu" method="_on_menu_button_pressed"]
