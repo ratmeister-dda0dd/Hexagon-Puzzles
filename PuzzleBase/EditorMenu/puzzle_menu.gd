@@ -52,40 +52,6 @@ func _on_import_pressed() -> void:
 	var filename = importMenu.get_item_text(importMenu.selected)
 	importJSON(filename)
 
-func exportHughes(filename: String) -> void:
-	var filepath = "user://SaveDataHughes"
-
-	if not DirAccess.dir_exists_absolute(filepath):
-		var error = DirAccess.make_dir_recursive_absolute(filepath)
-		if error != OK:
-			print("Failed to create directory: ", error)
-		else:
-			print("Directory created!")
-	else:
-		print("Directory already exists.")
-	
-	filepath += '/' + filename + ".hex"
-	var tiles = ""
-	
-	var size = 3
-	for ring in range(size):
-		var hexes = tilemap.cube_ring(Vector3i(0, 0, 0), ring)
-		for cell in hexes:
-			cell = tilemap.cube_to_map(cell)
-			var source_id = tilemap.get_cell_source_id(cell)
-			
-			if source_id == -1:
-				continue
-			
-			var atlas_coords = tilemap.get_cell_atlas_coords(cell) #hypothetically unneeded due to IntNodes, but its a very small file already & makes runtime faster
-			#var source = tilemap.tile_set.get_source(source_id)
-			tiles = (tiles + str(atlas_coords.y) + ' ')
-	#print(tiles)
-	var file = FileAccess.open(filepath, FileAccess.WRITE) 
-	if file:
-		file.store_string(tiles)
-		file.close()
-
 func exportJSON(filename: String) -> void:
 	var filepath = "user://SaveData"
 
@@ -128,6 +94,40 @@ func exportJSON(filename: String) -> void:
 		file.close()
 	$TopLeft/ImportPanel/ImportCont/FileDropdown.add_item(filename)
 
+func exportHughes(filename: String) -> void:
+	var filepath = "user://SaveDataHughes"
+
+	if not DirAccess.dir_exists_absolute(filepath):
+		var error = DirAccess.make_dir_recursive_absolute(filepath)
+		if error != OK:
+			print("Failed to create directory: ", error)
+		else:
+			print("Directory created!")
+	else:
+		print("Directory already exists.")
+	
+	filepath += '/' + filename + ".hex"
+	var tiles = ""
+	
+	var size = 3
+	for ring in range(size):
+		var hexes = tilemap.cube_ring(Vector3i(0, 0, 0), ring)
+		for cell in hexes:
+			cell = tilemap.cube_to_map(cell)
+			var source_id = tilemap.get_cell_source_id(cell)
+			
+			if source_id == -1:
+				continue
+			
+			var atlas_coords = tilemap.get_cell_atlas_coords(cell) #hypothetically unneeded due to IntNodes, but its a very small file already & makes runtime faster
+			#var source = tilemap.tile_set.get_source(source_id)
+			tiles = (tiles + str(atlas_coords.y) + ' ')
+	#print(tiles)
+	var file = FileAccess.open(filepath, FileAccess.WRITE) 
+	if file:
+		file.store_string(tiles)
+		file.close()
+
 func _on_open_export_pressed() -> void:
 	$TopLeft/Buttons.visible = false
 	$TopLeft/ImportPanel.visible = false
@@ -140,6 +140,14 @@ func _on_export_pressed() -> void:
 		pass
 	else:
 		exportJSON(filename)
+
+func _on_hughes_pressed() -> void:
+	var filename = $TopLeft/ExportPanel/ExportCont/ExportFilename.text
+	print(filename)
+	if filename == "":
+		pass
+	else:
+		exportHughes(filename)
 
 
 func _on_back_pressed() -> void:
