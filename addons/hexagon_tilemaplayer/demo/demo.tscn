@@ -209,6 +209,152 @@ text = "Please select a method on the left to view the result."
 context_menu_enabled = true
 selection_enabled = true
 
+[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer" unique_id=1581278521]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="LeftMenu" type="VBoxContainer" parent="CanvasLayer/MarginContainer2" unique_id=1284435066]
+custom_minimum_size = Vector2(220, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+mouse_filter = 0
+mouse_force_pass_scroll_events = false
+script = ExtResource("6_tv2ty")
+
+[node name="TileLayout" type="PanelContainer" parent="CanvasLayer/MarginContainer2/LeftMenu" unique_id=1157040379]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/MarginContainer2/LeftMenu/TileLayout" unique_id=1665989740]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer2/LeftMenu/TileLayout/MarginContainer" unique_id=352222280]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/MarginContainer2/LeftMenu/TileLayout/MarginContainer/VBoxContainer" unique_id=1839787519]
+layout_mode = 2
+bbcode_enabled = true
+text = "[center]Tile Layout[/center]"
+fit_content = true
+scroll_active = false
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/MarginContainer2/LeftMenu/TileLayout/MarginContainer/VBoxContainer" unique_id=723126927]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/MarginContainer2/LeftMenu/TileLayout/MarginContainer/VBoxContainer/CenterContainer" unique_id=1124986031]
+layout_mode = 2
+
+[node name="LayoutHorizontal" type="CheckBox" parent="CanvasLayer/MarginContainer2/LeftMenu/TileLayout/MarginContainer/VBoxContainer/CenterContainer/HBoxContainer" unique_id=2032285894]
+layout_mode = 2
+focus_mode = 0
+button_group = SubResource("ButtonGroup_2pem3")
+text = "Horizontal"
+
+[node name="LayoutVertical" type="CheckBox" parent="CanvasLayer/MarginContainer2/LeftMenu/TileLayout/MarginContainer/VBoxContainer/CenterContainer/HBoxContainer" unique_id=814787546]
+layout_mode = 2
+focus_mode = 0
+button_group = SubResource("ButtonGroup_2pem3")
+text = "Vertical"
+
+[node name="TileSetLayout" type="OptionButton" parent="CanvasLayer/MarginContainer2/LeftMenu/TileLayout/MarginContainer/VBoxContainer" unique_id=1005887803]
+layout_mode = 2
+focus_mode = 0
+selected = 0
+item_count = 6
+popup/item_0/text = "Stacked"
+popup/item_0/id = 0
+popup/item_1/text = "Stacked Offset"
+popup/item_1/id = 1
+popup/item_2/text = "Stairs Right"
+popup/item_2/id = 2
+popup/item_3/text = "Stairs Down"
+popup/item_3/id = 3
+popup/item_4/text = "Diamond Right"
+popup/item_4/id = 4
+popup/item_5/text = "Diamond Down"
+popup/item_5/id = 5
+
+[node name="Options" type="PanelContainer" parent="CanvasLayer/MarginContainer2/LeftMenu" unique_id=1001853568]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/MarginContainer2/LeftMenu/Options" unique_id=668951522]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer2/LeftMenu/Options/MarginContainer" unique_id=1419554763]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/MarginContainer2/LeftMenu/Options/MarginContainer/VBoxContainer" unique_id=1128512611]
+layout_mode = 2
+bbcode_enabled = true
+text = "[center]Options[/center]"
+fit_content = true
+scroll_active = false
+
+[node name="EnablePathfinding" type="CheckButton" parent="CanvasLayer/MarginContainer2/LeftMenu/Options/MarginContainer/VBoxContainer" unique_id=832354607]
+layout_mode = 2
+focus_mode = 0
+text = "Enable Pathfinding"
+
+[node name="DisplayPathfindingConnections" type="CheckButton" parent="CanvasLayer/MarginContainer2/LeftMenu/Options/MarginContainer/VBoxContainer" unique_id=1630945229]
+layout_mode = 2
+focus_mode = 0
+text = "Display Connections"
+
+[node name="DisplayTilesCoords" type="CheckButton" parent="CanvasLayer/MarginContainer2/LeftMenu/Options/MarginContainer/VBoxContainer" unique_id=774630152]
+layout_mode = 2
+focus_mode = 0
+text = "Display Tiles Coords"
+
+[node name="MethodsTree" type="Tree" parent="CanvasLayer/MarginContainer2/LeftMenu" unique_id=566862800]
+custom_minimum_size = Vector2(220, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+focus_mode = 0
+script = ExtResource("7_3xb6e")
+
+[node name="CodeContainer" type="PanelContainer" parent="CanvasLayer/MarginContainer2" unique_id=1480924582]
+layout_mode = 2
+size_flags_horizontal = 8
+mouse_force_pass_scroll_events = false
+theme_override_styles/panel = SubResource("StyleBoxFlat_3xb6e")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/MarginContainer2/CodeContainer" unique_id=1217111933]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer2/CodeContainer/MarginContainer" unique_id=328950858]
+layout_mode = 2
+
+[node name="SampleCode" type="RichTextLabel" parent="CanvasLayer/MarginContainer2/CodeContainer/MarginContainer/VBoxContainer" unique_id=162041536]
+custom_minimum_size = Vector2(400, 300)
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 2
+bbcode_enabled = true
+text = "Please select a method on the left to view the result."
+context_menu_enabled = true
+selection_enabled = true
+
 [connection signal="pressed" from="CanvasLayer/MarginContainer/LeftMenu/TileLayout/MarginContainer/VBoxContainer/CenterContainer/HBoxContainer/LayoutHorizontal" to="CanvasLayer/MarginContainer/LeftMenu" method="_on_tile_layout_offset_horizontal_pressed"]
 [connection signal="pressed" from="CanvasLayer/MarginContainer/LeftMenu/TileLayout/MarginContainer/VBoxContainer/CenterContainer/HBoxContainer/LayoutVertical" to="CanvasLayer/MarginContainer/LeftMenu" method="_on_tile_layout_offset_vertical_pressed"]
 [connection signal="item_selected" from="CanvasLayer/MarginContainer/LeftMenu/TileLayout/MarginContainer/VBoxContainer/TileSetLayout" to="CanvasLayer/MarginContainer/LeftMenu" method="_on_tile_layout_selected"]
@@ -216,3 +362,10 @@ selection_enabled = true
 [connection signal="pressed" from="CanvasLayer/MarginContainer/LeftMenu/Options/MarginContainer/VBoxContainer/DisplayPathfindingConnections" to="CanvasLayer/MarginContainer/LeftMenu" method="update_debug_mode"]
 [connection signal="pressed" from="CanvasLayer/MarginContainer/LeftMenu/Options/MarginContainer/VBoxContainer/DisplayTilesCoords" to="CanvasLayer/MarginContainer/LeftMenu" method="update_debug_mode"]
 [connection signal="item_selected" from="CanvasLayer/MarginContainer/LeftMenu/MethodsTree" to="CanvasLayer/MarginContainer/LeftMenu/MethodsTree" method="_on_item_selected"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer2/LeftMenu/TileLayout/MarginContainer/VBoxContainer/CenterContainer/HBoxContainer/LayoutHorizontal" to="CanvasLayer/MarginContainer2/LeftMenu" method="_on_tile_layout_offset_horizontal_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer2/LeftMenu/TileLayout/MarginContainer/VBoxContainer/CenterContainer/HBoxContainer/LayoutVertical" to="CanvasLayer/MarginContainer2/LeftMenu" method="_on_tile_layout_offset_vertical_pressed"]
+[connection signal="item_selected" from="CanvasLayer/MarginContainer2/LeftMenu/TileLayout/MarginContainer/VBoxContainer/TileSetLayout" to="CanvasLayer/MarginContainer2/LeftMenu" method="_on_tile_layout_selected"]
+[connection signal="toggled" from="CanvasLayer/MarginContainer2/LeftMenu/Options/MarginContainer/VBoxContainer/EnablePathfinding" to="CanvasLayer/MarginContainer2/LeftMenu" method="_on_enable_pathfinding_toggled"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer2/LeftMenu/Options/MarginContainer/VBoxContainer/DisplayPathfindingConnections" to="CanvasLayer/MarginContainer2/LeftMenu" method="update_debug_mode"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer2/LeftMenu/Options/MarginContainer/VBoxContainer/DisplayTilesCoords" to="CanvasLayer/MarginContainer2/LeftMenu" method="update_debug_mode"]
+[connection signal="item_selected" from="CanvasLayer/MarginContainer2/LeftMenu/MethodsTree" to="CanvasLayer/MarginContainer2/LeftMenu/MethodsTree" method="_on_item_selected"]

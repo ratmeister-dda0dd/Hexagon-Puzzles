@@ -47,21 +47,28 @@ func buildTileDict():
 			if id != null:
 				tileDict[id] = {"coords": coords} #"source_id": source_id,
 
+func coordsContain(cell: Vector3i, value: int):
+	return (cell.x == value or cell.y == value or cell.z == value) and (cell.x == -value or cell.y == -value or cell.z == -value)
+
 # Takes an integer representation of a hex & turns it into an array of statuses.
-func int2NodeVals(hex: int):
+func int2Vals(hex: int, returnHex = false):
 	# Uses subtraction to determine the binary value of the int.
 	var nodes: Array[int] # (-1 = unfilled, 0 = unknown, 1 = filled)
+	var filled = 0
 	var divisor = 32
 	for i in range(6, 0, -1):
 		if hex >= divisor:
 			#print(hex, ' > ', divisor)
 			hex = hex-divisor
+			filled += 0
 			nodes.push_front(1)
 		else:
 			#print(hex, ' < ', divisor)
 			nodes.push_front(-1)
 		@warning_ignore("integer_division") #for some reason, godot throws a warning for this
 		divisor = divisor/2
+	if returnHex:
+		return filled
 	return nodes
 
 # Removes all hexagons outside of the bounds.
@@ -96,7 +103,7 @@ func placeValidHex(cell: Vector3i, size: int, lowBound: int = 0, highBound: int 
 	# Pulls a random tile from the bounded tiles that we have.
 	randomize()
 	var randTile = totalTiles[randi() % totalTiles.size()]
-	var randTileVals = int2NodeVals(randTile)
+	var randTileVals = int2Vals(randTile)
 	#print(totalTiles, ' ', randTile, ' ', randTileVals)
 	var searching = true
 	
@@ -105,7 +112,7 @@ func placeValidHex(cell: Vector3i, size: int, lowBound: int = 0, highBound: int 
 		if totalTiles.size() == 0:
 			return false
 		randTile = totalTiles[randi() % totalTiles.size()]
-		randTileVals = int2NodeVals(randTile)
+		randTileVals = int2Vals(randTile)
 		
 		# Checks it against the restrictions, if it fails searching is set to false.
 		for i in range(6):
@@ -118,14 +125,15 @@ func placeValidHex(cell: Vector3i, size: int, lowBound: int = 0, highBound: int 
 		
 		# If it doesn't fail, we place the tile, then check it doesn't create a 1, -1, 1, -1 or -1, 1, -1, 1 pattern.
 		if searching:
+			#print(int2NodeVals(randTile))
 			var tile = tileDict.get(randTile)
 			var atlasCoords = tile["coords"]
 			tilemap.set_cell(tilemap.cube_to_map(cell), 0, atlasCoords) #(location on map, layer, location in tileset)
-			if invalidAdjacency(cell):
+			if invalidAdjacency(cell) or cornerInvalid(cell, size, randTile):
 				#print(atlasCoords)
 				totalTiles.erase(randTile)
 				randTile = totalTiles[randi() % totalTiles.size()]
-				randTileVals = int2NodeVals(randTile)
+				randTileVals = int2Vals(randTile)
 			else:
 				searching = false
 		else:
@@ -137,7 +145,7 @@ func placeValidHex(cell: Vector3i, size: int, lowBound: int = 0, highBound: int 
 # Finds the nodes that are already filled in.
 func findRestrictions(pos: int, tiledata, restrictions: Array[int] = [0,0,0,0,0,0]):
 	# Uses a simple match statement. Somewhat ugly but whatever...
-	var value: Array[int] = int2NodeVals(tiledata.get_custom_data("IntNodes"))
+	var value: Array[int] = int2Vals(tiledata.get_custom_data("IntNodes"))
 	match pos:
 		0:
 			if value[4]:
@@ -191,6 +199,22 @@ func invalidAdjacency(cell: Vector3i, toCheck: Array[bool] = [true, true, true, 
 					#print('EXITED VALID', restrictions)
 					return true
 	#print('EXITED INVALID')
+	return false
+
+func cornerInvalid(cell: Vector3i, size: int, tileVal: int):
+	if coordsContain(cell, size):
+		if cell == Vector3i(size, -size, 0) and (tileVal == 1 or tileVal == 2 or tileVal == 61 or tileVal == 62):
+			return true
+		elif cell == Vector3i(size, 0, -size) and (tileVal == 2 or tileVal == 4 or tileVal == 59 or tileVal == 61):
+			return true
+		elif cell == Vector3i(0, size, -size) and (tileVal == 4 or tileVal == 8 or tileVal == 55 or tileVal == 59):
+			return true
+		elif cell == Vector3i(-2, 2, 0) and (tileVal == 8 or tileVal == 16 or tileVal == 47 or tileVal == 55):
+			return true
+		elif cell == Vector3i(-2, 0, 2) and (tileVal == 16 or tileVal == 32 or tileVal == 31 or tileVal == 47):
+			return true
+		elif cell == Vector3i(0, -2, 2) and (tileVal == 32 or tileVal == 1 or tileVal == 62 or tileVal == 31):
+			return true
 	return false
 
 func performaceTest(puzzles: int = 10000, cutoff: int = 50):
@@ -275,11 +299,10 @@ func _ready() -> void:
 	tileset = tilemap.tile_set
 	buildTileDict()
 	#Note that set_cell works like set_cell(cords in tilemap, id (always 0 as we only have 1 set), cords in the tileset (0,0) = 0, (0,1) = 1
-	#performaceTest()
+	#performaceTest(10000, 1000)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(_delta: float) -> void:
-#	#printTileVals()
 #	pass
 
 func _on_generate_pressed() -> void:
@@ -388,7 +411,7 @@ func solvePuzzle(hexes: Array[Vector3i], pos: int = 0, solutions: int = 0):
 		var source = tileset.get_source(0) as TileSetAtlasSource
 		var tile_data = source.get_tile_data(hexAtlas, 0) # 0 = alternative tile
 		
-		var hexNodes = int2NodeVals(tile_data.get_custom_data("IntNodes"))
+		var hexNodes = int2Vals(tile_data.get_custom_data("IntNodes"))
 		
 		
 		#print(Vector2i(choice, hexVal))
