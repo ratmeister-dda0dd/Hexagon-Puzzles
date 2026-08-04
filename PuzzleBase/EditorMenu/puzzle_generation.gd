@@ -51,24 +51,20 @@ func coordsContain(cell: Vector3i, value: int):
 	return (cell.x == value or cell.y == value or cell.z == value) and (cell.x == -value or cell.y == -value or cell.z == -value)
 
 # Takes an integer representation of a hex & turns it into an array of statuses.
-func int2Vals(hex: int, returnHex = false):
+func int2Vals(hex: int): 
 	# Uses subtraction to determine the binary value of the int.
 	var nodes: Array[int] # (-1 = unfilled, 0 = unknown, 1 = filled)
-	var filled = 0
 	var divisor = 32
 	for i in range(6, 0, -1):
 		if hex >= divisor:
 			#print(hex, ' > ', divisor)
 			hex = hex-divisor
-			filled += 0
 			nodes.push_front(1)
 		else:
 			#print(hex, ' < ', divisor)
 			nodes.push_front(-1)
 		@warning_ignore("integer_division") #for some reason, godot throws a warning for this
 		divisor = divisor/2
-	if returnHex:
-		return filled
 	return nodes
 
 # Removes all hexagons outside of the bounds.
@@ -121,7 +117,7 @@ func placeValidHex(cell: Vector3i, size: int, lowBound: int = 0, highBound: int 
 				searching = false
 				totalTiles.erase(randTile)
 				break
-		#print(totalTiles,randTile,randTileVals)
+		#print(totalTiles, ' to try ', randTile)#,randTileVals)
 		
 		# If it doesn't fail, we place the tile, then check it doesn't create a 1, -1, 1, -1 or -1, 1, -1, 1 pattern.
 		if searching:
@@ -139,6 +135,7 @@ func placeValidHex(cell: Vector3i, size: int, lowBound: int = 0, highBound: int 
 		else:
 			searching = true
 			
+	#print(randTile, ' at cell ', cell)
 	# If it doesn't we return true.
 	return true
 
@@ -308,7 +305,6 @@ func _ready() -> void:
 func _on_generate_pressed() -> void:
 	# Hide the Failure label & clear the old puzzle.
 	$PuzzleMenu/BottomLeft/Buttons/TextBox.visible = false
-	tilemap.clear()
 	
 	# Sets the spiral's size to the user's input or 2 if that's not possible.
 	var customSize = 2
@@ -322,6 +318,7 @@ func _on_generate_pressed() -> void:
 	# Reads each coord & places the hexes.
 	var toSolve = true
 	while toSolve:
+		tilemap.clear()
 		for cell in spiral:
 			var neighbors = tilemap.cube_neighbors(cell)
 			var lowBound = 0
@@ -349,14 +346,21 @@ func _on_generate_pressed() -> void:
 			else:
 				$PuzzleMenu/BottomLeft/Buttons/TextBox.text = "Puzzle Finished"
 			$PuzzleMenu/BottomLeft/Buttons/TextBox.visible = true
+		#print("DONE")
 		if $PuzzleMenu/BottomLeft/Buttons/SatisfactoryToggle.button_pressed:
-			if solvePuzzle(spiral) == 1:
+			var solutions = solvePuzzle(spiral)
+			if solutions == 1:
+				print('VALID')
 				toSolve = false
+			else:
+				print('INVALID ', solutions, ' SOLUTIONS EXIST')
 		else:
 			toSolve = false
 	
 # Solves puzzle to check validity
 func solvePuzzle(hexes: Array[Vector3i], pos: int = 0, solutions: int = 0):
+	if solutions > 1:
+		return solutions
 	#print(solutions)
 	
 	# Checks if we finished yet & if so, adds one to our solutions (our base case).
@@ -364,7 +368,6 @@ func solvePuzzle(hexes: Array[Vector3i], pos: int = 0, solutions: int = 0):
 		#print("base case reached")
 		solutions += 1
 		return solutions
-		
 		
 	# We see the hexagon at current position & its restrictions
 	var restrictions: Array[int] = [0, 0, 0, 0, 0, 0]
@@ -429,5 +432,3 @@ func solvePuzzle(hexes: Array[Vector3i], pos: int = 0, solutions: int = 0):
 			pos -= 1
 	tilemapSolving.set_cell(hexPos) #(location on map, layer, location in tileset)
 	return solutions
-
-	
