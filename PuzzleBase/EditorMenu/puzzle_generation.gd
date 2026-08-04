@@ -260,8 +260,8 @@ func performaceTest(puzzles: int = 10000, cutoff: int = 50):
 			# Finds a hexagon that fits & places it.
 			#print(lowBound, ' ', highBound, ' ', restrictions)
 			if !placeValidHex(cell, customSize, lowBound, highBound, restrictions):
-				$PuzzleMenu/BottomLeft/Buttons/TextBox.text = "Puzzle Failed"
-				$PuzzleMenu/BottomLeft/Buttons/TextBox.visible = true
+				$PuzzleMenu/Label.text = "Puzzle Failed"
+				$PuzzleMenu/Label.visible = true
 		
 		var solution = solvePuzzle(spiral)
 		print(map)
@@ -304,7 +304,7 @@ func _ready() -> void:
 
 func _on_generate_pressed() -> void:
 	# Hide the Failure label & clear the old puzzle.
-	$PuzzleMenu/BottomLeft/Buttons/TextBox.visible = false
+	$PuzzleMenu/Label.visible = false
 	
 	# Sets the spiral's size to the user's input or 2 if that's not possible.
 	var customSize = 2
@@ -342,20 +342,21 @@ func _on_generate_pressed() -> void:
 			# Finds a hexagon that fits & places it.
 			#print(lowBound, ' ', highBound, ' ', restrictions)
 			if !placeValidHex(cell, customSize, lowBound, highBound, restrictions):
-				$PuzzleMenu/BottomLeft/Buttons/TextBox.text = "Puzzle Failed"
-			else:
-				$PuzzleMenu/BottomLeft/Buttons/TextBox.text = "Puzzle Finished"
-			$PuzzleMenu/BottomLeft/Buttons/TextBox.visible = true
-		#print("DONE")
-		if $PuzzleMenu/BottomLeft/Buttons/SatisfactoryToggle.button_pressed:
-			var solutions = solvePuzzle(spiral)
-			if solutions == 1:
-				print('VALID')
+				$PuzzleMenu/Label.text = "Puzzle Failed"
 				toSolve = false
-			else:
-				print('INVALID ', solutions, ' SOLUTIONS EXIST')
-		else:
+				break
+			
+		#print("DONE")
+		var solutions = solvePuzzle(spiral)
+		if solutions == 1:
+			#print('VALID')
+			$PuzzleMenu/Label.text = str("Satisfactory Puzzle Generated")
 			toSolve = false
+		else:
+			if !$PuzzleMenu/BottomLeft/Buttons/SatisfactoryToggle.button_pressed:
+				toSolve = false
+				$PuzzleMenu/Label.text = str("Puzzle Generated With ", solutions, " Solutions")
+	$PuzzleMenu/Label.visible = true
 	
 # Solves puzzle to check validity
 func solvePuzzle(hexes: Array[Vector3i], pos: int = 0, solutions: int = 0):

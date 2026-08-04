@@ -282,17 +282,12 @@ theme = SubResource("Theme_ri7nl")
 [node name="Buttons" type="VBoxContainer" parent="PuzzleMenu/BottomLeft" unique_id=15915904]
 z_index = 1
 layout_mode = 2
+size_flags_horizontal = 3
 theme = ExtResource("7_pjvge")
 alignment = 2
 
-[node name="TextBox" type="Label" parent="PuzzleMenu/BottomLeft/Buttons" unique_id=674147259]
-visible = false
-layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "Placeholder"
-horizontal_alignment = 1
-
 [node name="SatisfactoryToggle" type="CheckBox" parent="PuzzleMenu/BottomLeft/Buttons" unique_id=1020895828]
+custom_maximum_size = Vector2(467, 467)
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
 text = "Force Single Solution"
@@ -568,6 +563,20 @@ layout_mode = 2
 toggle_mode = true
 texture_normal = ExtResource("55_wvqh4")
 texture_pressed = ExtResource("56_0yjxr")
+
+[node name="Label" type="Label" parent="PuzzleMenu" unique_id=1225353301]
+visible = false
+custom_minimum_size = Vector2(640, 200)
+custom_maximum_size = Vector2(640, -1)
+offset_left = 768.0
+offset_top = 800.0
+offset_right = 1408.0
+offset_bottom = 1000.0
+theme = ExtResource("7_pjvge")
+text = "[placeholder text]"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
 
 [connection signal="pressed" from="PuzzleMenu/TopLeft/Buttons/OpenImport" to="PuzzleMenu" method="_on_open_import_pressed"]
 [connection signal="pressed" from="PuzzleMenu/TopLeft/Buttons/OpenExport" to="PuzzleMenu" method="_on_open_export_pressed"]

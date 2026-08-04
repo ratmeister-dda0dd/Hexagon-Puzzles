@@ -51,6 +51,8 @@ func _on_import_pressed() -> void:
 	var importMenu = $TopLeft/ImportPanel/ImportCont/FileDropdown
 	var filename = importMenu.get_item_text(importMenu.selected)
 	importJSON(filename)
+	$Label.text = "Puzzle Imported"
+	$Label.visible = true
 
 func exportJSON(filename: String) -> void:
 	var filepath = "user://SaveData"
@@ -93,6 +95,8 @@ func exportJSON(filename: String) -> void:
 		file.store_string(json_data)
 		file.close()
 	$TopLeft/ImportPanel/ImportCont/FileDropdown.add_item(filename)
+	$Label.text = "Puzzle Exported"
+	$Label.visible = true
 
 func exportHughes(filename: String) -> void:
 	var filepath = "user://SaveDataHughes"
@@ -127,6 +131,8 @@ func exportHughes(filename: String) -> void:
 	if file:
 		file.store_string(tiles)
 		file.close()
+	$Label.text = "Puzzle Exported as .hex file"
+	$Label.visible = true
 
 func _on_open_export_pressed() -> void:
 	$TopLeft/Buttons.visible = false
