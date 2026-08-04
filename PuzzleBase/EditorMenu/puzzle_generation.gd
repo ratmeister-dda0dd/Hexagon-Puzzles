@@ -281,7 +281,7 @@ func performaceTest(puzzles: int = 10000, cutoff: int = 50):
 						continue
 					
 					var atlas_coords = tilemap.get_cell_atlas_coords(cell) #hypothetically unneeded due to IntNodes, but its a very small file already & makes runtime faster
-					var source = tilemap.tile_set.get_source(source_id)
+					#var source = tilemap.tile_set.get_source(source_id)
 					tiles = (tiles + str(atlas_coords.y) + ' ')
 			#print(tiles)
 		
@@ -359,8 +359,8 @@ func _on_generate_pressed() -> void:
 	
 # Solves puzzle to check validity
 func solvePuzzle(hexes: Array[Vector3i], pos: int = 0, solutions: int = 0):
-	if solutions > 1:
-		return solutions
+	#if solutions > 1:
+	#	return solutions
 	#print(solutions)
 	
 	# Checks if we finished yet & if so, adds one to our solutions (our base case).
@@ -382,35 +382,35 @@ func solvePuzzle(hexes: Array[Vector3i], pos: int = 0, solutions: int = 0):
 			restrictions = findRestrictions(neighborPos, neighborTiledata, restrictions)
 	
 	# Determines which tileset we will be useing based on the number that we draw
-	var totalTiles: Array[int]
+	#var totalTiles: Array[int]
 	var tileChoices: int
 	match hexVal:
 		0:
 			tileChoices = 1
-			totalTiles = zeroTiles
+			#totalTiles = zeroTiles
 		1:
 			tileChoices = 6
-			totalTiles = oneTiles
+			#totalTiles = oneTiles
 		2:
 			tileChoices = 6
-			totalTiles = twoTiles
+			#totalTiles = twoTiles
 		3:
 			tileChoices = 6
-			totalTiles = threeTiles
+			#totalTiles = threeTiles
 		4:
 			tileChoices = 9
-			totalTiles = fourTiles
+			#totalTiles = fourTiles
 		5:
 			tileChoices = 6
-			totalTiles = fiveTiles
+			#totalTiles = fiveTiles
 		6:
 			tileChoices = 1
-			totalTiles = sixTiles
+			#totalTiles = sixTiles
 	
 	# Sets the current cell to one of the valid hex permutations
 	for choice in range(tileChoices):
 		var hexAtlas = Vector2i(choice, hexVal)
-		var tileset = tilemap.tile_set
+		#var tileset = tilemap.tile_set
 		var source = tileset.get_source(0) as TileSetAtlasSource
 		var tile_data = source.get_tile_data(hexAtlas, 0) # 0 = alternative tile
 		
