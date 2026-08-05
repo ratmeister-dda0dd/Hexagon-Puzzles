@@ -37,9 +37,12 @@ func importJSON(filename: String):
 				for tile in data_received:
 					tilemap.set_cell(Vector2i(tile["mapX"], tile["mapY"]), 0, Vector2i(tile["atlasX"], tile["atlasY"]))
 			else:
-				print("Unexpected data")
+				$Label.text = "Unexpected Data In JSON"
+				$Label.visible = true
 		else:
-			print("JSON Parse Error: ", json.get_error_message(), " in ", content, " at line ", json.get_error_line())
+			$Label.text = "JSON Parse Error"
+			$Label.visible = true
+			#print("JSON Parse Error: ", json.get_error_message(), " in ", content, " at line ", json.get_error_line())
 		file.close()
 
 func _on_open_import_pressed() -> void:
@@ -63,7 +66,7 @@ func exportJSON(filename: String) -> void:
 			print("Failed to create directory: ", error)
 	
 	filepath += '/' + filename + ".json"
-	print(filepath)
+	#print(filepath)
 	
 	var tiles := []
 	for cell in tilemap.get_used_cells():
@@ -95,7 +98,7 @@ func exportJSON(filename: String) -> void:
 		file.store_string(json_data)
 		file.close()
 	$TopLeft/ImportPanel/ImportCont/FileDropdown.add_item(filename)
-	$Label.text = "Puzzle Exported"
+	$Label.text = str("Puzzle Exported to ", OS.get_data_dir(), "/SaveData")
 	$Label.visible = true
 
 func exportHughes(filename: String) -> void:
@@ -104,11 +107,13 @@ func exportHughes(filename: String) -> void:
 	if not DirAccess.dir_exists_absolute(filepath):
 		var error = DirAccess.make_dir_recursive_absolute(filepath)
 		if error != OK:
-			print("Failed to create directory: ", error)
-		else:
-			print("Directory created!")
+			$Label.text = str("Failed to access ", filepath)
+			$Label.visible = true
+	#	else:
+	#		print("Directory created!")
 	else:
-		print("Directory already exists.")
+		$Label.text = str("Accessed ", filepath)
+		$Label.visible = true
 	
 	filepath += '/' + filename + ".hex"
 	var tiles = ""
@@ -131,7 +136,7 @@ func exportHughes(filename: String) -> void:
 	if file:
 		file.store_string(tiles)
 		file.close()
-	$Label.text = "Puzzle Exported as .hex file"
+	$Label.text = str("Puzzle Exported to ", OS.get_data_dir(), "/SaveDataHughes In .hex Format")
 	$Label.visible = true
 
 func _on_open_export_pressed() -> void:
@@ -141,7 +146,7 @@ func _on_open_export_pressed() -> void:
 
 func _on_export_pressed() -> void:
 	var filename = $TopLeft/ExportPanel/ExportCont/ExportFilename.text
-	print(filename)
+	#print(filename)
 	if filename == "":
 		pass
 	else:
@@ -149,7 +154,7 @@ func _on_export_pressed() -> void:
 
 func _on_hughes_pressed() -> void:
 	var filename = $TopLeft/ExportPanel/ExportCont/ExportFilename.text
-	print(filename)
+	#print(filename)
 	if filename == "":
 		pass
 	else:

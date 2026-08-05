@@ -47,6 +47,14 @@ func buildTileDict():
 			if id != null:
 				tileDict[id] = {"coords": coords} #"source_id": source_id,
 
+func _ready() -> void:
+	# Builds a dictonary that uses source ID or node value as a key for atlas coords.
+	tileset = tilemap.tile_set
+	buildTileDict()
+	#Note that set_cell works like set_cell(cords in tilemap, id (always 0 as we only have 1 set), cords in the tileset (0,0) = 0, (0,1) = 1
+	#performaceTest(10000, 1000)
+
+
 func coordsContain(cell: Vector3i, value: int):
 	return (cell.x == value or cell.y == value or cell.z == value) and (cell.x == -value or cell.y == -value or cell.z == -value)
 
@@ -291,12 +299,7 @@ func performaceTest(puzzles: int = 10000, cutoff: int = 50):
 			file.store_string(str(solutions[val]) + '\n')
 	file.close()
 
-func _ready() -> void:
-	# Builds a dictonary that uses source ID or node value as a key for atlas coords.
-	tileset = tilemap.tile_set
-	buildTileDict()
-	#Note that set_cell works like set_cell(cords in tilemap, id (always 0 as we only have 1 set), cords in the tileset (0,0) = 0, (0,1) = 1
-	#performaceTest(10000, 1000)
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(_delta: float) -> void:
@@ -433,3 +436,22 @@ func solvePuzzle(hexes: Array[Vector3i], pos: int = 0, solutions: int = 0):
 			pos -= 1
 	tilemapSolving.set_cell(hexPos) #(location on map, layer, location in tileset)
 	return solutions
+
+
+func _on_solve_pressed() -> void:
+	# Sets the spiral's size to the user's input or 2 if that's not possible.
+	var customSize = 2
+	if sideLen.text.is_valid_int():
+		customSize = sideLen.text.to_int() - 1
+		if customSize < 0:
+			customSize = 2
+	var spiral = tilemap.cube_spiral(Vector3i(0,0,0), customSize) #returns a list of coords needed to spiral
+
+	var solutions = solvePuzzle(spiral)
+	if solutions == 0:
+		$PuzzleMenu/Label.text = str("Unsatisfiable Puzzle Found")
+	elif solutions == 1:
+		$PuzzleMenu/Label.text = str("Satisfactory Puzzle Found")
+	else:
+		$PuzzleMenu/Label.text = str("Puzzle With ", solutions, " Solutions Found")
+	$PuzzleMenu/Label.visible = true

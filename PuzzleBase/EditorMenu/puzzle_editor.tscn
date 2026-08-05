@@ -284,6 +284,7 @@ z_index = 1
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("7_pjvge")
+theme_override_constants/separation = 35
 alignment = 2
 
 [node name="SatisfactoryToggle" type="CheckBox" parent="PuzzleMenu/BottomLeft/Buttons" unique_id=1020895828]
@@ -299,6 +300,10 @@ placeholder_text = "Size?"
 [node name="Generate" type="Button" parent="PuzzleMenu/BottomLeft/Buttons" unique_id=1188066836]
 layout_mode = 2
 text = "Create Puzzle"
+
+[node name="Solve" type="Button" parent="PuzzleMenu/BottomLeft/Buttons" unique_id=1195727946]
+layout_mode = 2
+text = "Solve Puzzle"
 
 [node name="Return" type="Button" parent="PuzzleMenu/BottomLeft/Buttons" unique_id=776776038]
 layout_mode = 2
@@ -586,6 +591,7 @@ autowrap_mode = 3
 [connection signal="pressed" from="PuzzleMenu/TopLeft/ImportPanel/ImportCont/Import" to="PuzzleMenu" method="_on_import_pressed"]
 [connection signal="pressed" from="PuzzleMenu/TopLeft/ImportPanel/ImportCont/BackButton" to="PuzzleMenu" method="_on_back_pressed"]
 [connection signal="pressed" from="PuzzleMenu/BottomLeft/Buttons/Generate" to="." method="_on_generate_pressed"]
+[connection signal="pressed" from="PuzzleMenu/BottomLeft/Buttons/Solve" to="." method="_on_solve_pressed"]
 [connection signal="pressed" from="PuzzleMenu/BottomLeft/Buttons/Return" to="PuzzleMenu" method="_on_return_pressed"]
 [connection signal="pressed" from="PuzzleMenu/TopRight/Menu/MenuButton" to="PuzzleMenu" method="_on_menu_button_pressed"]
 [connection signal="pressed" from="PuzzleMenu/TopRight/NumberButtons/OneButtons/OneSubButtons/Button1-6" to="PuzzleMenu/TopRight/NumberButtons" method="_on_button_16_pressed"]

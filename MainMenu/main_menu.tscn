@@ -36,7 +36,7 @@ theme_override_constants/separation = 50
 layout_mode = 2
 theme = ExtResource("3_5de1l")
 theme_override_font_sizes/font_size = 75
-text = "Fun Button!!!"
+text = "Play"
 
 [node name="Edit" type="Button" parent="MenuContainer/MainButtons" unique_id=57173652]
 layout_mode = 2
@@ -92,8 +92,8 @@ mouse_filter = 2
 color = Color(0.9411765, 0.8784314, 0.8627451, 1)
 
 [node name="MenuImage" type="Sprite2D" parent="." unique_id=439449842]
-position = Vector2(1560.0001, 891)
-scale = Vector2(1.4454547, 1.4454545)
+position = Vector2(1558.6364, 890)
+scale = Vector2(1.4427272, 1.440909)
 texture = ExtResource("4_ajn5b")
 
 [connection signal="pressed" from="MenuContainer/MainButtons/Play" to="." method="_on_fun_pressed"]
